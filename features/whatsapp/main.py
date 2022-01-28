@@ -40,6 +40,7 @@ while True:
             Reply_Bot.Bot_Reply()
             print('Bot_msg that came in main_chatbot.py : ',Reply_Bot.Bot_Reply())
             jarvis.write(emoji.emojize(randomise_bot_reply.Randomised_Bot_Reply())+' *-Jarvis*')        # Writes reply
+            #time.sleep(50)
             jarvis.press('enter',presses=2, interval=1)
             jump_to_pw.jump_to_pw()
             import bot_append_new_keywords
