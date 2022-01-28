@@ -10,6 +10,7 @@ def live_speech_to_text():
             # use the microphone as source for input.
             with sr.Microphone() as source2:
                 # wait for a second to let the recognizer to adjust the energy threshold based on the surrounding noise level 
+                #this is the edited line test by codemasterayush
                 r.adjust_for_ambient_noise(source2, duration=0.2)
                 #listens for the user's input 
                 try:
