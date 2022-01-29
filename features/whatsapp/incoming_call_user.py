@@ -11,6 +11,8 @@ def Caller_Name():
         ocr = pytesseract.image_to_string(cap, lang ='eng')
         return ocr
     else:
-        print('No incoming call user....')
+        return 'No incoming call user....'
     
     #print(ocr)
+while True:
+    print(Caller_Name())
