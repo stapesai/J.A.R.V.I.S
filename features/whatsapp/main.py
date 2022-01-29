@@ -2,7 +2,7 @@ import time
 from asyncio import sleep
 import pyautogui as jarvis
 import emoji
-import os
+# import os
 # Importing Files
 import Open_WhatsApp
 import Find_Unread_Msg
@@ -10,13 +10,13 @@ import Copy_Msg
 import Reply_Bot
 import jump_to_pw
 import randomise_bot_reply
-import live_speech_to_text
+# import live_speech_to_text
 # Call Function
 import call
 import jarvis_speech_to_text
 import jarvis_text_to_speech
 import process_call
-import time_output
+# import time_output
 import incoming_call_user
 
 
