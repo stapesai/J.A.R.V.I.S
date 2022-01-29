@@ -1,7 +1,8 @@
 "['break','end','Bye','GoodBye']",['Good Bye Sir have a nice day']
 "['homework','hhw','hw']","['I have not done my homework yet','maine nahi kiya homework','abhi tak maine kaam nahi kiya hai']"
 ['hello'],"['Hey, a bit busy right now. just drop a message I will talk to you later :smile:']"
-['sample'],"['It is sample reply 1 :smiley:','It is sample reply 2 :smile:']"
+"['?','have','what']",['Interesting question  I will talk to you about that later']
+['sample'],"['It is sample reply 1 :smiley:','It is sample reply 2 :smiley:']"
 ['advice'],"['If I were you, I would go to the internet and type exactly what you wrote there!']"
 ['jarvis'],"['Hello, Jarvis Here - a AI Bot, a self talking and texting ']"
 ['robot'],"['I am a masterpiece of my master Devasheesh, An advanced bot']"
@@ -18,4 +19,3 @@
 ['how'],['if you are talking about me.. I am fine']
 ['thank'],['Welcome Sir']
 ['ok'],['ok take care sir']
-"['?','have','what']",['Interesting question  I will talk to you about that later']

@@ -2,7 +2,7 @@ import time
 from asyncio import sleep
 import pyautogui as jarvis
 import emoji
-#import os
+import os
 # Importing Files
 import Open_WhatsApp
 import Find_Unread_Msg
@@ -10,13 +10,13 @@ import Copy_Msg
 import Reply_Bot
 import jump_to_pw
 import randomise_bot_reply
-#import live_speech_to_text
+import live_speech_to_text
 # Call Function
 import call
 import jarvis_speech_to_text
 import jarvis_text_to_speech
 import process_call
-#import time_output
+import time_output
 import incoming_call_user
 
 
@@ -40,7 +40,6 @@ while True:
             Reply_Bot.Bot_Reply()
             print('Bot_msg that came in main_chatbot.py : ',Reply_Bot.Bot_Reply())
             jarvis.write(emoji.emojize(randomise_bot_reply.Randomised_Bot_Reply())+' *-Jarvis*')        # Writes reply
-            #time.sleep(50)
             jarvis.press('enter',presses=2, interval=1)
             jump_to_pw.jump_to_pw()
             import bot_append_new_keywords
