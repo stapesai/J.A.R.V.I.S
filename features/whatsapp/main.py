@@ -3,8 +3,7 @@ import pyautogui as jarvis
 import emoji
 # import os
 # Importing Files
-import Open_WhatsApp
-import Find_Unread_Msg
+import Open_WhatsApp, Find_Unread_Msg
 import Copy_Msg
 import Reply_Bot
 import jump_to_pw
