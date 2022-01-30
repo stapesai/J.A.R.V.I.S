@@ -6,9 +6,9 @@ import sys
 
 
 # Set your server name, server ip and client name here
-SERVER_IP = '192.168.0.144'
-SERVER_NAME = "Mi Box"
-CLIENT_NAME = "hmi"
+SERVER_IP = '192.168.1.45'
+SERVER_NAME = "AI PONT"
+CLIENT_NAME = "Jarvis"
 
 def print_guide():
     print('''

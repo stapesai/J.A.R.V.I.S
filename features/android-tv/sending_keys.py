@@ -118,4 +118,3 @@ class SendingKeySocket:
             message.append(ord(item))
         # sending key command with release flag
         self.send_message(bytes(message))
-        

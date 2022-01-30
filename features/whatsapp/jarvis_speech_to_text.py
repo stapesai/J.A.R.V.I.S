@@ -8,8 +8,8 @@ def jarvis_voice_recognition():
     import speech_recognition as jarvis_voice_recognition
     import pyaudio
     speech = jarvis_voice_recognition.Recognizer()
-    with jarvis_voice_recognition.Microphone() as source:
-        #speech.adjust_for_ambient_noise(source, duration=0.2)       # Adjust for ambient noises
+    with jarvis_voice_recognition.Microphone(device_index=None) as source:
+        speech.adjust_for_ambient_noise(source, duration=0.2)       # Adjust for ambient noises
         print("Listening to call..............")
         #audio = speech.listen(source, timeout=2)
         audio = speech.listen(source)

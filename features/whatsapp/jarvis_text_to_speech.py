@@ -1,6 +1,5 @@
 def jarvis_speak(my_text):
     from gtts import gTTS
-    import os
     from playsound import playsound
     
     # USing gTTs
@@ -25,5 +24,3 @@ def jarvis_speak(my_text):
     # Common Steps...
     #os.system('start output.mp3')
     #os.remove('output.mp3')
-    
-#jarvis_speak('Swastik Tablet')
