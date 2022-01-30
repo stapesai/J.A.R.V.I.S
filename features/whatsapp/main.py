@@ -9,16 +9,15 @@ import Copy_Msg
 import Reply_Bot
 import jump_to_pw
 import randomise_bot_reply
-# import live_speech_to_text
+
 # Call Function
 import call
 import jarvis_speech_to_text
 import jarvis_text_to_speech
 import process_call
-# import time_output
 import incoming_call_user
 
-while True:
+def Whatsapp_Automate():
     # Basic Functions......
     Open_WhatsApp.Open_WhatsApp()
     time.sleep(3)
@@ -28,7 +27,7 @@ while True:
     while True:
         time.sleep(2)
         Find_Unread_Msg.Find_Unread_Msg()
-        if Find_Unread_Msg.Unread_Msg!=None:
+        if Find_Unread_Msg.Find_Unread_Msg()==True:
             Copy_Msg.Copy_Msg()
             Reply_Bot.Bot_Reply()
             print('Bot_msg that came in main_chatbot.py : ',Reply_Bot.Bot_Reply())
@@ -39,7 +38,6 @@ while True:
             bot_append_new_keywords.Append_Keywords()
 
         # Attending calls....
-        # time.sleep(2)
         user = incoming_call_user.Caller_Name()
         print(user)
         time.sleep(1)
@@ -55,9 +53,9 @@ while True:
                 jarvis_text_to_speech.jarvis_speak(speak_to_user)
                 print('user has been answered........')
                 print('speak to user :',speak_to_user)
-                #time.sleep(time_output.time_sleep())
                 if speak_to_user == 'Good Bye Sir have a nice day':
-                    #jarvis_text_to_speech.jarvis_speak('Bye Sir. Hope you enjoyed the conversation')
                     call.cut_call()
-                    # os.remove('__pycache__')
                     break
+
+while True:
+    Whatsapp_Automate()
