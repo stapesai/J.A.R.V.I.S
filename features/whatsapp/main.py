@@ -1,5 +1,4 @@
 import time
-from asyncio import sleep
 import pyautogui as jarvis
 import emoji
 # import os
@@ -19,12 +18,7 @@ import process_call
 # import time_output
 import incoming_call_user
 
-
-#if 'jarvis' in live_speech_to_text.live_speech_to_text():
 while True:
-    # starting time
-    start = time.time()
-    #jarvis_text_to_speech.jarvis_speak('Hello Welcome Back Sir')
     # Basic Functions......
     Open_WhatsApp.Open_WhatsApp()
     time.sleep(3)
@@ -32,7 +26,6 @@ while True:
 
     # Reply Messages....
     while True:
-    #if 'jarvis' in jarvis_speech_to_text.jarvis_voice_recognition():
         time.sleep(2)
         Find_Unread_Msg.Find_Unread_Msg()
         if Find_Unread_Msg.Unread_Msg!=None:
@@ -68,8 +61,3 @@ while True:
                     call.cut_call()
                     # os.remove('__pycache__')
                     break
-        # end time
-        end = time.time()
-
-        # total time taken
-        print(f"Runtime of the program is {end - start}")
