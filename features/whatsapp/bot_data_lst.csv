@@ -1,21 +1,21 @@
 "['break','end','Bye','GoodBye']",['Good Bye Sir have a nice day']
-"['homework','hhw','hw']","['I have not done my homework yet','maine nahi kiya homework','abhi tak maine kaam nahi kiya hai']"
-['hello'],"['Hey, a bit busy right now. just drop a message I will talk to you later :smile:']"
-['sample'],"['It is sample reply 1 :smiley:','It is sample reply 2 :smile:']"
+"['homework','hhw']","['I have not done my homework yet','maine nahi kiya homework','abhi tak maine kaam nahi kiya hai']"
+"['kaha','kidhar','where']",['He is unavailable right now. Approach him later']
+['thank'],['Welcome Sir']
+"['weather','mausam']",['Today weather looks like the wish of God']
+['ok'],['ok take care sir']
+['sample'],"['It is sample reply 1 :smiley:','It is sample reply 2 :smiley:']"
 ['advice'],"['If I were you, I would go to the internet and type exactly what you wrote there!']"
-['jarvis'],"['Hello, Jarvis Here - a AI Bot, a self talking and texting ']"
 ['robot'],"['I am a masterpiece of my master Devasheesh, An advanced bot']"
 "['kaam','work']","['Did not completed yet. Talk to me later. I am working now','abhi tak nahi huya hai kaam pura']"
 "['call','phone','baat']",['Master will call you later when he will be free']
 "['cute','sweetie','love']",['Thanks for your compliment. I will tell my master about you ']
 "['help','please']",['Do not worry friend ! When my master comes online. I will tell him to solve your problem as soon as possible']
-"['Devasheesh','Devashish']","['He is my master, my creator. Tell me your message I will forward him']"
-"['kaha','kidhar','where']",['He is unavailable right now. Approach him later']
-"['weather','mausam']",['Today weather looks like the wish of God']
 "['atul','yadav','kshitij']",['He is friend even I knows it']
+"['?','have','what']",['Interesting question  I will talk to you about that later']
 ['morning'],['Good Morning! Have a great day']
 ['night'],['Good Night! Sleep tight']
 ['how'],['if you are talking about me.. I am fine']
-['thank'],['Welcome Sir']
-['ok'],['ok take care sir']
-"['?','have','what']",['Interesting question  I will talk to you about that later']
+['jarvis'],"['Hello, Jarvis Here - a AI Bot, a self talking and texting ']"
+['hello'],"['Hey, a bit busy right now. just drop a message I will talk to you later :smile:']"
+"['Devasheesh','Devashish']","['He is my master, my creator. Tell me your message I will forward him']"

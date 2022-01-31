@@ -51,7 +51,6 @@ def Bot_Reply():
 
     bot_data_open.close()
     print('--'*50)
-    
     return bot_msg
     
 #Bot_Reply()

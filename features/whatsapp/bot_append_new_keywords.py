@@ -39,4 +39,3 @@ def Append_Keywords():
         print('Message appended : ', new_keyword)
         bot_data_open2.close()
     return 'Keywords are appended'
-    

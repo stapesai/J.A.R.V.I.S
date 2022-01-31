@@ -1,7 +1,5 @@
-import imp
 import pyautogui as jarvis
 import pyperclip
-import Open_WhatsApp
 jarvis.FAILSAFE=False
 message='sample'
 def Copy_Msg():
@@ -26,8 +24,3 @@ def Copy_Msg():
 
     else:
         print('None')
-while True:
-    print('Copy_Msg file output : ',message)
-    # Getting Out of loop
-    if message=='sample':
-        break

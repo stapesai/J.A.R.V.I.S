@@ -1,18 +1,13 @@
 import pytesseract
-import pyautogui as jarvis
+import pyautogui
 from PIL import ImageGrab
 
 def Caller_Name():
-    attend_call_cordinates=jarvis.locateCenterOnScreen('img\call_attend.png', confidence=0.5)
+    attend_call_cordinates=pyautogui.locateCenterOnScreen('img\call_attend.png', confidence=0.7)
     if attend_call_cordinates!=None:
-        pytesseract.pytesseract.tesseract_cmd = r'C:\Users\swast\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
-        cap = ImageGrab.grab(bbox =(1630, 120, 1910, 130))
-        cap.save()
-        #print(type(cap))
+        pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe' #Reinstall Tesseract-OCR in this location 'C:\Program Files\Tesseract-OCR'
+        cap = ImageGrab.grab(bbox =(1630, 85, 1910, 130))
         ocr = pytesseract.image_to_string(cap, lang ='eng')
         return ocr
     else:
         return 'No incoming call user....'
-
-# while True:
-#     print(Caller_Name())
