@@ -56,5 +56,5 @@ def Whatsapp_Automate():
                     call.cut_call()
                     break
 
-while True:
-    Whatsapp_Automate()
+# while True:
+#     Whatsapp_Automate()

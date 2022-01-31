@@ -1,82 +1,53 @@
-def jarvis_voice_recognition1():
-    import speech_recognition as jarvis_voice_recognition
-    import pyaudio
-    speech = jarvis_voice_recognition.Recognizer()
-    with jarvis_voice_recognition.Microphone() as source:
-        speech.adjust_for_ambient_noise(source, duration=0.2)       # Adjust for ambient noises
-        print("Listening Sir..............")
-        audio = speech.listen(source, timeout=2, phrase_time_limit=3)
-        global text
-        text_dict_old = speech.recognize_google(audio,  language='en-US', show_all=True)
+import speech_recognition 
+import pyttsx3
+import Threads
+# Initialising modules....
+jarvis_ear = speech_recognition.Recognizer()
+jarvis_mouth = pyttsx3.init()
 
-        list_check = isinstance(text_dict_old, list)
-        if list_check == True:
-            text_dict_old = {'alternative': [{'transcript': 'Could Not Understand.... Can You please Repeat it ', 'confidence': 0.92995489}, {'transcript': 'helo'}, {'transcript': 'hallo'}, {'transcript': 'yellow'}, {'transcript': 'hello I'}], 'final': True}
-            print('in if loop')
-        print(text_dict_old)
-        x = list(text_dict_old.values())
-        # print(type(x))
-        text = list(x[0][0].values())[0]
-        print("You said : {}".format(text))
-        return text
+# Chinging voice....
+voices = jarvis_mouth.getProperty('voices')
+jarvis_mouth.setProperty('voice', voices[1].id)
 
-def jarvis_voice_recognition():
-    import speech_recognition as jarvis_voice_recognition
-    import pyaudio
-    speech = jarvis_voice_recognition.Recognizer()
-    with jarvis_voice_recognition.Microphone() as source:
-        try:
-            speech.adjust_for_ambient_noise(source, duration=0.2)       # Adjust for ambient noises
-            print("Listening Sir..............")
-            #speech.pause_threshold
-            audio = speech.listen(source, timeout=2, phrase_time_limit=2)
-            global text
-            text_dict_old = speech.recognize_google(audio,  language='en-US', show_all=True)
-            x = list(text_dict_old.values())
-            text = list(x[0][0].values())[0]
-            return "You said : {}".format(text)
-        except:
-            return 'Could Not Understand.... Can You please Repeat it'
+# Jarvis Text to speech
+def jarvis_speak(text):
+    print("Jarvis: " + text)
+    jarvis_mouth.say(text)
+    jarvis_mouth.runAndWait()
 
-def Check_Microphone():
-    import speech_recognition as sr
-    for index, name in enumerate(sr.Microphone.list_microphone_names()):
-        print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
+# Jarvis Speech to text
+def jarvis_listen():
+    try:
+        with speech_recognition.Microphone() as mic:
+            print("Jarvis: I'm Listening Sir")
+            audio = jarvis_ear.listen(mic,timeout=6 )
+            
+        you = jarvis_ear.recognize_google(audio)  
+        you = you.lower()
+        if "jarvis" in you:
+            you = you.replace("jarvis", "")
+    except:
+        you = "Cannot Recognize......"
+        pass
 
-def jarvis_speak(my_text):
-    from gtts import gTTS
-    import os
-    from playsound import playsound
+    return you
+
+def main():
+    you = jarvis_listen()
+    print("Boss: " + you) 
     
-    '''
-    # Using gTTs
-    language='en'
-    output=gTTS(text=my_text,lang=language,slow=False)
-    output.save('output.mp3')
-    playsound('output.mp3')
-    os.system('start output.mp3')
-    os.remove('output.mp3')
-    '''
+    if "hello" or 'wake up' in you:
+        return 'hello'
 
-    # Using pyttsx3
-    import pyttsx3
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
-    newVoiceRate = 135
-    engine.setProperty('rate',newVoiceRate)
-    #newVolume = 1.0
-    #engine.setProperty('volume', newVolume)
-    engine.say(my_text)
-    #engine.save_to_file(my_text,'output.mp3')
-    engine.runAndWait()
-
-# Main Body
+    elif "bye"  or 'goodbye' or 'you need a break' or 'shutdown' in you :
+        return 'Bye Sir, but you can call me anytime.....'
+        
+    elif 'whatsapp' in you:
+        Threads.Whatsapp()
+    else:
+        return 'Sir You have not programmed any such function in me....'
 
 while True:
-    print(jarvis_voice_recognition())
-    st = jarvis_voice_recognition().replace(' ','').lower()
-    print(st)
-    if 'friday' in st:
-        print('hello')
-        jarvis_speak('Good Evening Boss')
+    jarvis_speak(main())
+    if main()=='Bye Sir, but you can call me anytime.....':
+        break
