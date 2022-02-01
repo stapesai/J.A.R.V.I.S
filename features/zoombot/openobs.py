@@ -1,7 +1,9 @@
 import pyautogui as jarvis
 def openobsstudio():
     jarvis.press('winleft')
+    jarvis.sleep(1)
     jarvis.write('obs')
+    jarvis.sleep(1)
     jarvis.press('enter')
     jarvis.sleep(10)
     cords=jarvis.locateCenterOnScreen('startcam.png',confidence=0.8)
