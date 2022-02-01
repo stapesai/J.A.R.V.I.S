@@ -7,5 +7,3 @@ def ZoomReset():
     if zoom_cord!=None:
         jarvis.click(zoom_cord)
     jarvis.keyUp('ctrl')
-
-ZoomReset()
