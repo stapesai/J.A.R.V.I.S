@@ -1,7 +1,7 @@
 {
-    'Video':'Link'
+    'Idea':'Link'
 }
 
 {
-    'Video':'Link'
+    'Idea':'Link'
 }
