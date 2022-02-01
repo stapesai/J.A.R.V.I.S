@@ -2,6 +2,7 @@ import datetime
 import webbrowser
 import pyautogui as jarvis
 webbrowser.open('https://apps.skolaro.com/lecture-timetable/user')
+
 crnt_dateandtime=datetime.datetime.now() #diaplays date along with time
 #we want only time as skolaro automatically updates date
 time=crnt_dateandtime.strftime("%H:%M:%S")
