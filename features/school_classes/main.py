@@ -31,7 +31,6 @@ def delta_days(inp_day):
         return None
 
 def ZoomReset():
-    jarvis.sleep(3)
     jarvis.hotkey('ctrl','+')
     zoom_cord = jarvis.locateCenterOnScreen('edge_reset.png',confidence=0.8) or jarvis.locateCenterOnScreen('chrome_reset.png',confidence=0.8)
     if zoom_cord!=None:
@@ -75,29 +74,39 @@ def Open_Skolaro():
     jarvis.click(center_cord)
     jarvis.press('down',presses=5, interval=0.1)
 
-# Main Body Of Program
 def OneTimeProcess():
     Open_OBS_Studio()         # Starting Virtual Cam
     Open_Skolaro()            # Opening Skolaro (Ignoring Homeroom)
     ZoomReset()
 
-def Join_Class():
-    # Before 9 AM
-
-
-    # After 9 AM
+def Find_Class():
     day, crt_hour = Current_DateTime()
     print(f'Today Day is "{day}" and hour "{crt_hour}"')
 
     initial_cord = (829, 381)
     jarvis.moveTo(initial_cord)
+    delta_x = delta_days(day) * 95
+    delta_y = 0
+    jarvis.moveRel(delta_x,delta_y)
+    while True:
+        jarvis.moveRel(0,5)
+        crt_cord = jarvis.position()
+        jarvis.click(crt_cord)
+        if jarvis.locateCenterOnScreen('feedback_support.png', confidence =0.5) == None:
+            break
+        else:
+            jarvis.press('enter')
 
-    
+def Join_Class():
+    while True:
+        open_cord = jarvis.locateCenterOnScreen('edge_zoom_open.png', confidence =0.8) or jarvis.locateCenterOnScreen('chrome_zoom_open.png',confidence=0.8)
+        if open_cord !=None:
+            jarvis.click(open_cord)
+            break
 
-
-
-
-
-
-# OneTimeProcess()      # Working Process....
+# Main Body Of Program
+OneTimeProcess()
+sleep(2)
+Find_Class()
+sleep(2)
 Join_Class()
