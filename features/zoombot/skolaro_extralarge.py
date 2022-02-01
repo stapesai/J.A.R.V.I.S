@@ -8,5 +8,10 @@ def Skolaro_ExtraLarge():
         jarvis.click(x,y)
         jarvis.press('pagedown')
         jarvis.press('enter')
+
+        #now scrolling to down to find classes
+        jarvis.click(960,540)
+        
     else:
         print('cant find..')
+ 
