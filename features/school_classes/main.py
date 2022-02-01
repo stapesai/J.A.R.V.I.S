@@ -2,6 +2,40 @@
 import time
 import pyautogui as jarvis
 import webbrowser
+import datetime
+
+def Current_DateTime():
+    day = (datetime.datetime.today().strftime('%A')).lower()        # Current Day
+
+    crnt_dateandtime=datetime.datetime.now()      
+    time=crnt_dateandtime.strftime("%H:%M:%S")
+    hour=time[0:2]
+    crt_hour=int(hour)
+
+    return day, crt_hour
+
+def delta_days(inp_day):
+    if inp_day == 'monday':
+        return 0
+    elif inp_day == 'tuesday':
+        return 1
+    elif inp_day == 'wednesday':
+        return 2
+    elif inp_day == 'thursday':
+        return 3
+    elif inp_day == 'friday':
+        return 4
+    elif inp_day == 'saturday':
+        return 5
+    elif inp_day == 'sunday':
+        return None
+
+def ZoomReset():
+    jarvis.sleep(3)
+    jarvis.hotkey('ctrl','+')
+    zoom_cord = jarvis.locateCenterOnScreen('edge_reset.png',confidence=0.8) or jarvis.locateCenterOnScreen('chrome_reset.png',confidence=0.8)
+    if zoom_cord!=None:
+        jarvis.click(zoom_cord)
 
 def sleep(n):
     time.sleep(n)
@@ -45,5 +79,25 @@ def Open_Skolaro():
 def OneTimeProcess():
     Open_OBS_Studio()         # Starting Virtual Cam
     Open_Skolaro()            # Opening Skolaro (Ignoring Homeroom)
+    ZoomReset()
 
-OneTimeProcess()
+def Join_Class():
+    # Before 9 AM
+
+
+    # After 9 AM
+    day, crt_hour = Current_DateTime()
+    print(f'Today Day is "{day}" and hour "{crt_hour}"')
+
+    initial_cord = (829, 381)
+    jarvis.moveTo(initial_cord)
+
+    
+
+
+
+
+
+
+# OneTimeProcess()      # Working Process....
+Join_Class()
