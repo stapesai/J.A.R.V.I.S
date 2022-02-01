@@ -104,13 +104,12 @@ def Join_Class():
             jarvis.click(open_cord)
             break
 
-def meeting_passcode():
-    
-
 # Main Body Of Program
-OneTimeProcess()
-sleep(2)
-Find_Class()
-sleep(2)
-Join_Class()
+def Main():
+    OneTimeProcess()
+    sleep(2)
+    Find_Class()
+    sleep(2)
+    Join_Class()
 
+Main()
