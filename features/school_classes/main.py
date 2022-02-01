@@ -1,5 +1,6 @@
 # Importing Modules....
 import time
+from tkinter.messagebox import NO
 import pyautogui as jarvis
 import webbrowser
 import datetime
@@ -123,8 +124,11 @@ def Join_Class():
             break
     
     # Check Waiting Room...
-    
-
+    while True:
+        waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)
+        if waiting_room == None:
+            sleep(5)
+            break
     # Turn ON camera...
     jarvis.hotkey('alt','v')
 
