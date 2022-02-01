@@ -93,7 +93,7 @@ elif int_hour== 12:
         print('going on next time limit...')
 
 elif int_hour== 13:
-    if int_mins>=20 and int_mins<=55:
+    if int_mins>=20 and int_mins<=59:
         jarvis.press('down',presses=73,interval=0.1)
         class6_cords=jarvis.locateOnScreen('classes\sixthclass.png',confidence=0.8) #6th class
         x=class6_cords[0]+85
