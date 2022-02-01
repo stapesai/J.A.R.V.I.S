@@ -144,6 +144,3 @@ elif int_hour== 13:
         print('going on next time limit...')
 else:
     print('currently no classes.... ')
-    
-
-
