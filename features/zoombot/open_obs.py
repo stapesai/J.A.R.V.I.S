@@ -15,4 +15,3 @@ def openobsstudio():
             break
         else:
             print('not found...')
-
