@@ -98,11 +98,20 @@ def Find_Class():
             jarvis.press('enter')
 
 def Join_Class():
+    # Joining meeting...
     while True:
         open_cord = jarvis.locateCenterOnScreen('edge_zoom_open.png', confidence =0.8) or jarvis.locateCenterOnScreen('chrome_zoom_open.png',confidence=0.8)
         if open_cord !=None:
             jarvis.click(open_cord)
             break
+
+    # Enter Meeting Passcode...
+    while True:
+        passcode_box = jarvis.locateCenterOnScreen('zoom_passcode.png', confidence =0.8)
+        
+    # Turn ON camera...
+    jarvis.hotkey('alt','v')
+
 
 # Main Body Of Program
 def Main():
