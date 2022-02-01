@@ -6,12 +6,13 @@ def openobsstudio():
     jarvis.sleep(1)
     jarvis.press('enter')
     jarvis.sleep(7)
-    cords=jarvis.locateCenterOnScreen('startcam.png',confidence=0.8)
+    
     while True:
+        cords=jarvis.locateCenterOnScreen('startcam.png',confidence=0.8)
         if cords!=None:
             print('cords founded',cords)
             jarvis.click(cords)
             break
         else:
             print('not found...')
-openobsstudio()
+

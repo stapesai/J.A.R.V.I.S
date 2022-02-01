@@ -1,11 +1,27 @@
 import datetime
 import webbrowser
-import time
-import pyautogui as jarvis
-webbrowser.open('https://apps.skolaro.com/lecture-timetable/user')
-time.sleep(3)
 
-crnt_dateandtime=datetime.datetime.now() #diaplays date along with time
+import pyautogui as jarvis 
+
+#opening obs 
+import open_obs
+open_obs.openobsstudio() 
+jarvis.sleep(3)
+
+#opening skolaro 
+webbrowser.open('https://apps.skolaro.com/lecture-timetable/user')
+
+#resetting browser zoom
+import zoom_reset
+zoom_reset.ZoomReset()
+jarvis.sleep(3)
+
+#skolaro extra large
+import skolaro_extralarge
+skolaro_extralarge.Skolaro_ExtraLarge()
+
+#checking current date and time
+crnt_dateandtime=datetime.datetime.now()  #diaplays date along with time
 #we want only time as skolaro automatically updates date
 time=crnt_dateandtime.strftime("%H:%M:%S")
 hour=time[0:2]   #SEPERATING HOUR MINUTE AND SECOND
@@ -15,6 +31,7 @@ second=time[6:9]
 int_hour=int(hour)
 int_mins=int(minute)
 int_secs=int(second)
+jarvis.sleep(1)
 if int_hour == 8:
     if int_mins>=20 and int_mins<=25:
         class1_cords=jarvis.locateCenterOnScreen('classes\firstclass.png',confidence=0.8) #for 1st class
@@ -78,3 +95,5 @@ elif int_hour== 1:
             print('cords not found')
     else:
         print('going on next time limit...')
+else:
+    print('currently no classes ')

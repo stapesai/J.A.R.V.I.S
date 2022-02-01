@@ -10,4 +10,3 @@ def Skolaro_ExtraLarge():
         jarvis.press('enter')
     else:
         print('cant find..')
-Skolaro_ExtraLarge()

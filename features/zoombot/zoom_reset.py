@@ -7,4 +7,3 @@ def ZoomReset():
         jarvis.click(zoom_cord)
     
 
-ZoomReset()
