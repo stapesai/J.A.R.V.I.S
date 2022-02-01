@@ -4,6 +4,8 @@ import pyautogui as jarvis
 import webbrowser
 import datetime
 
+from sklearn.linear_model import PassiveAggressiveClassifier
+
 def Current_DateTime():
     day = (datetime.datetime.today().strftime('%A')).lower()        # Current Day
 
@@ -98,11 +100,34 @@ def Find_Class():
             jarvis.press('enter')
 
 def Join_Class():
+    # Joining meeting...
     while True:
         open_cord = jarvis.locateCenterOnScreen('edge_zoom_open.png', confidence =0.8) or jarvis.locateCenterOnScreen('chrome_zoom_open.png',confidence=0.8)
         if open_cord !=None:
             jarvis.click(open_cord)
             break
+    sleep(5)
+    # Enter Meeting Passcode...
+    while True:
+        passcode_box = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
+        if passcode_box!=None:
+            jarvis.click(passcode_box)
+            jarvis.write('david')
+            sleep(10)
+            passcode_box2 = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
+            if passcode_box2!=None:
+                jarvis.click(passcode_box2)
+                jarvis.write('am2119')
+                sleep(10)
+                break
+            break
+    
+    # Check Waiting Room...
+    
+
+    # Turn ON camera...
+    jarvis.hotkey('alt','v')
+
 
 # Main Body Of Program
 def Main():
