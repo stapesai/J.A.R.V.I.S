@@ -5,7 +5,7 @@ def openobsstudio():
     jarvis.write('obs')
     jarvis.sleep(1)
     jarvis.press('enter')
-    jarvis.sleep(10)
+    jarvis.sleep(7)
     cords=jarvis.locateCenterOnScreen('startcam.png',confidence=0.8)
     while True:
         if cords!=None:
