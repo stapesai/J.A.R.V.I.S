@@ -130,10 +130,11 @@ def Join_Class():
     
     # Check Waiting Room...
     while True:
-        waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)
-        if waiting_room == None:
+        waiting= jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8) or jarvis.locateCenterOnScreen('waiting_for_host.png', confidence =0.8)
+        print('In waiting Room sir ......')
+        if waiting == None:
             sleep(5)
-            print('In waiting Room sir ......')
+            print('Out of waiting room ......')
             start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.8)
             if start_video != None:
                 break
