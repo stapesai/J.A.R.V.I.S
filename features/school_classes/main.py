@@ -110,7 +110,29 @@ def Join_Class():
             jarvis.click(open_cord)
             sleep(10)
             break
-    sleep(5)
+
+    # Checking waiting for host....
+    waiting_for_host = jarvis.locateCenterOnScreen('waiting_for_host.png', confidence =0.8)
+    while True:
+        if waiting_for_host == None:
+            sleep(5)
+            break            
+        else:
+            print('waiting for host to start this meeting....')
+            sleep(5)
+            i=0
+            # Closing Zoom after 9 min....
+            if i==108:
+                center_cord = (960,540)
+                jarvis.click(center_cord)
+                jarvis.hotkey('alt','f4')
+                print('zoom closed successfully....')
+                return
+                
+            else:
+                i+=1
+
+
     # Enter Meeting Passcode...
     while True:
         passcode_box = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
@@ -130,16 +152,18 @@ def Join_Class():
     
     # Check Waiting Room...
     while True:
-        waiting= jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8) or jarvis.locateCenterOnScreen('waiting_for_host.png', confidence =0.8)
+        waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)
+        
         print('In waiting Room sir ......')
-        if waiting == None:
+        if waiting_room == None:
             sleep(5)
             print('Out of waiting room ......')
             start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.8)
             if start_video != None:
                 break
             break
-    
+        else:
+            continue
     # Turn ON camera...
     jarvis.hotkey('alt','v')
     start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.9)
