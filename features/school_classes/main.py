@@ -193,15 +193,25 @@ while True:
     crt_day = str(Current_DateTime()[0])
     print('current time is : ',crt_time)
 
-    if crt_day!='monday':
-        if '8:0' == crt_time or '8:20' == crt_time or'9:10' == crt_time or'10:10' == crt_time or'11:0' == crt_time or'12:0' == crt_time or'13:20' == crt_time:
-            Main()
-            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-            if class_join_confirm != None:
-                print('Sir Class is joined confirmly.....')
-                sleep(3000)
+    if crt_day =='sunday':
+        print('No Class Today Sir....')
+        break
+
+    elif crt_day == 'monday' and '8:0' <= crt_time <= '8:40':
+        Main()
+        class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+        if class_join_confirm != None:
+            print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
+            sleep(3000)
+
     else:
-        if '8:0' == crt_time or '9:10' == crt_time or'10:10' == crt_time or'11:0' == crt_time or'12:0' == crt_time or'13:20' == crt_time:
+        if ('8:0'<= crt_time <'8:10' or 
+        '8:20'<= crt_time <'9:0' or 
+        '9:10'<= crt_time <'9:50' or 
+        '10:10'<= crt_time <'10:50' or 
+        '11:0'<= crt_time <'11:40' or 
+        '12:0'<= crt_time <'12:40' or 
+        '13:20'<= crt_time <'14:0'):
             Main()
             class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
             if class_join_confirm != None:
