@@ -195,7 +195,7 @@ def Main():
     Find_Class()
     sleep(2)
     Join_Class()
-
+    jarvis.hotkey('winleft','up')
 
 
 # Continious Run....
@@ -224,9 +224,11 @@ while True:
         '12:0'<= crt_time <'12:40' or 
         '13:20'<= crt_time <'14:0'):
             Main()
-            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-            if class_join_confirm != None:
-                print('Sir Class is joined confirmly.....')
-                sleep(3000)
+            while True:
+                class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+                if class_join_confirm != None:
+                    print('Sir Class is joined confirmly.....')
+                    sleep(3000)
+                    break
     
     sleep(30)
