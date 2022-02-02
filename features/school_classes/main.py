@@ -256,6 +256,5 @@ if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
                         break
     
         sleep(30)
-Open_OBS_Studio()
-Main()
+
 # code completed
