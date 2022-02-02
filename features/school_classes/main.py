@@ -188,11 +188,7 @@ def Join_Class():
             jarvis.click(start_video)
             print('Turning ON camera.......')
             break
-
-# Main Body Of Program
-Open_OBS_Studio()       # Starting Virtual Cam
          
-
 def Main():
     Open_Skolaro()      # Opening Skolaro (Ignoring Homeroom)
     sleep(2)
@@ -202,57 +198,63 @@ def Main():
     jarvis.hotkey('winleft','up')
 
 
-# Continious Run....
-while True:
-    crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
-    crt_day = str(Current_DateTime()[0])
-    print('current time is : ',crt_time)
+# Main Body Of Program
+crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
+crt_day = str(Current_DateTime()[0])
 
-    if crt_day =='sunday':
-        print('No Class Today Sir....')
-        break
+if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
 
-    else:
-        if crt_day == 'monday' and '8:0' <= crt_time <= '8:40':
-            Main()
-            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-            if class_join_confirm != None:
-                print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
-                print('sir I am going to sleep for 1.05 hrs...')
-                sleep(3900)
+    Open_OBS_Studio()       # Starting Virtual Cam
+    while True:
+        crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
+        crt_day = str(Current_DateTime()[0])
+        print('current time is : ',crt_time)
 
-        elif ('8:0'<= crt_time <'8:10'):
-            Main()
-            while True:
+        if crt_day =='sunday':
+            print('No Class Today Sir....')
+            break
+
+        else:
+            if crt_day == 'monday' and '8:0' <= crt_time <= '8:40':
+                Main()
                 class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
                 if class_join_confirm != None:
-                    jarvis.click(class_join_confirm)
-                    jarvis.hotkey('winleft','up')
-                    sleep(1)            
-                    print('Sir homeroom Class is joined confirmly.....')
-                    print('sir I am going to sleep for 20 mins....')
-                    sleep(1200)
-                    break
+                    print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
+                    print('sir I am going to sleep for 1.05 hrs...')
+                    sleep(3900)
 
-        elif ( 
-        '8:20'<= crt_time <'9:0' or 
-        '9:10'<= crt_time <'9:50' or 
-        '10:10'<= crt_time <'10:50' or 
-        '11:0'<= crt_time <'11:40' or 
-        '12:0'<= crt_time <'12:40' or 
-        '13:20'<= crt_time <'14:0'):
-            Main()
-            while True:
-                class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-                if class_join_confirm != None:
-                    jarvis.click(class_join_confirm)
-                    jarvis.hotkey('winleft','up')
-                    sleep(1)            
-                    print('Sir Class is joined confirmly.....')
-                    print('sir I am going to sleep for 50 mins....')
-                    sleep(3000)
-                    break
+            elif ('8:0'<= crt_time <'8:10'):
+                Main()
+                while True:
+                    class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+                    if class_join_confirm != None:
+                        jarvis.click(class_join_confirm)
+                        jarvis.hotkey('winleft','up')
+                        sleep(1)            
+                        print('Sir homeroom Class is joined confirmly.....')
+                        print('sir I am going to sleep for 20 mins....')
+                        sleep(1200)
+                        break
+
+            elif ( 
+            '8:20'<= crt_time <'9:0' or 
+            '9:10'<= crt_time <'9:50' or 
+            '10:10'<= crt_time <'10:50' or 
+            '11:0'<= crt_time <'11:40' or 
+            '12:0'<= crt_time <'12:40' or 
+            '13:20'<= crt_time <'14:0'):
+                Main()
+                while True:
+                    class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+                    if class_join_confirm != None:
+                        jarvis.click(class_join_confirm)
+                        jarvis.hotkey('winleft','up')
+                        sleep(1)            
+                        print('Sir Class is joined confirmly.....')
+                        print('sir I am going to sleep for 50 mins....')
+                        sleep(3000)
+                        break
     
-    sleep(30)
+        sleep(30)
 
 # code comple
