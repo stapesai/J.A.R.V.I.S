@@ -53,6 +53,7 @@ def Open_OBS_Studio():
     jarvis.write('obs')
     jarvis.sleep(1)
     jarvis.press('enter')
+    jarvis.sleep(1)
     
     # Starting Virtual Cam
     while True:
@@ -68,8 +69,10 @@ def Open_OBS_Studio():
 
 def Open_Skolaro():
     webbrowser.open('https://apps.skolaro.com/lecture-timetable/user')
-    sleep(5)
+    sleep(10)
     jarvis.hotkey('winleft','up')
+    sleep(3)
+    ZoomReset()
 
     # if skoalro is not signed in...
     sign_in_cord=jarvis.locateCenterOnScreen('sign_in.png',confidence=0.8)
@@ -123,9 +126,10 @@ def Join_Class():
             sleep(5)
             i=0
             # Closing Zoom after 9 min....
-            if i==108:
+            if i==108:     # this is set in reference of 5 secs sleep 
                 center_cord = (960,540)
                 jarvis.click(center_cord)
+                sleep(1)
                 jarvis.hotkey('alt','f4')
                 print('zoom closed successfully....')
                 return
@@ -187,7 +191,7 @@ def Join_Class():
 
 # Main Body Of Program
 Open_OBS_Studio()       # Starting Virtual Cam
-ZoomReset()         
+         
 
 def Main():
     Open_Skolaro()      # Opening Skolaro (Ignoring Homeroom)
@@ -227,8 +231,13 @@ while True:
             while True:
                 class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
                 if class_join_confirm != None:
+                    jarvis.hotkey('winleft','up')
+                    sleep(1)            
                     print('Sir Class is joined confirmly.....')
+                    print('sir I am going to sleep till 50 mins....')
                     sleep(3000)
                     break
     
     sleep(30)
+
+# code comple
