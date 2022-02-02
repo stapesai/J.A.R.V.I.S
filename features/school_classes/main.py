@@ -3,6 +3,7 @@ import time
 import pyautogui as jarvis
 import webbrowser
 import datetime
+jarvis.FAILSAFE = False
 
 def Current_DateTime():
     day = (datetime.datetime.today().strftime('%A')).lower()        # Current Day
@@ -107,6 +108,7 @@ def Join_Class():
         open_cord = jarvis.locateCenterOnScreen('edge_zoom_open.png', confidence =0.8) or jarvis.locateCenterOnScreen('chrome_zoom_open.png',confidence=0.8)
         if open_cord !=None:
             jarvis.click(open_cord)
+            sleep(10)
             break
     sleep(5)
     # Enter Meeting Passcode...
@@ -123,22 +125,29 @@ def Join_Class():
                 sleep(10)
                 break
             break
+        else:
+            break
     
     # Check Waiting Room...
     while True:
         waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)
         if waiting_room == None:
             sleep(5)
+            print('In waiting Room sir ......')
+            start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.8)
+            if start_video != None:
+                break
             break
     
     # Turn ON camera...
     jarvis.hotkey('alt','v')
-    start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.8)
+    start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.9)
     while True:
         if start_video == None:
             break
         else:
             jarvis.click(start_video)
+            break
 
 # Main Body Of Program
 Open_OBS_Studio()       # Starting Virtual Cam
