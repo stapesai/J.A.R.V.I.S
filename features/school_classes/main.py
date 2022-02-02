@@ -39,6 +39,7 @@ def ZoomReset():
     zoom_cord = jarvis.locateCenterOnScreen('edge_reset.png',confidence=0.8) or jarvis.locateCenterOnScreen('chrome_reset.png',confidence=0.8)
     if zoom_cord!=None:
         jarvis.click(zoom_cord)
+        print('Sir zoom has been reseted successfully !!!!')
 
 def sleep(n):
     time.sleep(n)
@@ -58,8 +59,10 @@ def Open_OBS_Studio():
         if cords!=None:
             print('cords founded',cords)
             jarvis.click(cords)
+            print('Sir, start virtual camera has been started successfully......')
             break
         else:
+            sleep(10)
             print('cannot start virtual camera......')
 
 def Open_Skolaro():
@@ -69,19 +72,16 @@ def Open_Skolaro():
     # if skoalro is not signed in...
     sign_in_cord=jarvis.locateCenterOnScreen('sign_in.png',confidence=0.8)
     if sign_in_cord != None:
-        print('signing in..')
         jarvis.click(sign_in_cord)
+        print('signined in successfully...')
         sleep(3)
     
     # Jumping to main class shedule...
     center_cord = (960,540)
     jarvis.click(center_cord)
     jarvis.press('down',presses=5, interval=0.1)
-
-def OneTimeProcess():
-    Open_Skolaro()            # Opening Skolaro (Ignoring Homeroom)
-    ZoomReset()
-
+    print('Jumping to main class shedule...')
+               
 def Find_Class():
     day, crt_hour, crt_min = Current_DateTime()
     print(f'Today Day is "{day}" and hour "{crt_hour}" and min "{crt_min}"')
@@ -96,6 +96,7 @@ def Find_Class():
         crt_cord = jarvis.position()
         jarvis.click(crt_cord)
         if jarvis.locateCenterOnScreen('feedback_support.png', confidence =0.5) == None:
+            print('Sir class has been opened successfully....')
             break
         else:
             jarvis.press('enter')
@@ -140,9 +141,11 @@ def Join_Class():
             jarvis.click(start_video)
 
 # Main Body Of Program
-Open_OBS_Studio()         # Starting Virtual Cam
+Open_OBS_Studio()       # Starting Virtual Cam
+ZoomReset()         
+
 def Main():
-    OneTimeProcess()
+    Open_Skolaro()      # Opening Skolaro (Ignoring Homeroom)
     sleep(2)
     Find_Class()
     sleep(2)
@@ -161,12 +164,14 @@ while True:
             Main()
             class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
             if class_join_confirm != None:
+                print('Sir Class is joined confirmly.....')
                 sleep(3000)
     else:
         if '8:0' == crt_time or '9:10' == crt_time or'10:10' == crt_time or'11:0' == crt_time or'12:0' == crt_time or'13:20' == crt_time:
             Main()
             class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
             if class_join_confirm != None:
+                print('Sir Class is joined confirmly.....')
                 sleep(3000)
     
     sleep(30)
