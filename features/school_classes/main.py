@@ -57,7 +57,7 @@ def Open_OBS_Studio():
     
     # Starting Virtual Cam
     while True:
-        cords=jarvis.locateCenterOnScreen('start_virtual_cam.png',confidence=0.8)
+        cords=jarvis.locateCenterOnScreen('start_virtual_cam.png',confidence=0.8) or jarvis.locateCenterOnScreen('start_virtual_cam_fullscreen.png',confidence=0.8)
         if cords!=None:
             print('cords founded',cords)
             jarvis.click(cords)
@@ -256,5 +256,6 @@ if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
                         break
     
         sleep(30)
-
-# code comple
+Open_OBS_Studio()
+Main()
+# code completed
