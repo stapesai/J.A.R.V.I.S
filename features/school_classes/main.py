@@ -69,6 +69,7 @@ def Open_OBS_Studio():
 def Open_Skolaro():
     webbrowser.open('https://apps.skolaro.com/lecture-timetable/user')
     sleep(5)
+    jarvis.hotkey('winleft','up')
 
     # if skoalro is not signed in...
     sign_in_cord=jarvis.locateCenterOnScreen('sign_in.png',confidence=0.8)
@@ -139,11 +140,15 @@ def Join_Class():
         if passcode_box!=None:
             jarvis.click(passcode_box)
             jarvis.write('david')
+            join_meeting = jarvis.locateCenterOnScreen('join_meeting.png', confidence =0.8)
+            jarvis.click(join_meeting)
             sleep(10)
             passcode_box2 = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
             if passcode_box2!=None:
                 jarvis.click(passcode_box2)
                 jarvis.write('am2119')
+                join_meeting = jarvis.locateCenterOnScreen('join_meeting.png', confidence =0.8)
+                jarvis.click(join_meeting)
                 sleep(10)
                 break
             break
@@ -153,6 +158,7 @@ def Join_Class():
     # Check Waiting Room...
     while True:
         waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)
+        jarvis.hotkey('winleft','up')
         print('In waiting Room sir ......')
         # Join with video....
         join_with_video = jarvis.locateCenterOnScreen('join_with_video.png', confidence =0.8)
@@ -176,6 +182,7 @@ def Join_Class():
             break
         else:
             jarvis.click(start_video)
+            print('Turning ON camera.......')
             break
 
 # Main Body Of Program
@@ -201,15 +208,15 @@ while True:
         print('No Class Today Sir....')
         break
 
-    elif crt_day == 'monday' and '8:0' <= crt_time <= '8:40':
-        Main()
-        class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-        if class_join_confirm != None:
-            print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
-            sleep(3000)
-
     else:
-        if ('8:0'<= crt_time <'8:10' or 
+        if crt_day == 'monday' and '8:0' <= crt_time <= '8:40':
+            Main()
+            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+            if class_join_confirm != None:
+                print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
+                sleep(3000)
+        
+        elif ('8:0'<= crt_time <'8:10' or 
         '8:20'<= crt_time <'9:0' or 
         '9:10'<= crt_time <'9:50' or 
         '10:10'<= crt_time <'10:50' or 
