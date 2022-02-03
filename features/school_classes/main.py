@@ -248,7 +248,7 @@ if crt_time >='08:00' and crt_time <'14:00' and crt_day != 'sunday':
         crt_time >='10:10' and crt_time <'10:50'or 
         crt_time >='11:00' and crt_time <'11:40' or 
         crt_time >='12:00' and crt_time <'12:40'or 
-        crt_time >='01:20' and crt_time <'02:00'):
+        crt_time >='13:20' and crt_time <'14:00'):
             Main()
             while True:
                 class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
