@@ -2,10 +2,10 @@
 import csv
 import youtube_dl       # install using guide video in youtube-dl
 
-global shut_check
+global shut_check # just to avoid the error
 shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
 
-global pw_check
+global pw_check # just to avoid the error
 pw_check = input('Do you want to download videos from pw? (y/n) : ')
 
 # function to download video
