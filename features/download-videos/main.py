@@ -50,10 +50,13 @@ def main():
         video_name = task[0] + '.mp4'
         video_link = task[1]
         video_path = task[2]
+        print('-'*50) # print a line
         print('New Video: ' + video_name)
         print('New Video Link: ' + video_link)
         print('New Video Path: ' + video_path)
         print('Downloading...')
+        print('-'*50) # print a line
+        
         VideoDownloader(video_link, video_name, video_path)
     
     # shuting down the computer after download
