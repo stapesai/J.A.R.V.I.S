@@ -2,6 +2,8 @@
 import csv
 import youtube_dl       # install using guide video in youtube-dl
 
+global shut
+shut = input('Do you want to shut down the computer after download? (y/n) : ')
 
 # function to download video
 def VideoDownloader(url_input, video_name, video_path):
@@ -42,7 +44,12 @@ def main():
         print('New Video Path: ' + video_path)
         print('Downloading...')
         VideoDownloader(video_link, video_name, video_path)
-
+    
+    # shuting down the computer after download
+    if shut == 'y':
+        print('Shutting down...')
+        import os
+        os.system('shutdown -s -t 0')
 
 # calling main function
 main()
