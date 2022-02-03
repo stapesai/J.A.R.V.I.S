@@ -199,10 +199,12 @@ def Main():
 
 
 # Main Body Of Program
-crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
+#crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
+crt_hour = str(Current_DateTime()[1])
 crt_day = str(Current_DateTime()[0])
 
-if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
+#if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
+if crt_hour <'14:0' and crt_day != 'sunday':
 
     Open_OBS_Studio()       # Starting Virtual Cam
     while True:
@@ -257,4 +259,4 @@ if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
     
         sleep(30)
 
-# code completed
+# code comple
