@@ -12,12 +12,12 @@ def Current_DateTime():
     time=crnt_dateandtime.strftime("%H:%M:%S")
 
     hour=time[0:2]
-    crt_hour=int(hour)
+    crt_hour=hour
 
     minute = time[3:5]
-    crt_min = int(minute)
-
-    return day, crt_hour, crt_min
+    crt_min = minute #changing here
+    
+    return day, crt_hour, crt_min 
 
 def delta_days(inp_day):
     if inp_day == 'monday':
@@ -45,6 +45,20 @@ def ZoomReset():
 def sleep(n):
     time.sleep(n)
 
+def start_virtual_cam():            #no need in main as integrated with open obs studio
+    # Starting Virtual Cam
+    while True:
+        cords=jarvis.locateCenterOnScreen('start_virtual_cam.png',confidence=0.8) or jarvis.locateCenterOnScreen('start_video_fullscreen.png',confidence=0.8)
+        if cords!=None:
+            print('cords founded',cords)
+            jarvis.click(cords)
+            print('Sir, virtual camera has been started successfully......')
+            break
+        else:
+            sleep(10)
+            print('cannot start virtual camera......')
+            continue
+
 def Open_OBS_Studio():
 
     # Opening OBS....
@@ -54,18 +68,15 @@ def Open_OBS_Studio():
     jarvis.sleep(1)
     jarvis.press('enter')
     jarvis.sleep(1)
-    
-    # Starting Virtual Cam
-    while True:
-        cords=jarvis.locateCenterOnScreen('start_virtual_cam.png',confidence=0.8) or jarvis.locateCenterOnScreen('start_virtual_cam_fullscreen.png',confidence=0.8)
-        if cords!=None:
-            print('cords founded',cords)
-            jarvis.click(cords)
-            print('Sir, start virtual camera has been started successfully......')
+    obs_already_running=jarvis.locateCenterOnScreen('obs_already_running.png',confidence=0.8)
+    while True:        
+        if obs_already_running != None:
             break
-        else:
-            sleep(10)
-            print('cannot start virtual camera......')
+        elif obs_already_running == None:
+            
+            start_virtual_cam()
+            continue
+
 
 def Open_Skolaro():
     webbrowser.open('https://apps.skolaro.com/lecture-timetable/user')
@@ -104,6 +115,7 @@ def Find_Class():
             print('Sir class has been opened successfully....')
             break
         else:
+            sleep(1)
             jarvis.press('enter')
 
 def Join_Class():
@@ -115,6 +127,27 @@ def Join_Class():
             sleep(10)
             break
 
+    # Enter Meeting Passcode...
+    while True:
+        passcode_box = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
+        if passcode_box!=None:
+            jarvis.click(passcode_box)
+            jarvis.write('david')
+            join_meeting = jarvis.locateCenterOnScreen('join_meeting.png', confidence =0.8)
+            jarvis.click(join_meeting)
+            sleep(10)
+            passcode_box = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
+            if passcode_box!=None:
+                jarvis.click(passcode_box)
+                jarvis.write('am2119')
+                join_meeting = jarvis.locateCenterOnScreen('join_meeting.png', confidence =0.8)
+                jarvis.click(join_meeting)
+                sleep(10)
+                
+            break
+        else:
+            break
+    
     # Checking waiting for host....
     waiting_for_host = jarvis.locateCenterOnScreen('waiting_for_host.png', confidence =0.8)
     while True:
@@ -136,60 +169,33 @@ def Join_Class():
                 
             else:
                 i+=1
-
-
-    # Enter Meeting Passcode...
-    while True:
-        passcode_box = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
-        if passcode_box!=None:
-            jarvis.click(passcode_box)
-            jarvis.write('david')
-            join_meeting = jarvis.locateCenterOnScreen('join_meeting.png', confidence =0.8)
-            jarvis.click(join_meeting)
-            sleep(10)
-            passcode_box2 = jarvis.locateCenterOnScreen('enter_passcode.png', confidence =0.8)
-            if passcode_box2!=None:
-                jarvis.click(passcode_box2)
-                jarvis.write('am2119')
-                join_meeting = jarvis.locateCenterOnScreen('join_meeting.png', confidence =0.8)
-                jarvis.click(join_meeting)
-                sleep(10)
-                break
-            break
-        else:
-            break
     
     # Check Waiting Room...
     while True:
-        waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)
         jarvis.hotkey('winleft','up')
+        waiting_room = jarvis.locateCenterOnScreen('waiting_room.png', confidence =0.8)        
         print('In waiting Room sir ......')
         # Join with video....
+        sleep(1)
         join_with_video = jarvis.locateCenterOnScreen('join_with_video.png', confidence =0.8)
         if join_with_video != None:
             jarvis.click(join_with_video)
             sleep(5)
-        if waiting_room == None:
+        elif waiting_room == None:
             sleep(5)
             print('Out of waiting room ......')
             start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.8)
             if start_video != None:
-                break
+                sleep(1)
+                jarvis.hotkey('alt','v')     # Turn ON camera...
+                print('Sir camera has been started.....')
             break
         else:
             continue
-    # Turn ON camera...
-    jarvis.hotkey('alt','v')
-    start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.9)
-    while True:
-        if start_video == None:
-            break
-        else:
-            jarvis.click(start_video)
-            print('Turning ON camera.......')
-            break
          
 def Main():
+    Open_OBS_Studio()
+    sleep(2)
     Open_Skolaro()      # Opening Skolaro (Ignoring Homeroom)
     sleep(2)
     Find_Class()
@@ -199,14 +205,12 @@ def Main():
 
 
 # Main Body Of Program
-#crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
-crt_hour = str(Current_DateTime()[1])
+crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
 crt_day = str(Current_DateTime()[0])
 
-#if '8:0'<= crt_time <'14:0' and crt_day != 'sunday':
-if crt_hour <'14:0' and crt_day != 'sunday':
+if crt_time >='08:00' and crt_time <'14:00' and crt_day != 'sunday':
 
-    Open_OBS_Studio()       # Starting Virtual Cam
+  #  Open_OBS_Studio()       # Starting Virtual Cam #integrated it
     while True:
         crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
         crt_day = str(Current_DateTime()[0])
@@ -216,16 +220,16 @@ if crt_hour <'14:0' and crt_day != 'sunday':
             print('No Class Today Sir....')
             break
 
-        else:
-            if crt_day == 'monday' and '8:0' <= crt_time <= '8:40':
-                Main()
-                class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-                if class_join_confirm != None:
-                    print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
-                    print('sir I am going to sleep for 1.05 hrs...')
-                    sleep(3900)
+        
+        elif crt_day == 'monday' and crt_time >='08:00' and crt_time <'08:10':
+            Main()    #why this thing not working
+            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+            if class_join_confirm != None:
+                print('Sir Test is joined confirmly and you might need to submit your test answer sheet.....')
+                print('sir I am going to sleep for 1.05 hrs...')
+                sleep(3900)
 
-            elif ('8:0'<= crt_time <'8:10'):
+            elif (crt_time >='08:00' and crt_time <'08:10'):
                 Main()
                 while True:
                     class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
@@ -238,25 +242,24 @@ if crt_hour <'14:0' and crt_day != 'sunday':
                         sleep(1200)
                         break
 
-            elif ( 
-            '8:20'<= crt_time <'9:0' or 
-            '9:10'<= crt_time <'9:50' or 
-            '10:10'<= crt_time <'10:50' or 
-            '11:0'<= crt_time <'11:40' or 
-            '12:0'<= crt_time <'12:40' or 
-            '13:20'<= crt_time <'14:0'):
-                Main()
-                while True:
-                    class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
-                    if class_join_confirm != None:
-                        jarvis.click(class_join_confirm)
-                        jarvis.hotkey('winleft','up')
-                        sleep(1)            
-                        print('Sir Class is joined confirmly.....')
-                        print('sir I am going to sleep for 50 mins....')
-                        sleep(3000)
-                        break
-    
-        sleep(30)
+        elif ( 
+        crt_time >='08:20' and crt_time <'09:00' or 
+        crt_time >='09:10' and crt_time <'09:50' or 
+        crt_time >='10:10' and crt_time <'10:50'or 
+        crt_time >='11:00' and crt_time <'11:40' or 
+        crt_time >='12:00' and crt_time <'12:40'or 
+        crt_time >='01:20' and crt_time <'02:00'):
+            Main()
+            while True:
+                class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+                if class_join_confirm != None:
+                    jarvis.click(class_join_confirm)
+                    jarvis.hotkey('winleft','up')
+                    sleep(1)            
+                    print('Sir Class is joined confirmly.....')
+                    print('sir I am going to sleep for 50 mins....')
+                    sleep(3000)
+                    break
 
+        sleep(30)
 # code comple
