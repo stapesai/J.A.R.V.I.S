@@ -2,8 +2,11 @@
 import csv
 import youtube_dl       # install using guide video in youtube-dl
 
-global shut
-shut = input('Do you want to shut down the computer after download? (y/n) : ')
+global shut_check
+shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
+
+global pw_check
+pw_check = input('Do you want to download videos from pw? (y/n) : ')
 
 # function to download video
 def VideoDownloader(url_input, video_name, video_path):
@@ -28,7 +31,15 @@ def ReadCSV(file_name):
             row[0] = row[0].replace(': ', '')
             row[0] = row[0].replace('||', 'II')
 
-            
+            if pw_check == 'y':
+                # edit the video url to paste master.m3u8
+                video_link_initial = row[1]
+                j=''
+                for i in  range(75):
+                    j+=video_link_initial[i]
+
+                video_link_final = j + 'master.m3u8'
+                row[1] = video_link_final
             urls.append(row)
 
 ReadCSV('videos.csv')
@@ -46,10 +57,11 @@ def main():
         VideoDownloader(video_link, video_name, video_path)
     
     # shuting down the computer after download
-    if shut == 'y':
+    if shut_check == 'y':
         print('Shutting down...')
         import os
         os.system('shutdown -s -t 0')
 
 # calling main function
 main()
+# code completed..... :)
