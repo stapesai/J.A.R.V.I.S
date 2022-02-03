@@ -1,21 +1,22 @@
 # Importing Modules....
 import time
-from tkinter.messagebox import NO
 import pyautogui as jarvis
 import webbrowser
 import datetime
-
-from sklearn.linear_model import PassiveAggressiveClassifier
 
 def Current_DateTime():
     day = (datetime.datetime.today().strftime('%A')).lower()        # Current Day
 
     crnt_dateandtime=datetime.datetime.now()      
     time=crnt_dateandtime.strftime("%H:%M:%S")
+
     hour=time[0:2]
     crt_hour=int(hour)
 
-    return day, crt_hour
+    minute = time[3:5]
+    crt_min = int(minute)
+
+    return day, crt_hour, crt_min
 
 def delta_days(inp_day):
     if inp_day == 'monday':
@@ -78,13 +79,12 @@ def Open_Skolaro():
     jarvis.press('down',presses=5, interval=0.1)
 
 def OneTimeProcess():
-    Open_OBS_Studio()         # Starting Virtual Cam
     Open_Skolaro()            # Opening Skolaro (Ignoring Homeroom)
     ZoomReset()
 
 def Find_Class():
-    day, crt_hour = Current_DateTime()
-    print(f'Today Day is "{day}" and hour "{crt_hour}"')
+    day, crt_hour, crt_min = Current_DateTime()
+    print(f'Today Day is "{day}" and hour "{crt_hour}" and min "{crt_min}"')
 
     initial_cord = (829, 381)
     jarvis.moveTo(initial_cord)
@@ -129,11 +129,18 @@ def Join_Class():
         if waiting_room == None:
             sleep(5)
             break
+    
     # Turn ON camera...
     jarvis.hotkey('alt','v')
-
+    start_video = jarvis.locateCenterOnScreen('start_video.png', confidence =0.8)
+    while True:
+        if start_video == None:
+            break
+        else:
+            jarvis.click(start_video)
 
 # Main Body Of Program
+Open_OBS_Studio()         # Starting Virtual Cam
 def Main():
     OneTimeProcess()
     sleep(2)
@@ -141,4 +148,25 @@ def Main():
     sleep(2)
     Join_Class()
 
-Main()
+
+
+# Continious Run....
+while True:
+    crt_time = str(Current_DateTime()[1]) + ':' + str(Current_DateTime()[2])
+    crt_day = str(Current_DateTime()[0])
+    print('current time is : ',crt_time)
+
+    if crt_day!='monday':
+        if '8:0' == crt_time or '8:20' == crt_time or'9:10' == crt_time or'10:10' == crt_time or'11:0' == crt_time or'12:0' == crt_time or'13:20' == crt_time:
+            Main()
+            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+            if class_join_confirm != None:
+                sleep(3000)
+    else:
+        if '8:0' == crt_time or '9:10' == crt_time or'10:10' == crt_time or'11:0' == crt_time or'12:0' == crt_time or'13:20' == crt_time:
+            Main()
+            class_join_confirm = jarvis.locateCenterOnScreen('class_join_confirm.png', confidence=0.8)
+            if class_join_confirm != None:
+                sleep(3000)
+    
+    sleep(30)
