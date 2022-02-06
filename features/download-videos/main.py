@@ -49,9 +49,14 @@ def shut_down(n):
         time.sleep(n)
 
         # shut down the remote computer
-        import sys
-        sys.path.insert(0, 'V:\\J.A.R.V.I.S\\features')
-        
+        try:
+            import sys
+            sys.path.insert(0, 'V:\\J.A.R.V.I.S\\features')
+            import command_remotly.command_server as command_server
+            command_server.command('shutdown')
+            time.sleep(5)
+        except:
+            print('Error: Shutting down the computer failed.')
 
         # shut down the main computer
         import os
