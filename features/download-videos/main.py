@@ -1,6 +1,5 @@
 # Importing Modules...
 import csv
-from time import time
 import youtube_dl       # install using guide video in youtube-dl
 from multiprocessing import Process
 
@@ -44,7 +43,10 @@ def ReadCSV(file_name):
                 row[1] = video_link_final
             urls.append(row)
     csv_file.close() # close the csv file
-ReadCSV('videos.csv')
+
+csv_file_name = input('Enter the csv file name: ')
+ReadCSV(csv_file_name)
+#ReadCSV('videos.csv')
 
 # main function
 def main():
@@ -63,6 +65,8 @@ def main():
     
     # shuting down the computer after download
     if shut_check == 'y':
+        print('All videos downloaded!')
+        import time
         print('Shutting down in 5 min...') # Showing the user that the computer will shut down in 5 min after download
         time.sleep(300)
         import os
