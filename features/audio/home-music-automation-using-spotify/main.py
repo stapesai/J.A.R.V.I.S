@@ -33,6 +33,7 @@ for track in results['tracks'][:10]:
     print()
 '''
 
+'''
 if len(sys.argv) > 1:
     name = ' '.join(sys.argv[1:])
 else:
@@ -43,4 +44,4 @@ items = results['artists']['items']
 if len(items) > 0:
     artist = items[0]
     print(artist['name'], artist['images'][0]['url'])
-    
+'''
