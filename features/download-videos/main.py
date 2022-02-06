@@ -40,10 +40,30 @@ def ReadCSV(file_name):
 
 ReadCSV(csv_file_name)
 
+# shuting down the computer after download
+def shut_down(n):
+    if shut_check == 'y':
+        # showing user that the computer will shut down in n seconds
+        import time
+        print(f'Shutting down in {n} sec...') # computer will shut down in 5 min after download.
+        time.sleep(n)
+
+        # shut down the remote computer
+        import sys
+        sys.path.insert(0, 'V:\\J.A.R.V.I.S\\features')
+        
+
+        # shut down the main computer
+        import os
+        os.system('shutdown -s -t 0')
+
 # main function
 def main():
     for task in urls:
-        video_name = task[0] + '.mp4'
+        if '.mp4' in task[1]:               # for pw protected videos
+            video_name = task[0] + '.mp4'
+        else:
+            video_name = task[0]
         video_link = task[1]
         video_path = task[2]
         print('-'*500) # print a line
@@ -56,13 +76,7 @@ def main():
         VideoDownloader(video_link, video_name, video_path)
     
     # shuting down the computer after download
-    if shut_check == 'y':
-        print('All videos downloaded!')
-        import time
-        print('Shutting down in 5 min...') # computer will shut down in 5 min after download.
-        time.sleep(300)
-        import os
-        os.system('shutdown -s -t 0')
+    shut_down(300)
 
 # calling main function
 main()
