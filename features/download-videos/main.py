@@ -32,7 +32,8 @@ def ReadCSV(file_name):
             row[0] = row[0].replace(': ', '')
             row[0] = row[0].replace('||', 'II')
 
-            if pw_check == 'y':
+            # if pw_check == 'y':
+            if '.mp4' in row[1]:
                 # edit the video url to paste master.m3u8
                 video_link_initial = row[1]
                 j=''
@@ -44,7 +45,7 @@ def ReadCSV(file_name):
             urls.append(row)
     csv_file.close() # close the csv file
 
-csv_file_name = input('Enter the csv file name: ')
+csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
 ReadCSV(csv_file_name)
 #ReadCSV('videos.csv')
 
