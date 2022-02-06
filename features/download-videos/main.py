@@ -1,16 +1,9 @@
-# Importing Modules...
-import csv
-import youtube_dl       # install using guide video in youtube-dl
-from multiprocessing import Process
-
-global shut_check # just to avoid the error
 shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
-
-global pw_check # just to avoid the error
-pw_check = input('Do you want to download videos from pw? (y/n) : ')
+csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
 
 # function to download video
 def VideoDownloader(url_input, video_name, video_path):
+    import youtube_dl
     ydl_opts = {
         'nopart': True,
         'format': 'bestvideo+bestaudio/best', # download best quality of video and audio available
@@ -22,9 +15,9 @@ def VideoDownloader(url_input, video_name, video_path):
 
 
 # function to read csv file and append the title and url to a list
-global urls # just to avoid the error
 urls = []
 def ReadCSV(file_name):
+    import csv
     with open(file_name, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
         for row in csv_reader:
@@ -45,9 +38,7 @@ def ReadCSV(file_name):
             urls.append(row)
     csv_file.close() # close the csv file
 
-csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
 ReadCSV(csv_file_name)
-#ReadCSV('videos.csv')
 
 # main function
 def main():
@@ -68,7 +59,7 @@ def main():
     if shut_check == 'y':
         print('All videos downloaded!')
         import time
-        print('Shutting down in 5 min...') # Showing the user that the computer will shut down in 5 min after download
+        print('Shutting down in 5 min...') # computer will shut down in 5 min after download.
         time.sleep(300)
         import os
         os.system('shutdown -s -t 0')
@@ -78,6 +69,7 @@ main()
 print('All videos downloaded!')
 
 # using multiprocessing to download videos in parallel
+# from multiprocessing import Process
 # if __name__ == '__main__':
 #     process_list = []
 #     for task in urls:
