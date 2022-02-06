@@ -1,13 +1,9 @@
-
 def receive_command():
-    import time
     import socket
-    import sys
     import os
 
     s = socket.socket()
-    host = '192.168.1.5'
-    # host = 'GAMING-PC'
+    host = '192.168.1.2'
     port = 9999
 
     try:
@@ -16,22 +12,19 @@ def receive_command():
         
         command = s.recv(1024).decode()
         print(f"Command Received : '{command}' ...")
-
+        
         if command == 'shutdown':
+            s.send('shutting down sir'.encode())
             print("Shutting down...")
             os.system('shutdown -s -t 0')
+        
+        else:
+            s.send('command received'.encode())
                 
     except:
         print("Error connecting to server..retrying")
+
 while True:
     receive_command()
-'''
-
-import socket
-
-c= socket.socket()
-c.connect(('192.168.1.5',9999))
-print("Connected to server")
-print(c.recv(1024))
-
-'''
+    import time
+    time.sleep(10)

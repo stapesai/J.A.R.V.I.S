@@ -53,8 +53,12 @@ def shut_down(n):
             import sys
             sys.path.insert(0, 'V:\\J.A.R.V.I.S\\features')
             import command_remotly.command_server as command_server
-            command_server.command('shutdown')
+            command_server.send_command('shutdown')
+            time.sleep(2)
+            if command_server.reply == 'shutting down sir':
+                print('NAS is shutting down...')
             time.sleep(5)
+            
         except:
             print('Error: Shutting down the computer failed.')
 
