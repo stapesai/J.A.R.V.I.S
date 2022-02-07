@@ -44,3 +44,5 @@ def check_connection_to_client():
     
 # c = input("Enter command: ")
 # send_command(c)
+
+check_connection_to_client()

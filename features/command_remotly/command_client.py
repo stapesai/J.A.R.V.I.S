@@ -27,4 +27,4 @@ def receive_command():
 while True:
     receive_command()
     import time
-    # time.sleep(10)
+    time.sleep(10)
