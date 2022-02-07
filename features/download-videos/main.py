@@ -1,6 +1,3 @@
-shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
-csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
-
 # function to download video
 def VideoDownloader(url_input, video_name, video_path):
     import youtube_dl
@@ -38,7 +35,14 @@ def ReadCSV(file_name):
             urls.append(row)
     csv_file.close() # close the csv file
 
-ReadCSV(csv_file_name)
+
+# check connection to client
+def check_client():
+    import sys
+    sys.path.insert(0, 'V:\\J.A.R.V.I.S\\features')
+    import command_remotly.command_server as command_server
+    command_server.check_connection_to_client()
+
 
 # shuting down the computer after download
 def shut_down(n):
@@ -83,13 +87,23 @@ def main():
         print('-'*500) # print a line
         
         VideoDownloader(video_link, video_name, video_path)
+    print('All videos downloaded!')
     
     # shuting down the computer after download
     shut_down(300)
 
+
+# ask user if he want to shut down the computer after download
+shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
+if shut_check == 'y':
+    check_client()
+
+# ask user the name of the csv file
+csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
+ReadCSV(csv_file_name)
+
 # calling main function
 main()
-print('All videos downloaded!')
 
 # using multiprocessing to download videos in parallel
 # from multiprocessing import Process
