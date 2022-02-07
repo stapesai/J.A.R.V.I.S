@@ -34,15 +34,13 @@ def check_connection_to_client():
     while True:
         try:
             s.bind((host, port))
-            print("Connected to client")
+            s.listen(2)
+            conn, addr = s.accept()
+            print("Connected to: " + str(addr))
             s.close()
             break
+        
         except:
             print("can't connect to client, retrying")
             import time
-            # time.sleep(5)
-    
-# c = input("Enter command: ")
-# send_command(c)
-
-check_connection_to_client()
+            time.sleep(1)

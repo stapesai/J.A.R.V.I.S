@@ -25,6 +25,7 @@ def receive_command():
         print("No incomming connection by server")
 
 while True:
+    print('client program initalized...')
     receive_command()
     import time
     time.sleep(10)
