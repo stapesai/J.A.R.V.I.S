@@ -1,9 +1,10 @@
-from cProfile import run
-from  threading import Thread
-class Whatsapp(Thread):
-    def Whatsapp():
-        import features.whatsapp.main as whatsapp_main
-        whatsapp_main.Whatsapp_Automate()
-while True:
-    Whatsapp_thread = Whatsapp()
-    Whatsapp_thread.start()
+import threading
+
+def Whatsapp():
+    import features.whatsapp.main as test
+    test.hello('hello')
+
+
+Whatsapp_thread = threading.Thread(target=Whatsapp, args=())
+Whatsapp_thread.start()
+Whatsapp_thread.join()
