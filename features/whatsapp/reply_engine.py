@@ -1,4 +1,4 @@
-def Reply_Engine(msg_input):
+def Reply_Engine(msg_input, centiment='happy'):
 
     # CSV Synthesize...
     import csv
@@ -32,12 +32,22 @@ def Reply_Engine(msg_input):
         for temp_keyword in lst_bot_keyword:
             print('temp keyword is : ',temp_keyword.lower())
 
-            if temp_keyword.lower() in msg_input.lower():
-                print('Match found')
-                # Randomly selecting a reply from all_replies
-                import random
-                bot_msg = random.choice(lst_bot_reply)
-                print('Bot_reply is : ',bot_msg)
-                return bot_msg
+            # user msg is split into words
+            lst_user_msg = msg_input.split()
+            
+            for msg in lst_user_msg:
+                if temp_keyword.lower() == msg.lower():
+                    import emoji
+                    print('Match found')
+                    # Randomly selecting a reply from all_replies
+                    import random
+                    bot_msg = random.choice(lst_bot_reply)
+                    print('Bot_reply is : ',emoji.emojize(bot_msg, use_aliases=True))
+                    return emoji.emojize(bot_msg, use_aliases=True)
 
-Reply_Engine('bye jarvis')
+    # If no match found
+    bot_msg = 'No Such Keyword found in directory'
+    print('Bot_reply is : ',bot_msg)
+    return bot_msg
+
+Reply_Engine('homework')
