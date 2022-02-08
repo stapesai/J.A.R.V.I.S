@@ -9,12 +9,7 @@ import Reply_Bot
 import jump_to_pw
 import randomise_bot_reply
 
-# Call Function
-import call
-import jarvis_speech_to_text
-import jarvis_text_to_speech
-import process_call
-import incoming_call_user
+
 
 def Whatsapp_Automate():
     # Basic Functions......
