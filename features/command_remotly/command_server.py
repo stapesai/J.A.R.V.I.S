@@ -28,19 +28,21 @@ def check_connection_to_client():
     import socket
 
     s = socket.socket()
-    host = '192.168.1.2' or '192.168.1.3'
+    hosts = ['192.168.1.3', '192.168.1.3']
     port = 9999
 
     while True:
-        try:
-            s.bind((host, port))
-            s.listen(2)
-            conn, addr = s.accept()
-            print("Connected to: " + str(addr))
-            s.close()
-            break
-        
-        except:
-            print("can't connect to client, retrying")
-            import time
-            time.sleep(1)
+        for host in hosts:
+            try:
+                s.bind((host, port))
+                s.listen(2)
+                conn, addr = s.accept()
+                print("Connected to: " + str(addr))
+                s.close()
+                break
+            except:
+                print("can't connect to client, retrying")
+                s.close()
+                import time
+                time.sleep(1)
+        break

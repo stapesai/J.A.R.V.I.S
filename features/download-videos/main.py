@@ -80,13 +80,21 @@ def main():
         video_link = task[1]
         video_path = task[2]
         print('-'*500) # print a line
-        print('New Video: ' + video_name)
-        print('New Video Link: ' + video_link)
-        print('New Video Path: ' + video_path)
-        print('Downloading...')
-        print('-'*500) # print a line
-        
-        VideoDownloader(video_link, video_name, video_path)
+
+        # check if the video is already downloaded
+        import os
+        if os.path.isfile(video_path+'/'+video_name):
+            print(f'{video_name} is already downloaded.')
+        else:
+            # giving information about the new video
+            print('New Video: ' + video_name)
+            print('New Video Link: ' + video_link)
+            print('New Video Path: ' + video_path)
+            print('Downloading...')
+            print('-'*500) # print a line
+
+            # download the video
+            VideoDownloader(video_link, video_name, video_path)
     print('All videos downloaded!')
     
     # shuting down the computer after download
@@ -118,4 +126,5 @@ main()
 #         process.start()
 #     for process in process_list:
 #         process.join()
+
 # code completed..... :) :) :)

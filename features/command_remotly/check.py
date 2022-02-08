@@ -1,0 +1,3 @@
+import command_server
+
+command_server.check_connection_to_client()
