@@ -49,5 +49,3 @@ def Reply_Engine(msg_input, centiment='happy'):
     bot_msg = 'No Such Keyword found in directory'
     print('Bot_reply is : ',bot_msg)
     return bot_msg
-
-Reply_Engine('homework')
