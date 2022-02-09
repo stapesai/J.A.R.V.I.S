@@ -1,8 +1,8 @@
-def Reply_Engine(msg_input, centiment='happy'):
+def Reply_Engine(msg_input, centiment='happy', file = 'bot_data_lst.csv'):
 
     # CSV Synthesize...
     import csv
-    bot_data_open = open('bot_data_lst.csv')
+    bot_data_open = open(file)
     bot_data_reader = csv.reader(bot_data_open)
     list_bot_data = list(bot_data_reader)
 

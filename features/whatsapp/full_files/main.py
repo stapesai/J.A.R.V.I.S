@@ -8,7 +8,10 @@ import Copy_Msg
 import Reply_Bot
 import jump_to_pw
 import randomise_bot_reply
-
+import call
+import incoming_call_user
+import jarvis_speech_to_text
+import jarvis_text_to_speech
 
 
 def Whatsapp_Automate():
@@ -51,5 +54,5 @@ def Whatsapp_Automate():
                     call.cut_call()
                     break
 
-# while True:
-#     Whatsapp_Automate()
+while True:
+    Whatsapp_Automate()
