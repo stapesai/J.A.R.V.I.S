@@ -63,8 +63,6 @@ def Copy_Msg():
         print('None')
 
 def Append_Keywords(msg, file = 'bot_new_keywords_data.txt'):
-    # Apending Keywords
-
     bot_data_open2 = open(file,'a')
     new_keyword = str(msg.lower())
     print('New Keyword is : ',new_keyword)
@@ -98,13 +96,13 @@ def Append_Keywords(msg, file = 'bot_new_keywords_data.txt'):
     bot_data_open2.close()
     print('Keywords are appended') 
 
+
 # Defining Main Function
 def main():
-    Open_WhatsApp()
     jump_to_pw()
     Find_Unread_Msg()
     msg = Copy_Msg()
-    reply_engine.Reply_Bot(msg)
+    reply_engine.Reply_Engine(msg)
     jarvis.write(msg)
     sleep(1)
     jarvis.press('enter', presses=2, interval=0.5)
@@ -113,4 +111,7 @@ def main():
         print('Appending Keywords....')
         Append_Keywords(msg)
 
-main()
+# Calling Main Function
+Open_WhatsApp()
+while True:
+    main()

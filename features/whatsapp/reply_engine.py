@@ -33,7 +33,10 @@ def Reply_Engine(msg_input, centiment='happy', file = 'bot_data_lst.csv'):
             print('temp keyword is : ',temp_keyword.lower())
 
             # user msg is split into words
-            lst_user_msg = msg_input.split()
+            try:
+                lst_user_msg = msg_input.split()
+            except:
+                lst_user_msg = ['hello']
             
             for msg in lst_user_msg:
                 if temp_keyword.lower() == msg.lower():
