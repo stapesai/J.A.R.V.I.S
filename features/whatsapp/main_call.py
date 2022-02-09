@@ -151,8 +151,6 @@ def main():
 # call main function
 main()
 
-
-
 '''
 FUTURE WORKS:
     1. add a virtual microphone to the program
