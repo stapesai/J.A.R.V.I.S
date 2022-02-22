@@ -51,19 +51,22 @@ def jarvis_speak(text):
 
 # background sound
 def background_sound():
-    from pydub import AudioSegment
-    from pydub.playback import play
-    import threading
+    import multiprocessing
 
-    sound = AudioSegment.from_wav('music\IronMan_Theme_Song.wav')
-    t = threading.Thread(target=play, args=(sound,))
-    t.start()
-    t.join()
+    def play_sound():
+        from playsound import playsound
+        playsound('music\IronMan_Theme_Song.wav')
+    if __name__ == '__main__':
+        bgsound = multiprocessing.Process(target=play_sound, args=())
+        bgsound.start()
+        return bgsound
+
 
 
 def main():
-    # background_sound()
+    bgsound.start()
     jarvis_speak('welcome back sir , all systems are online')
+    bgsound.kill()
 
     while True:
         text = jarvis_voice_recognise()
@@ -97,4 +100,5 @@ def main():
         else:
             jarvis_speak('This is not programmed yet.')
 
-main()
+background_sound()
+# main()
