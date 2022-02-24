@@ -70,7 +70,7 @@ def main():
     while True:
         text = jarvis_voice_recognise()
         print('command : ', text)
-        if 'jarvis' in text:
+        if 'jarvis' == text:
             jarvis_speak('Yes sir')
 
         elif 'hello' in text:
