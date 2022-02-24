@@ -61,7 +61,7 @@ def background_music(signal):
     
     return
 
-def main():
+if __name__ == '__main__':
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
@@ -100,10 +100,8 @@ def main():
 
         # Features
         elif 'attend my call' or 'respond my call' in text:
-            continue
+            import multiprocessing as mp
+
         
         else:
             jarvis_speak('This is not programmed yet.')
-
-
-main()
