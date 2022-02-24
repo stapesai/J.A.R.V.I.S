@@ -1,5 +1,6 @@
 import time
 import speech_recognition as sr
+import multiprocessing as mp
 # import winsound as ws 
 from playsound import playsound  # for background sound
 
@@ -61,13 +62,13 @@ def background_music(signal):
     
     return
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # not required
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
-    print('Program started')
 
-    while True:
+    # main code
+    def main():
         text = jarvis_voice_recognise()
         print('command : ', text)
         if 'jarvis' == text:
@@ -97,11 +98,26 @@ if __name__ == '__main__':
         elif 'Could not understand what you said' in text:
             print('Could not understand what you said')
 
-
         # Features
         elif 'attend my call' or 'respond my call' in text:
-            import multiprocessing as mp
-
-        
+            import features.whatsapp.main_call as call
+            
         else:
             jarvis_speak('This is not programmed yet.')
+
+    # check new incoming call
+    def check_for_new_call():
+        import features.whatsapp.main_call as call
+        if call.check_incoming_call() == True:
+            jarvis_speak('Sir There is a new call')
+
+    # =====doing multiprocessing=====
+    main_process = mp.Process(target=main)
+    check_for_new_call_process = mp.Process(target=check_for_new_call)
+
+    
+    main_process.start()
+    # check_for_new_call_process.start()
+    
+    main_process.join()
+    # check_for_new_call_process.join()
