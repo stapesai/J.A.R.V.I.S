@@ -154,5 +154,5 @@ main()
 '''
 FUTURE WORKS:
     1. add a virtual microphone to the program
-    2. integrate with main jarvis program
+    2. integrate with main jarvis program       --> working
 '''

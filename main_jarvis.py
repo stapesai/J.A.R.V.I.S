@@ -49,26 +49,17 @@ def jarvis_speak(text):
     engine.say(text)
     engine.runAndWait()
 
-# background sound
-def background_sound():
-    import multiprocessing
-
-    def play_sound():
-        from playsound import playsound     # pip install playsound==1.2.2
-        playsound('music\IronMan_Theme_Song.wav')
-    if __name__ == '__main__':
-        bgsound = multiprocessing.Process(target=play_sound)
-        return bgsound
-
-
 
 def main():
-    background_sound.start()
+    import winsound as ws
+    ws.PlaySound('music\IronMan_Theme_Song.wav', ws.SND_ASYNC | ws.SND_ALIAS)
     jarvis_speak('welcome back sir , all systems are online')
-    background_sound.kill()
-
+    ws.PlaySound(None, ws.SND_ASYNC)
+    
+    return
     while True:
         text = jarvis_voice_recognise()
+        print('command : ', text)
         if 'jarvis' in text:
             jarvis_speak('Yes sir')
 
