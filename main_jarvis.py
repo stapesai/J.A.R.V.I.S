@@ -49,13 +49,21 @@ def jarvis_speak(text):
     engine.say(text)
     engine.runAndWait()
 
+def background_music(signal):
+    import winsound as ws
+    if signal == 'start':
+        t = ws.SND_ASYNC | ws.SND_ALIAS
+    elif signal == 'stop':
+        t = ws.SND_ASYNC
+    
+    ws.PlaySound('music\IronMan_Theme_Song.wav', t)
+    return
 
 def main():
-    import winsound as ws
-    ws.PlaySound('music\IronMan_Theme_Song.wav', ws.SND_ASYNC | ws.SND_ALIAS)
+    background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
-    ws.PlaySound(None, ws.SND_ASYNC)
-    
+    background_music('stop')
+
     return
     while True:
         text = jarvis_voice_recognise()
