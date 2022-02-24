@@ -123,7 +123,7 @@ def check_incoming_call():
         return False
 
 # main function
-def main():
+if __name__ == '__main__':
     while True:
         if check_incoming_call() == True:
 

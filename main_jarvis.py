@@ -1,8 +1,14 @@
 import time
 import speech_recognition as sr
 import multiprocessing as mp
-# import winsound as ws 
-from playsound import playsound  # for background sound
+import threading as th
+import winsound as ws 
+
+# adding requried paths
+import sys
+sys.path.append('features\\whatsapp\\')
+sys.path.append('features\\whatsapp\\img\\')
+sys.path.append('features\\')
 
 # initialize the recognizer
 speech = sr.Recognizer()
@@ -51,7 +57,6 @@ def jarvis_speak(text):
     engine.runAndWait()
 
 def background_music(signal):
-    import winsound as ws
     if signal == 'start':
         ws.PlaySound('music\IronMan_Theme_Song.wav', ws.SND_ASYNC | ws.SND_ALIAS)
         print('Background music started')
@@ -62,7 +67,7 @@ def background_music(signal):
     
     return
 
-if __name__ == '__main__':  # not required
+if __name__ == '__main__':  # main function
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
@@ -110,14 +115,16 @@ if __name__ == '__main__':  # not required
         import features.whatsapp.main_call as call
         if call.check_incoming_call() == True:
             jarvis_speak('Sir There is a new call')
+            sleep(5)
 
-    # =====doing multiprocessing=====
-    main_process = mp.Process(target=main)
-    check_for_new_call_process = mp.Process(target=check_for_new_call)
+    # ===== doing multithreading ===== #
+    main_thread = th.Thread(target=main)
+    call_check_thread = th.Thread(target=check_for_new_call)
 
-    
-    main_process.start()
-    # check_for_new_call_process.start()
-    
-    main_process.join()
-    # check_for_new_call_process.join()
+    # starting the threads
+    # main_thread.start()
+    call_check_thread.start()
+
+    # joining the threads
+    # main_thread.join()
+    call_check_thread.join()

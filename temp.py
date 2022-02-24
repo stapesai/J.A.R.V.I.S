@@ -1,4 +1,6 @@
-import winsound
-winsound.PlaySound('music\IronMan_Theme_Song.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
-print('Program started')
-winsound.PlaySound
+def Check_Microphone():
+    import speech_recognition as sr
+    for index, name in enumerate(sr.Microphone.list_microphone_names()):
+        print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
+
+Check_Microphone()
