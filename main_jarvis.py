@@ -29,13 +29,13 @@ def jarvis_voice_recognise(tout=None, ptlimit=None):
         audio = speech.listen(source, timeout=tout, phrase_time_limit=ptlimit)                # set timeout here
 
         try:
-            text = speech.recognize_google(audio, language='en-US')
+            text = speech.recognize_google(audio, language='en-US').lower()
             print("You said : {}".format(text))
             return text
 
         except:
             print("Could not understand what you said")
-            return "Could not understand what you said"
+            return "Could not understand what you said".lower()
 
 # just a function to check the microphone
 def Check_Microphone():
@@ -54,19 +54,18 @@ def background_sound():
     import multiprocessing
 
     def play_sound():
-        from playsound import playsound
+        from playsound import playsound     # pip install playsound==1.2.2
         playsound('music\IronMan_Theme_Song.wav')
     if __name__ == '__main__':
-        bgsound = multiprocessing.Process(target=play_sound, args=())
-        bgsound.start()
+        bgsound = multiprocessing.Process(target=play_sound)
         return bgsound
 
 
 
 def main():
-    bgsound.start()
+    background_sound.start()
     jarvis_speak('welcome back sir , all systems are online')
-    bgsound.kill()
+    background_sound.kill()
 
     while True:
         text = jarvis_voice_recognise()
@@ -96,9 +95,14 @@ def main():
 
         elif 'Could not understand what you said' in text:
             print('Could not understand what you said')
+
+
+        # Features
+        elif 'attend my call' or 'respond my call' in text:
+            continue
         
         else:
             jarvis_speak('This is not programmed yet.')
 
-background_sound()
-# main()
+
+main()
