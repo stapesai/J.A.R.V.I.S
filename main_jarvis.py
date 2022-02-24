@@ -63,8 +63,8 @@ def main():
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
-
-    return
+    print('Program started')
+    
     while True:
         text = jarvis_voice_recognise()
         print('command : ', text)
