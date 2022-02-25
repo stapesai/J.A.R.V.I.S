@@ -6,6 +6,13 @@ import pytesseract
 import pyautogui
 from PIL import ImageGrab
 import reply_engine
+import os
+import pygame
+
+# initiate the mixer
+def init_mixer():
+    pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
+init_mixer()
 
 # text to speech engine
 import pyttsx3
@@ -19,6 +26,15 @@ engine.setProperty('rate',newVoiceRate)    # set the speed rate
 def sleep(sec):
     time.sleep(sec)
 
+# calculate len of wave file
+def calculate_wave_len(wave_file='output.wav'):
+    import wave
+    wav = wave.open(wave_file, 'rb')
+    frames = wav.getnframes()
+    rate = wav.getframerate()
+    duration = frames / float(rate)
+    return float(duration.__round__(2))
+
 # speech to text
 def jarvis_voice_recognise():
     import speech_recognition as sr
@@ -28,16 +44,20 @@ def jarvis_voice_recognise():
 
         speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
         print("Listening to call..............")
-        audio = speech.listen(source)                # set timeout here
 
         try:
-            text = speech.recognize_google(audio, language='en-US')
-            print("You said : {}".format(text))
+            audio = speech.listen(source, timeout=2, phrase_time_limit=6)                # set timeout here
+            text = speech.recognize_google(audio, language='en-US') # recognize speech using Google Speech Recognition
             return text
+        
+        except sr.WaitTimeoutError:
+            print("Timeout Error")
 
         except:
             print("Could not understand what you said")
             return "Could not understand what you said"
+        
+        
 
 # just a function to check the microphone
 def Check_Microphone():
@@ -52,20 +72,28 @@ def Check_Microphone():
     
 # text to speech
 def jarvis_speak(text):
-    #engine.say(text)
+    # engine.say(text)
+    pygame.mixer.quit()
+    while True:
+        try:
+            os.remove('output.wav')     # delete the previous file
+            break
+        except PermissionError:
+            print('Retrying to delete the previous file')
+            continue
+
     engine.save_to_file(text, 'output.wav')
     engine.runAndWait()
 
     if __name__=="__main__":
         # play the audio file
-        import pygame
-        pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
+        try:
+            init_mixer()
+        except:
+            print('Mixer not initiated')
         pygame.mixer.music.load('output.wav')
         pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy() == True:
-            sleep(1)
-            continue
-        pygame.mixer.quit()
+        sleep(calculate_wave_len()-1)
 
 # caller name
 def Caller_Name():
@@ -153,7 +181,6 @@ if __name__ == '__main__':
 
                 while True:
                     user_said = jarvis_voice_recognise()    # get the user input
-                    print('User said : ',user_said)
 
                     reply = reply_engine.Reply_Engine(msg_input = user_said)   # get the reply
                     jarvis_speak(reply)
@@ -167,7 +194,7 @@ if __name__ == '__main__':
 
 '''
 FUTURE WORKS:
-    1. add a virtual microphone to the program      --> working
+    1. add a virtual microphone to the program      --> done
     2. integrate with main jarvis program       --> working
-    3. if user cuts the call, then the program will not wait for the user to say anything      --> working
+    3. if user cuts the call, then the program will not wait for the user to say anything      --> done
 '''

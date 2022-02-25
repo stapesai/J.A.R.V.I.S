@@ -10,6 +10,10 @@ def Reply_Engine(msg_input, centiment='happy', file = 'bot_data_lst.csv'):
     # print('--'*50)
     print('User said : ',msg_input)
 
+    # reply if could not understand the user input
+    if msg_input == 'Could not understand what you said':
+        return 'Could not understand what you said'
+
     # bot_msg=['No Such Keyword found in directory']
 
     for data in list_bot_data:
