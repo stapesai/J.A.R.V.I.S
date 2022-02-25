@@ -7,6 +7,14 @@ import pyautogui
 from PIL import ImageGrab
 import reply_engine
 
+# text to speech engine
+import pyttsx3
+engine = pyttsx3.init()     # initialise the engine
+voices = engine.getProperty('voices')   
+engine.setProperty('voice', voices[1].id)   # set the voice
+newVoiceRate = 135
+engine.setProperty('rate',newVoiceRate)    # set the speed rate
+
 # sleep function
 def sleep(sec):
     time.sleep(sec)
@@ -44,18 +52,19 @@ def Check_Microphone():
     
 # text to speech
 def jarvis_speak(text):
-    import pyttsx3
-    engine = pyttsx3.init()     # initialise the engine
-
-    voices = engine.getProperty('voices')   
-    engine.setProperty('voice', voices[1].id)   # set the voice
-
-    newVoiceRate = 135
-    engine.setProperty('rate',newVoiceRate)    # set the speed rate
-
     engine.say(text)
     engine.save_to_file(text, 'output.mp3')
     engine.runAndWait()
+
+    # play the audio file
+    import pygame
+    pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
+    pygame.mixer.music.load('output.mp3')
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy() == True:
+        sleep(1)
+        continue
+    pygame.mixer.quit()
 
 # caller name
 def Caller_Name():
