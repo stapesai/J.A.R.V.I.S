@@ -52,19 +52,20 @@ def Check_Microphone():
     
 # text to speech
 def jarvis_speak(text):
-    engine.say(text)
-    engine.save_to_file(text, 'output.mp3')
+    #engine.say(text)
+    engine.save_to_file(text, 'output.wav')
     engine.runAndWait()
 
-    # play the audio file
-    import pygame
-    pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
-    pygame.mixer.music.load('output.mp3')
-    pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy() == True:
-        sleep(1)
-        continue
-    pygame.mixer.quit()
+    if __name__=="__main__":
+        # play the audio file
+        import pygame
+        pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
+        pygame.mixer.music.load('output.wav')
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy() == True:
+            sleep(1)
+            continue
+        pygame.mixer.quit()
 
 # caller name
 def Caller_Name():
