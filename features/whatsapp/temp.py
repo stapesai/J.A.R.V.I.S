@@ -1,8 +1,11 @@
-import pygame._sdl2 as sdl2
+import sounddevice
+
+devs = sounddevice.query_devices()
+print(devs) # Shows current output and input as well with "<" abd ">" tokens
+    
+for dev in devs:
+    print(dev['name'])
+
 import pygame
-pygame.init()
-is_capture = 0  # zero to request playback devices, non-zero to request recording devices
-num = sdl2.get_num_audio_devices(is_capture)
-names = [str(sdl2.get_audio_device_name(i, is_capture), encoding="utf-8") for i in range(num)]
-print("\n".join(names))
-pygame.quit()
+
+pygame.mixer.init(devicename='Hi-Fi Cable Input (VB-Audio Hi-Fi Cable)')
