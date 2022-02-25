@@ -1,6 +1,20 @@
-def Check_Microphone():
+def jarvis_voice_recognise():
     import speech_recognition as sr
-    for index, name in enumerate(sr.Microphone.list_microphone_names()):
-        print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
+    speech = sr.Recognizer()
 
-Check_Microphone()
+    with sr.Microphone(device_index=2) as source:
+
+        speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
+        print("Listening to call..............")
+        audio = speech.listen(source)                # set timeout here
+
+        try:
+            text = speech.recognize_google(audio, language='en-US')
+            print("You said : {}".format(text))
+            return text
+
+        except:
+            print("Could not understand what you said")
+            return "Could not understand what you said"
+while True:
+    jarvis_voice_recognise()

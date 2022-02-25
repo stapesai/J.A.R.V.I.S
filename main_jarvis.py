@@ -29,7 +29,7 @@ def sleep(sec):
 
 # speech to text
 def jarvis_voice_recognise(tout=None, ptlimit=None):
-    with sr.Microphone(device_index=None) as source:
+    with sr.Microphone(device_index=2) as source:
 
         speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
         print("Listening........")

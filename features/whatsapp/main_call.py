@@ -16,7 +16,7 @@ def jarvis_voice_recognise():
     import speech_recognition as sr
     speech = sr.Recognizer()
 
-    with sr.Microphone(device_index=None) as source:
+    with sr.Microphone(device_index=2) as source:
 
         speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
         print("Listening to call..............")
@@ -33,10 +33,15 @@ def jarvis_voice_recognise():
 
 # just a function to check the microphone
 def Check_Microphone():
+    # merhod 01
     import speech_recognition as sr
     for index, name in enumerate(sr.Microphone.list_microphone_names()):
         print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
 
+    # method 02
+    import sounddevice as sd
+    print (sd.query_devices())
+    
 # text to speech
 def jarvis_speak(text):
     import pyttsx3
@@ -49,6 +54,7 @@ def jarvis_speak(text):
     engine.setProperty('rate',newVoiceRate)    # set the speed rate
 
     engine.say(text)
+    engine.save_to_file(text, 'output.mp3')
     engine.runAndWait()
 
 # caller name
@@ -63,7 +69,7 @@ def Caller_Name():
             return ocr
         else:
             print('No incoming call....')
-            sleep(1)
+            sleep(3)
 
 # attend call
 def attend_call():
@@ -93,18 +99,19 @@ def decline_call():
 
 # cut call
 def cut_call():
-    global cut_call_cordinates
-    cut_call_cordinates=jarvis.locateCenterOnScreen('img\call_cut.png', confidence=0.7)
-    if cut_call_cordinates!=None:
-        print('Cutting Call....',cut_call_cordinates)
-        x=cut_call_cordinates[0]
-        y=cut_call_cordinates[1]
-        jarvis.click(x, y)
-        jarvis.sleep(1)
+    try:
+        cut_call_cordinates=jarvis.locateCenterOnScreen('img\call_cut.png', confidence=0.7)
+        if cut_call_cordinates!=None:
+            print('Cutting Call....',cut_call_cordinates)
+            x=cut_call_cordinates[0]
+            y=cut_call_cordinates[1]
+            jarvis.click(x, y)
+            jarvis.sleep(1)
+    except:
+        print('Can not find cut call button...')
 
 # check if the call is in progress
 def check_call():
-    global call_in_progress
     call_in_progress=jarvis.locateCenterOnScreen('img\call_in_progress.png', confidence=0.7)
     if call_in_progress!=None:
         print('Call in progress........')
@@ -131,10 +138,10 @@ if __name__ == '__main__':
             attend_call()        # attend the call
             
             if attend_call_cordinates!=None:
+                print('Call Attended........')
                 jarvis_speak('Hello ' + user + 'I am jarvis, AI bot. How can I help you?')
-                while True:
-                    print('Call Attended........')
 
+                while True:
                     user_said = jarvis_voice_recognise()    # get the user input
                     print('User said : ',user_said)
 
@@ -144,13 +151,13 @@ if __name__ == '__main__':
                     print('user has been answered........')
                     print('reply to user :',reply)
 
-                    if reply == 'Good Bye Sir have a nice day':
+                    if reply == 'Good Bye Sir have a nice day' or check_call() == False:
                         cut_call()
                         break
 
 '''
 FUTURE WORKS:
-    1. add a virtual microphone to the program
+    1. add a virtual microphone to the program      --> working
     2. integrate with main jarvis program       --> working
-    3. if user cuts the call, then the program will not wait for the user to say anything
+    3. if user cuts the call, then the program will not wait for the user to say anything      --> working
 '''

@@ -1,0 +1,22 @@
+# Bansal
+Microphone with name "CABLE Output (VB-Audio Virtual " found for `Microphone(device_index=1)`
+
+Microphone with name "Hi-Fi Cable Output (VB-Audio Hi" found for `Microphone(device_index=2)`
+
+Microphone with name "CABLE Input (VB-Audio Virtual C" found for `Microphone(device_index=6)`
+
+Microphone with name "Hi-Fi Cable Input (VB-Audio Hi-" found for `Microphone(device_index=7)`
+
+
+
+
+
+
+# Devasheesh
+Microphone with name "Hi-Fi Cable Output (VB-Audio Hi" found for `Microphone(device_index=2)`
+
+Microphone with name "CABLE Output (VB-Audio Virtual " found for `Microphone(device_index=4)`
+
+Microphone with name "CABLE Input (VB-Audio Virtual C" found for `Microphone(device_index=7)`
+
+Microphone with name "Hi-Fi Cable Input (VB-Audio Hi-" found for `Microphone(device_index=9)`
