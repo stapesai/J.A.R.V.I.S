@@ -1,3 +1,4 @@
+
 # basic imports
 import pyautogui as jarvis
 jarvis.FAILSAFE=False   # This is to avoid the program to close when the mouse is not found
@@ -12,6 +13,8 @@ import pygame
 # initiate the mixer
 def init_mixer():
     pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
+
+# initiate the pygame mixer once the program starts
 init_mixer()
 
 # text to speech engine
