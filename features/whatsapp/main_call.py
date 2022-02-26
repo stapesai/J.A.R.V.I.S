@@ -7,9 +7,9 @@ import pyautogui
 from PIL import ImageGrab
 import os
 import pygame
-
+import pyttsx3
 class _call_ ():
-    initial_location=''
+    initial_location = ''
     import reply_engine
 
     # initiate the mixer
@@ -22,7 +22,6 @@ class _call_ ():
 
     # text to speech engine
     global engine
-    import pyttsx3
     engine = pyttsx3.init()     # initialise the engine
     voices = engine.getProperty('voices')   
     engine.setProperty('voice', voices[1].id)   # set the voice

@@ -72,7 +72,7 @@ if __name__ == '__main__':  # main function
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
 
-    # main code
+    # 1. main process
     def main():
         text = jarvis_voice_recognise()
         print('command : ', text)
@@ -106,15 +106,18 @@ if __name__ == '__main__':  # main function
         # Features
         elif 'attend my call' or 'respond my call' in text:
             import features.whatsapp.main_call as call
-            # call._call_()
+            call._call_()
         else:
             jarvis_speak('This is not programmed yet.')
 
-    # check new incoming call
+    # 2. check new incoming call process
     def check_for_new_call():
         import features.whatsapp.main_call as call
         if call.check_incoming_call() == True:
             jarvis_speak('Sir There is a new call')
+            sleep(1)
+        elif call.check_incoming_call() == False:
+            print('No new call')
             sleep(5)
 
     # ===== doing multithreading ===== #
