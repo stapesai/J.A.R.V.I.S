@@ -11,8 +11,8 @@ def Reply_Engine(msg_input, centiment='happy', file = 'bot_data_lst.csv'):
     print('User said : ',msg_input)
 
     # reply if could not understand the user input
-    if msg_input == 'Could not understand what you said':
-        return 'Could not understand what you said'
+    if msg_input == 'Seems like you are not speaking or i can not understand you':
+        return 'Seems like you are not speaking or i can not understand you'
 
     # bot_msg=['No Such Keyword found in directory']
 

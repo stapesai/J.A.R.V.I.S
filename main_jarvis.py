@@ -106,7 +106,7 @@ if __name__ == '__main__':  # main function
         # Features
         elif 'attend my call' or 'respond my call' in text:
             import features.whatsapp.main_call as call
-            
+            # call._call_()
         else:
             jarvis_speak('This is not programmed yet.')
 

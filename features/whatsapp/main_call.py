@@ -8,11 +8,12 @@ from PIL import ImageGrab
 import os
 import pygame
 
-class _call_ :
-    initial_location=None
-    re_engine='reply_engine'
-    import re_engine
+class _call_ ():
+    initial_location=''
+    import reply_engine
+
     # initiate the mixer
+    global init_mixer
     def init_mixer():
         pygame.mixer.init(devicename='Jarvis - Speaker (VB-Audio Virtual Cable)')
 
@@ -20,6 +21,7 @@ class _call_ :
     init_mixer()
 
     # text to speech engine
+    global engine
     import pyttsx3
     engine = pyttsx3.init()     # initialise the engine
     voices = engine.getProperty('voices')   
@@ -28,11 +30,13 @@ class _call_ :
     engine.setProperty('rate',newVoiceRate)    # set the speed rate
 
     # sleep function
+    global sleep
     def sleep(sec):
         time.sleep(sec)
 
     # calculate len of wave file
-    def calculate_wave_len(wave_file='output.wav'):
+    global calculate_wave_len
+    def calculate_wave_len(wave_file=initial_location+'output.wav'):
         import wave
         wav = wave.open(wave_file, 'rb')
         frames = wav.getnframes()
@@ -61,10 +65,8 @@ class _call_ :
                 print(err)
 
             except:
-                print("Could not understand what you said")
-                return "Could not understand what you said"
-            
-            
+                print("Seems like you are not speaking or i can not understand you")
+                return "Seems like you are not speaking or i can not understand you"
 
     # just a function to check the microphone
     def Check_Microphone():
@@ -200,9 +202,9 @@ class _call_ :
                             cut_call()
                             break
 
-    '''
-    FUTURE WORKS:
-        1. add a virtual microphone to the program      --> done
-        2. integrate with main jarvis program       --> working
-        3. if user cuts the call, then the program will not wait for the user to say anything      --> done
-    '''
+'''
+FUTURE WORKS:
+    1. add a virtual microphone to the program      --> done
+    2. integrate with main jarvis program       --> working
+    3. if user cuts the call, then the program will not wait for the user to say anything      --> done
+'''
