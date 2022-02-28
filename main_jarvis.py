@@ -77,41 +77,29 @@ def main(text):
         print('command : ', text)
         if 'jarvis' == text:
             jarvis_speak('Yes sir')
-    elif 'hello' in text:
-        jarvis_speak('Hello sir')
+        elif 'hello' in text:
+            jarvis_speak('Hello sir')
 
-    elif 'how are you' in text:
-        jarvis_speak('I am fine sir')
+        elif 'how are you' in text:
+            jarvis_speak('I am fine sir')
 
-    elif 'what is your name' in text:
-        jarvis_speak('My name is jarvis')
+        elif 'what is your name' in text:
+            jarvis_speak('My name is jarvis')
 
-    elif 'what is your age' in text:
-        jarvis_speak('My software is still in development mode')
+        elif 'what is your age' in text:
+            jarvis_speak('My software is still in development mode')
 
-    elif 'what is your job' in text:
-        jarvis_speak('I am a virtual assistant')
+        elif 'what is your job' in text:
+            jarvis_speak('I am a virtual assistant')
 
-    elif 'what is your favourite colour' in text:
-        jarvis_speak('My favourite colour is blue')
+        elif 'what is your favourite colour' in text:
+            jarvis_speak('My favourite colour is blue')
 
-    elif 'what is your favourite song' in text:
-        jarvis_speak('My favourite song is Iron Man Songs')
+        elif 'what is your favourite song' in text:
+            jarvis_speak('My favourite song is Iron Man Songs')
 
-    elif 'Could not understand what you said' in text:
-        print('Could not understand what you said')
-
-    # Features
-    elif 'attend my call' or 'respond my call' in text:
-        import features.whatsapp.main_call as call
-        call._call_()
-    else:
-        jarvis_speak('This is not programmed yet.')
-
-if __name__ == '__main__':  # main function
-    background_music('start')
-    jarvis_speak('welcome back sir , all systems are online')
-    background_music('stop')
+        elif 'Could not understand what you said' in text:
+            print('Could not understand what you said')
 
         # Features
         elif 'attend my call' or 'respond my call' in text:
@@ -119,6 +107,12 @@ if __name__ == '__main__':  # main function
             call._call_()
         else:
             jarvis_speak('This is not programmed yet.')
+
+if __name__ == '__main__':  # main function
+    background_music('start')
+    jarvis_speak('welcome back sir , all systems are online')
+    background_music('stop')
+
 ##main mei hi daalu kya check for new call ko taki loop mei kaam krte rhe
     # 2. check new incoming call process
     def check_for_new_call():   

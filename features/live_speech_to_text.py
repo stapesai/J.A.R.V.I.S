@@ -24,7 +24,7 @@ def live_speech_to_text():
                 #listens for the user's input 
                 try:
                     print("Listening........")
-                    audio2 = r.listen(source2, phrase_time_limit=3)
+                    audio2 = r.listen(source2, phrase_time_limit=5)
                     # Using google to recognize audio
                     print('Recognizing........')
                     MyText = r.recognize_google(audio2)
