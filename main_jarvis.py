@@ -5,6 +5,9 @@ import threading as th
 import winsound as ws 
 import pyautogui as jarvis
 
+# hotword detection
+import lsHotword as hotword     # C:\Users\swast\AppData\Local\Programs\Python\Python310\Lib\site-packages\lsHotword
+
 # adding requried paths
 import sys
 sys.path.append('features\\whatsapp\\')
@@ -45,11 +48,6 @@ def jarvis_voice_recognise(tout=None, ptlimit=5):  # no need of timeout
             print("Could not understand what you said")
             return "Could not understand what you said".lower()
 
-# just a function to check the microphone
-def Check_Microphone():
-    import speech_recognition as sr
-    for index, name in enumerate(sr.Microphone.list_microphone_names()):
-        print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
 
 # text to speech
 def jarvis_speak(text):
@@ -68,10 +66,10 @@ def background_music(signal):
     
     return
 
-if __name__ == '__main__':  # main function
-    background_music('start')
-    jarvis_speak('welcome back sir , all systems are online')
-    background_music('stop')
+# main function
+def main(text):
+    if 'jarvis' == text:
+        jarvis_speak('Yes sir')
 
     # 1. main process
     def main(): 
@@ -79,30 +77,41 @@ if __name__ == '__main__':  # main function
         print('command : ', text)
         if 'jarvis' == text:
             jarvis_speak('Yes sir')
+    elif 'hello' in text:
+        jarvis_speak('Hello sir')
 
-        elif 'hello' in text:
-            jarvis_speak('Hello sir')
+    elif 'how are you' in text:
+        jarvis_speak('I am fine sir')
 
-        elif 'how are you' in text:
-            jarvis_speak('I am fine sir')
+    elif 'what is your name' in text:
+        jarvis_speak('My name is jarvis')
 
-        elif 'what is your name' in text:
-            jarvis_speak('My name is jarvis')
+    elif 'what is your age' in text:
+        jarvis_speak('My software is still in development mode')
 
-        elif 'what is your age' in text:
-            jarvis_speak('My software is still in development mode')
+    elif 'what is your job' in text:
+        jarvis_speak('I am a virtual assistant')
 
-        elif 'what is your job' in text:
-            jarvis_speak('I am a virtual assistant')
+    elif 'what is your favourite colour' in text:
+        jarvis_speak('My favourite colour is blue')
 
-        elif 'what is your favourite colour' in text:
-            jarvis_speak('My favourite colour is blue')
+    elif 'what is your favourite song' in text:
+        jarvis_speak('My favourite song is Iron Man Songs')
 
-        elif 'what is your favourite song' in text:
-            jarvis_speak('My favourite song is Iron Man Songs')
+    elif 'Could not understand what you said' in text:
+        print('Could not understand what you said')
 
-        elif 'Could not understand what you said' in text:
-            print('Could not understand what you said')
+    # Features
+    elif 'attend my call' or 'respond my call' in text:
+        import features.whatsapp.main_call as call
+        call._call_()
+    else:
+        jarvis_speak('This is not programmed yet.')
+
+if __name__ == '__main__':  # main function
+    background_music('start')
+    jarvis_speak('welcome back sir , all systems are online')
+    background_music('stop')
 
         # Features
         elif 'attend my call' or 'respond my call' in text:
