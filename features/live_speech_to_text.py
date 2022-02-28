@@ -1,3 +1,13 @@
+# initialize the engine
+import pyttsx3
+engine = pyttsx3.init()     # initialise the engine
+
+voices = engine.getProperty('voices')   
+engine.setProperty('voice', voices[1].id)   # set the voice
+
+newVoiceRate = 140
+engine.setProperty('rate',newVoiceRate)    # set the speed rate
+
 def live_speech_to_text():
     import speech_recognition as sr
 
@@ -13,8 +23,10 @@ def live_speech_to_text():
                 r.adjust_for_ambient_noise(source2, duration=0.2)
                 #listens for the user's input 
                 try:
-                    audio2 = r.listen(source2, timeout=None, phrase_time_limit=1)
+                    print("Listening........")
+                    audio2 = r.listen(source2, phrase_time_limit=3)
                     # Using google to recognize audio
+                    print('Recognizing........')
                     MyText = r.recognize_google(audio2)
                     MyText = MyText.lower()
                     print("Did you say "+MyText)
@@ -35,8 +47,8 @@ def live_speech_to_text():
 
         # Wake Word
         if 'jarvis' in MyText:
-            return MyText
-            #break
+            engine.say('Yes sir')
+            engine.runAndWait()
+            print('Jarvis : Yes sir')
 
-        
-#live_speech_to_text()
+live_speech_to_text()

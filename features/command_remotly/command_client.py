@@ -4,7 +4,8 @@ def receive_command():
     import os
 
     s = socket.socket()
-    hosts = ['192.168.1.11', '192.168.1.12']
+    # hosts = ['192.168.1.11', '192.168.1.12']
+    hosts = ['192.168.1.12']
     port = 9999
 
     for host in hosts:
@@ -27,9 +28,10 @@ def receive_command():
             print("No incomming connection by server")
             s.close()
 
-# main function
-print('client program initalized...')
-while True:
-    receive_command()
-    import time
-    time.sleep(10)
+if __name__ == "__main__":
+    # main function
+    print('client program initalized...')
+    while True:
+        receive_command()
+        import time
+        time.sleep(10)
