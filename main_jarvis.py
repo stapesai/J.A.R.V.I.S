@@ -3,6 +3,7 @@ import speech_recognition as sr
 import multiprocessing as mp
 import threading as th
 import winsound as ws 
+import pyautogui as jarvis
 
 # adding requried paths
 import sys
@@ -28,12 +29,12 @@ def sleep(sec):
     time.sleep(sec)
 
 # speech to text
-def jarvis_voice_recognise(tout=None, ptlimit=None):
-    with sr.Microphone(device_index=2) as source:
+def jarvis_voice_recognise(tout=None, ptlimit=5):  # no need of timeout
+    with sr.Microphone(device_index=1) as source:    #due to changed systems audio index
 
         speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
         print("Listening........")
-        audio = speech.listen(source, timeout=tout, phrase_time_limit=ptlimit)                # set timeout here
+        audio = speech.listen(source, timeout=tout, phrase_time_limit=ptlimit)                
 
         try:
             text = speech.recognize_google(audio, language='en-US').lower()
@@ -73,7 +74,7 @@ if __name__ == '__main__':  # main function
     background_music('stop')
 
     # 1. main process
-    def main():
+    def main(): 
         text = jarvis_voice_recognise()
         print('command : ', text)
         if 'jarvis' == text:
@@ -109,25 +110,32 @@ if __name__ == '__main__':  # main function
             call._call_()
         else:
             jarvis_speak('This is not programmed yet.')
-
+##main mei hi daalu kya check for new call ko taki loop mei kaam krte rhe
     # 2. check new incoming call process
-    def check_for_new_call():
-        import features.whatsapp.main_call as call
-        if call.check_incoming_call() == True:
-            jarvis_speak('Sir There is a new call')
-            sleep(1)
-        elif call.check_incoming_call() == False:
-            print('No new call')
-            sleep(5)
+    def check_for_new_call():   
+        #copied the code from check_incoming_call()
+        while True:
+            attend_call_cordinates=jarvis.locateCenterOnScreen('features\whatsapp\img\call_attend.png', confidence=0.7)
+            if attend_call_cordinates!=None:
+                jarvis_speak('Sir There is a new call')    #features to be added -to ask user whether to pick it up or not by jarvis or by you
+                sleep(1)
+            elif attend_call_cordinates== None:  #multiprocessing required
+                print('No new call')           
+                sleep(5)
 
-    # ===== doing multithreading ===== #
-    main_thread = th.Thread(target=main)
-    call_check_thread = th.Thread(target=check_for_new_call)
+    main()
+    # # ===== doing multithreading ===== #
+    # main_thread = th.Thread(target=main)
+    # call_check_thread = th.Thread(target=check_for_new_call)
 
-    # starting the threads
-    # main_thread.start()
-    call_check_thread.start()
+    # # starting the threads
+    # # main_thread.start()
+    # call_check_thread.start()
 
-    # joining the threads
-    # main_thread.join()
-    call_check_thread.join()
+    # # joining the threads
+    # # main_thread.join()
+    # call_check_thread.join()
+
+"""
+hotword yet to be added
+"""
