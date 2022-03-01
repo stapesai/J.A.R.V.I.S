@@ -10,12 +10,11 @@ audio_stream=None
 print('All keywords:', pvporcupine.KEYWORDS)
 # C:\Users\swast\AppData\Local\Programs\Python\Python310\Lib\site-packages\pvporcupine
 
-def wake_word_detection(music_file = 'chime.wav'):
+def wake_word_detection(model, music_file = 'chime.wav'):
     try:
         porcupine=pvporcupine.create(
             access_key='+m4ClCWe3QUlLBiYi9bIgjdboyQWIqDdnCkN3gUAnCDuJHF2L9ez8g==',
-            keywords=['alexa','jarvis'],  # if to use default model
-            # keyword_paths=['jarvis_pvporcupine_model.ppn']      # if to use custom model
+            keyword_paths=model
             ) 
         paud=pyaudio.PyAudio()
         audio_stream=paud.open(rate=porcupine.sample_rate,channels=1,format=pyaudio.paInt16,input=True,frames_per_buffer=porcupine.frame_length)
@@ -38,4 +37,5 @@ def wake_word_detection(music_file = 'chime.wav'):
             paud.terminate()
 
 if __name__ == '__main__':
-    wake_word_detection()
+    while True:
+        wake_word_detection()

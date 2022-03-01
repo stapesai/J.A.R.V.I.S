@@ -7,6 +7,8 @@ import pyautogui as jarvis
 
 # hotword detection
 import features.wake_word as wake_word
+def hotword_detection():
+    wake_word.wake_word_detection(music_file='features\chime.wav', model=['voice_model\jarvis_windows.ppn','voice_model\hey-jarvis_windows.ppn'])
 
 # initialize the recognizer
 speech = sr.Recognizer()
@@ -116,11 +118,9 @@ if __name__ == '__main__':
     background_music('stop')
 
     while True:
-        wake_word.wake_word_detection(music_file='features\chime.wav')
-
-        text = jarvis_voice_recognise(ptlimit=5)
-        main(text)
-
+        hotword_detection()
+        # text = jarvis_voice_recognise(ptlimit=5)
+        # main(text)
         
 
     # # ===== doing multithreading ===== #
