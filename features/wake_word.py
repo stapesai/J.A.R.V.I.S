@@ -2,9 +2,12 @@ import struct
 import pyaudio
 import pvporcupine
 import playsound
+
 porcupine=None
 paud=None
 audio_stream=None
+
+print('All keywords:', pvporcupine.KEYWORDS)
 
 try:
     access_key='+m4ClCWe3QUlLBiYi9bIgjdboyQWIqDdnCkN3gUAnCDuJHF2L9ez8g=='
