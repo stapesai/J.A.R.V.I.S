@@ -4,6 +4,7 @@ import multiprocessing as mp
 import threading as th
 import winsound as ws 
 import pyautogui as jarvis
+import datetime
 
 # hotword detection
 import features.wake_word as wake_word
@@ -105,23 +106,27 @@ def main(text):
 def check_for_new_call():   
     attend_call_cordinates=jarvis.locateCenterOnScreen('features\whatsapp\img\call_attend.png', confidence=0.7)
     if attend_call_cordinates!=None:
-        jarvis_speak('Sir There is a new call')    #features to be added -to ask user whether to pick it up or not by jarvis or by you
+        jarvis_speak('Sir There is a new call')
         sleep(1)
-    elif attend_call_cordinates== None:  #multiprocessing required
+    elif attend_call_cordinates== None:
         print('No new call')           
         sleep(5)
 
 
 if __name__ == '__main__':
+    count = 0
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
 
     while True:
         hotword_detection()
-        text = jarvis_voice_recognise(ptlimit=5)
-        main(text)
-        
+
+        # text = jarvis_voice_recognise(ptlimit=5)
+        # main(text)
+
+        count += 1
+        print('This is trial number{} at {}'.format(count, datetime.datetime.now()))
 
     # # ===== doing multithreading ===== #
     # main_thread = th.Thread(target=main)

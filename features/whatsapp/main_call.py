@@ -116,10 +116,10 @@ def attend_call():
     attend_call_cordinates=jarvis.locateCenterOnScreen(initial_location+'img\call_attend.png', confidence=0.7)
     if attend_call_cordinates!=None:
         print('Attending Call....',attend_call_cordinates)
-        x=attend_call_cordinates[0]
-        y=attend_call_cordinates[1]
-        jarvis.click(x, y)
+        init_cur = jarvis.position()
+        jarvis.click(attend_call_cordinates[0], attend_call_cordinates[1])
         jarvis.sleep(1.5)
+        jarvis.click(init_cur[0], init_cur[1])
     else:
         print('Can not find call_attend button...')
 
@@ -166,32 +166,36 @@ def check_incoming_call():
         return True
     else:
         print('No incoming call....')
-        sleep(3)
         return False
 
 # main function
-def __main__():
-    while True:
-        if check_incoming_call() == True:
-            user = Caller_Name()    # get the caller name
-            attend_call()        # attend the call
-            
-            if attend_call_cordinates!=None:
-                print('Call Attended........')
-                jarvis_speak('Hello ' + user + 'I am jarvis, AI bot. How can I help you?')
-                while True:
-                    user_said = jarvis_voice_recognise()    # get the user input
-                    print('User said : ',user_said)
-                    reply = reply_engine.Reply_Engine(msg_input = user_said, file = initial_location+'bot_data_lst.csv')   # get the reply
-                    jarvis_speak(reply)
-                    print('user has been answered........')
-                    print('reply to user :',reply)
-                    if reply == 'Good Bye Sir have a nice day' or check_call() == False:
-                        cut_call()
-                        break
+def __main__(): 
+    if check_incoming_call() == True:
+        user = Caller_Name()    # get the caller name
+        attend_call()        # attend the call
+        
+        if attend_call_cordinates!=None:
+            print('Call Attended........')
+            jarvis_speak('Hello ' + user + 'I am jarvis, AI bot. How can I help you?')
+            while True:
+                user_said = jarvis_voice_recognise()    # get the user input
+                print('User said : ',user_said)
+                reply = reply_engine.Reply_Engine(msg_input = user_said, file = initial_location+'bot_data_lst.csv')   # get the reply
+                jarvis_speak(reply)
+                print('user has been answered........')
+                print('reply to user :',reply)
+                if reply == 'Good Bye Sir have a nice day' or check_call() == False:
+                    cut_call()
+                    break
 
 if __name__=="__main__":
-    __main__()
+    while True:
+        try:
+            __main__()
+            sleep(3)
+        except KeyboardInterrupt:
+            print('Exiting....')
+            break
 
 '''
 FUTURE WORKS:
