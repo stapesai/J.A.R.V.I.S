@@ -43,5 +43,6 @@ def wake_word_detection(model, music_file = 'chime.wav'):
             paud.terminate()
 
 if __name__ == '__main__':
+    
     while True:
-        wake_word_detection()
+        wake_word_detection(model=['hey-jarvis_windows.ppn','jarvis_windows.ppn'])

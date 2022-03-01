@@ -1,5 +1,6 @@
 # Importing Modules....
 import time
+from pip import main
 import pyautogui as jarvis
 import webbrowser
 import datetime
@@ -262,4 +263,5 @@ if crt_time >='08:00' and crt_time <'14:00' and crt_day != 'sunday':
                     break
 
         sleep(30)
-# code comple
+
+# code complete
