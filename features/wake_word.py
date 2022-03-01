@@ -12,7 +12,7 @@ print('All keywords:', pvporcupine.KEYWORDS)
 try:
     porcupine=pvporcupine.create(
         access_key='+m4ClCWe3QUlLBiYi9bIgjdboyQWIqDdnCkN3gUAnCDuJHF2L9ez8g==',
-        keywords=['alexa'],  # if to use default model
+        keywords=['alexa','jarvis'],  # if to use default model
         # keyword_paths=['jarvis_pvporcupine_model.ppn']      # if to use custom model
         ) 
     paud=pyaudio.PyAudio()
@@ -24,7 +24,8 @@ try:
         if keyword_index>=0:
             print("hotword detected")
             # play sound
-            playsound.playsound("chime.wav")
+            playsound.playsound("chime.wav")    # pip install playsound==1.2.2
+            
             
 
 finally:
