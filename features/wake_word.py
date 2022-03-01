@@ -8,10 +8,13 @@ paud=None
 audio_stream=None
 
 print('All keywords:', pvporcupine.KEYWORDS)
-
+# C:\Users\swast\AppData\Local\Programs\Python\Python310\Lib\site-packages\pvporcupine
 try:
-    access_key='+m4ClCWe3QUlLBiYi9bIgjdboyQWIqDdnCkN3gUAnCDuJHF2L9ez8g=='
-    porcupine=pvporcupine.create(access_key=access_key,keywords=["jarvis"]) # pvporcupine.KEYWORDS for all keywords
+    porcupine=pvporcupine.create(
+        access_key='+m4ClCWe3QUlLBiYi9bIgjdboyQWIqDdnCkN3gUAnCDuJHF2L9ez8g==',
+        keywords=['alexa'],  # if to use default model
+        # keyword_paths=['jarvis_pvporcupine_model.ppn']      # if to use custom model
+        ) 
     paud=pyaudio.PyAudio()
     audio_stream=paud.open(rate=porcupine.sample_rate,channels=1,format=pyaudio.paInt16,input=True,frames_per_buffer=porcupine.frame_length)
     while True:
