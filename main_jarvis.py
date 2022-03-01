@@ -8,12 +8,6 @@ import pyautogui as jarvis
 # hotword detection
 import features.wake_word as wake_word
 
-# adding requried paths
-import sys
-sys.path.append('features\\whatsapp\\')
-sys.path.append('features\\whatsapp\\img\\')
-sys.path.append('features\\')
-
 # initialize the recognizer
 speech = sr.Recognizer()
 
@@ -100,7 +94,7 @@ def main(text):
     # Features
     elif 'attend my call' or 'respond my call' in text:
         import features.whatsapp.main_call as call
-        call._call_()
+        call.__main__()
     
     else:
         jarvis_speak('This is not programmed yet.')
@@ -117,16 +111,12 @@ def check_for_new_call():
 
 
 if __name__ == '__main__':
-    wake_word.wake_word_detection(music_file='features\chime.wav')
-
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
 
     while True:
         wake_word.wake_word_detection(music_file='features\chime.wav')
-
-        check_for_new_call()    # by multiprocessing
 
         text = jarvis_voice_recognise(ptlimit=5)
         main(text)
