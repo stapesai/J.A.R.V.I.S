@@ -1,2 +1,1 @@
-import datetime
-print(datetime.datetime.now())
+import features.whatsapp.main_call as call

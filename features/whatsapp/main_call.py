@@ -53,7 +53,7 @@ def jarvis_voice_recognise():
         speech.pause_threshold=1
         print("Listening to call..............")
         try:
-            audio = speech.listen(source, timeout=3, phrase_time_limit=6)                # set timeout here
+            audio = speech.listen(source, timeout=None, phrase_time_limit=6)                # set timeout here
             text = speech.recognize_google(audio, language='en-US') # recognize speech using Google Speech Recognition
             return text
         
@@ -161,12 +161,15 @@ def check_call():
 
 # check incoming call
 def check_incoming_call():
-    attend_call_cordinates=jarvis.locateCenterOnScreen(initial_location+'img\call_attend.png', confidence=0.7)
+    attend_call_cordinates=jarvis.locateCenterOnScreen(initial_location+'img\call_attend.png', confidence=0.9)
     if attend_call_cordinates!=None:
+        print('Incoming Call........')
         return True
     else:
         print('No incoming call....')
+        sleep(5)
         return False
+
 
 # main function
 def __main__(): 

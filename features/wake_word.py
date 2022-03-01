@@ -2,15 +2,22 @@ import struct
 import pyaudio
 import pvporcupine
 import playsound
+import multiprocessing as mp
 
 porcupine=None
 paud=None
 audio_stream=None
 
-print('All keywords:', pvporcupine.KEYWORDS)
 # C:\Users\swast\AppData\Local\Programs\Python\Python310\Lib\site-packages\pvporcupine
 
+def tune(music_file):
+    # play sound
+    playsound.playsound(music_file)    # pip install playsound==1.2.2
+
 def wake_word_detection(model, music_file = 'chime.wav'):
+    
+    tune_process = mp.Process(target=tune, args=(music_file,))
+
     try:
         porcupine=pvporcupine.create(
             access_key='+m4ClCWe3QUlLBiYi9bIgjdboyQWIqDdnCkN3gUAnCDuJHF2L9ez8g==',
@@ -24,8 +31,7 @@ def wake_word_detection(model, music_file = 'chime.wav'):
             keyword_index=porcupine.process(keyword)
             if keyword_index>=0:
                 print("hotword detected")
-                # play sound
-                playsound.playsound(music_file)    # pip install playsound==1.2.2
+                tune_process.start()
                 break
                 
     finally:
