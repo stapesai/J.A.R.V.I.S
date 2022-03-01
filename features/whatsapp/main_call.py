@@ -9,6 +9,20 @@ import os
 import pygame
 import pyttsx3
 
+def select_mic():
+    cou = -1
+    import sounddevice as sd
+    all = sd.query_devices()
+    for i in all:
+        # print(i)
+        mic_name = str(i['name'])
+        cou += 1
+        # print(mic_name)
+        if 'Jarvis - Mic' in mic_name:
+            print('Jarvis - Mic found : ' + str(cou))
+            return cou
+
+
 # iniitial location
 if __name__=="__main__":
     initial_location = ''
@@ -48,7 +62,7 @@ def calculate_wave_len(wave_file=initial_location+'output.wav'):
 def jarvis_voice_recognise():
     import speech_recognition as sr
     speech = sr.Recognizer()
-    with sr.Microphone(device_index=3) as source:
+    with sr.Microphone(device_index=select_mic()) as source:
         speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
         speech.pause_threshold=1
         print("Listening to call..............")
