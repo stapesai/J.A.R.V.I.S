@@ -119,8 +119,8 @@ if __name__ == '__main__':
 
     while True:
         hotword_detection()
-        # text = jarvis_voice_recognise(ptlimit=5)
-        # main(text)
+        text = jarvis_voice_recognise(ptlimit=5)
+        main(text)
         
 
     # # ===== doing multithreading ===== #
