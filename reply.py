@@ -1,6 +1,7 @@
 import features.whatsapp.main_call as call
 import multiprocessing as mp
 import datetime
+
 # reply function
 def reply(text): 
 
@@ -62,7 +63,7 @@ def reply(text):
 
     # 2. send whatsapp message
     elif 'send whatsapp message' in text or 'send message' in text:
-        import pywhatkit
+        import tools.pywhatkit as pywhatkit
 
         '''
         Type:
@@ -88,7 +89,7 @@ def reply(text):
         pywhatkit.sendwhatmsg(  phone_no = out['number'], 
                                 message = out['message'], 
                                 time_hour = crt_hr, 
-                                time_min = crt_min, 
+                                time_min = crt_min+1, 
                                 tab_close=True
                                 )
         
