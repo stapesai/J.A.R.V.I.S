@@ -13,8 +13,7 @@ import features.whatsapp.main_call as call
 import logging
 
 def initiate_logs():
-    for i in range(5):
-        logging.info('\n')
+    logging.info('-------------------------------------'*4)
 
     logging.info('Jarvis log at {}'.format(datetime.datetime.now()))
 

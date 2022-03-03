@@ -8,7 +8,7 @@ def reply(text):
         return('Yes sir')
 
     elif 'hello how are you' in text:
-        return('hello sir, I am fine sir')
+        return('hello sir, I am fine.')
     
     elif 'what is your name' in text:
         return('My name is Jarvis')
