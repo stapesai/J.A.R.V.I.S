@@ -65,12 +65,14 @@ def reply(text):
         import pywhatkit
 
         def extract_msg(text):
-            msg = text.split('send whatsapp message')[1].strip()
-            return msg
+            out = {'number': '', 'message': ''}
+
+            return out
         
         out = extract_msg(text)
         crt_hr = datetime.datetime.now().strftime("%H")
-        pywhatkit.sendwhatmsg(phone_no = out['number'], message = out['msg'], 14, 11, tab_close=True)
+        crt_min = datetime.datetime.now().strftime("%M")
+        pywhatkit.sendwhatmsg(phone_no = out['number'], message = out['message'], time_hour = crt_hr, time_min = crt_min, tab_close=True)
         return('sir, now i have sent your message')
 
     else:

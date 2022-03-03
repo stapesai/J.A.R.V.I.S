@@ -1,6 +1,6 @@
 def extract_msg(text):
     out = {'name': '', 'msg': ''}
-    out = text.replace('send msg to', '')
+    out = text.replace('send message to ', '')
     return out
 
 
