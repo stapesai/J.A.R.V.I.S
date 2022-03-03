@@ -177,10 +177,8 @@ def check_call():
 def check_incoming_call():
     attend_call_cordinates=jarvis.locateCenterOnScreen(initial_location+'img\call_attend.png', confidence=0.9)
     if attend_call_cordinates!=None:
-        print('Incoming Call........')
         return True
     else:
-        print('No incoming call....')
         sleep(5)
         return False
 
@@ -188,6 +186,7 @@ def check_incoming_call():
 # main function
 def __main__(): 
     if check_incoming_call() == True:
+        print('Incoming Call........')
         user = Caller_Name()    # get the caller name
         attend_call()        # attend the call
         
@@ -204,7 +203,8 @@ def __main__():
                 if reply == 'Good Bye Sir have a nice day' or check_call() == False:
                     cut_call()
                     break
-
+    elif check_incoming_call() == False:
+        print('No incoming call........')
 if __name__=="__main__":
     while True:
         try:

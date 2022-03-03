@@ -4,8 +4,7 @@ def receive_command():
     import os
 
     s = socket.socket()
-    # hosts = ['192.168.1.11', '192.168.1.12']
-    hosts = ['192.168.1.12']
+    hosts = ['192.168.1.11', '192.168.1.12']
     port = 9999
 
     for host in hosts:
