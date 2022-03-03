@@ -108,18 +108,22 @@ def reply(text):
                         break
             print(output)
         
-        info = extract_msg(text)
-        crt_hr = datetime.datetime.now().strftime("%H")
-        crt_min = datetime.datetime.now().strftime("%M")
+        try:
+            info = extract_msg(text)
+            crt_hr = datetime.datetime.now().strftime("%H")
+            crt_min = datetime.datetime.now().strftime("%M")
 
-        pywhatkit.sendwhatmsg ( phone_no = info['number'], 
-                                message = info['message'],
-                                time_hour = crt_hr, 
-                                time_min = crt_min+2, 
-                                tab_close=True
-                                )
+            pywhatkit.sendwhatmsg ( phone_no = info['number'], 
+                                    message = info['message'],
+                                    time_hour = crt_hr, 
+                                    time_min = crt_min+2, 
+                                    tab_close=True
+                                    )
+            
+            return('sir, now i have sent your message')
         
-        return('sir, now i have sent your message')
+        except:
+            return('sir, i could not send your message')
 
     else:
         return('This is not programmed yet.')
