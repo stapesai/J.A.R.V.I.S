@@ -62,7 +62,7 @@ def reply(text):
             return('no sir, there is no new call')
 
     # 2. send whatsapp message
-    elif 'send whatsapp message' in text or 'send message' in text or 'inform' in text:
+    elif 'send whatsapp message' in text or 'send message' in text or 'inform' in text or 'send a message' in text :
         import tools.pywhatkit as pywhatkit
 
         '''
@@ -70,22 +70,22 @@ def reply(text):
              jarvis send a message to ayush bansal that i am fine
              jarvis inform ayush bansal that i am fine           
              jarvis inform kshitij that i am fine
-             jarvis 
         '''
 
-        def extract_msg(text):
-           # out = {'number': '', 'message': ''}
-            out=text.replace('jarvis send a msg to','')
-            out=text.replace('jarvis inform','')
-            out=text.replace('jarvis tell','')
-            extracted_data=out.split('that','')
-            global msg
-            global R_name
-            msg=extracted_data[1]
-            R_name=extracted_data[0].lower()
-            #finding name in csv file
-            # CSV Synthesize...
+        def extract_msg(text : str):
+            output = {'number': '', 'message': ''}
 
+            out=text.replace('send a message to','')
+            out=text.replace('inform','')
+
+            extracted_data=out.split(' that ')
+
+            R_name=extracted_data[0].lower()
+            msg = extracted_data[1]
+
+            output.update({'message': str(msg)})
+
+            # finding name in contact list
             import csv
 
             contacts_data_open = open('contacts_data.csv','r')
@@ -93,34 +93,29 @@ def reply(text):
             list_contacts_data = list(contacts_data)
 
             for temp in list_contacts_data:
-                
+                print('loop1')
                 import ast
                 names = ast.literal_eval(temp[0])
-                global num
                 num=temp[1]
                 for temp2 in names:
-                    if R_name == temp2:
-                        print('found')
-                        print(num)
+                    print('loop2')
+                    if R_name in temp2:
+                        print('loop3')
+                        output.update({'number': '+91' + str(num)})
+                        contacts_data_open.close()
+                        return output
                     else:
-                        print('not found')
-
-           
-
-            
-            # code to extract number and message from text
-            # NOTE : out is dict and it contains number and message as key and value are to be appended in the out dict. find number using csv or json.
-
-            return extracted_data
+                        break
+            print(output)
         
-        out = extract_msg(text)
+        info = extract_msg(text)
         crt_hr = datetime.datetime.now().strftime("%H")
         crt_min = datetime.datetime.now().strftime("%M")
 
-        pywhatkit.sendwhatmsg(  phone_no = num, 
-                                message = out['message'], 
+        pywhatkit.sendwhatmsg ( phone_no = info['number'], 
+                                message = info['message'],
                                 time_hour = crt_hr, 
-                                time_min = crt_min+1, 
+                                time_min = crt_min+2, 
                                 tab_close=True
                                 )
         

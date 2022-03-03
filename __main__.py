@@ -39,7 +39,7 @@ def save_logs(text, type):
     elif type == 'exception':
         logging.exception(text)
     else:
-        logging.warning('No such log type exists, log is : '+text)
+        logging.warning('No such log type exists, log is : '+ text)
 
 # hotword detection
 import features.wake_word as wake_word      # pip install pvporcupine
