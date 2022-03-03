@@ -1,9 +1,3 @@
-from numba import jit
-@jit(nopython=True)
+import pywhatkit
 
-def temp(t):
-    print(t + 1) 
-import time
-start_time = time.time()
-temp(1)
-print("--- %s seconds ---" % (time.time() - start_time))
+pywhatkit.sendwhatmsg("+919560355384", "Hi", 14, 11, tab_close=True)

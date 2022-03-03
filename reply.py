@@ -1,11 +1,23 @@
 import features.whatsapp.main_call as call
 import multiprocessing as mp
-
+import datetime
 # reply function
 def reply(text): 
 
     if 'jarvis' == text:
         return('Yes sir')
+
+    elif 'hello how are you' in text:
+        return('hello sir, I am fine sir')
+    
+    elif 'what is your name' in text:
+        return('My name is Jarvis')
+    
+    elif 'what are you doing' in text:
+        return('I am waiting for your command sir')
+    
+    elif 'what time is it' in text:
+        return('Current time is {}'.format(datetime.datetime.now().strftime("%H:%M:%S")))
 
     elif 'hello' in text:
         return('Hello sir')
@@ -29,7 +41,6 @@ def reply(text):
         return('My favourite song is Iron Man Songs')
 
     elif 'could not understand what you said' in text:
-        print('Could not understand what you said')
         return('Could not understand what you said')
     
     # Features
@@ -48,6 +59,19 @@ def reply(text):
         
         else:
             return('no sir, there is no new call')
+
+    # 2. send whatsapp message
+    elif 'send whatsapp message' in text or 'send message' in text:
+        import pywhatkit
+
+        def extract_msg(text):
+            msg = text.split('send whatsapp message')[1].strip()
+            return msg
+        
+        out = extract_msg(text)
+        crt_hr = datetime.datetime.now().strftime("%H")
+        pywhatkit.sendwhatmsg(phone_no = out['number'], message = out['msg'], 14, 11, tab_close=True)
+        return('sir, now i have sent your message')
 
     else:
         return('This is not programmed yet.')

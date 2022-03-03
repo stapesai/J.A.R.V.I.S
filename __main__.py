@@ -1,18 +1,46 @@
 import time
 import speech_recognition as sr
 import multiprocessing as mp
-import threading as th
+# import threading as th
 import winsound as ws 
-import pyautogui as jarvis
+# import pyautogui as jarvis
 import datetime
-import os
+# import os
 
 import features.whatsapp.main_call as call
 
-# saving output to text file
-# import sys
-# stdoutOrigin=sys.stdout
-# sys.stdout = open(file='logs\\log '+ str(datetime.datetime.now()) +'.txt', mode='w')
+# saving logs
+import logging
+
+def initiate_logs():
+    for i in range(5):
+        logging.info('\n')
+
+    logging.info('Jarvis log at {}'.format(datetime.datetime.now()))
+
+logging.basicConfig(
+                    filename='logs\log.log',
+                    filemode='a', 
+                    format='%(name)s - %(levelname)s - %(message)s - %(asctime)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.DEBUG
+                    )
+
+def save_logs(text, type):
+    if type == 'error':
+        logging.error(text)
+    elif type == 'warning':
+        logging.warning(text)
+    elif type == 'info':
+        logging.info(text)
+    elif type == 'debug':
+        logging.debug(text)
+    elif type == 'critical':
+        logging.critical(text)
+    elif type == 'exception':
+        logging.exception(text)
+    else:
+        logging.warning('No such log type exists, log is : '+text)
 
 # hotword detection
 import features.wake_word as wake_word      # pip install pvporcupine
@@ -42,21 +70,25 @@ def jarvis_voice_recognise(tout=None, ptlimit=None):
 
         speech.adjust_for_ambient_noise(source, duration=0.5)       # Adjust for ambient noises
         print("Listening........")
+        save_logs('Listening........', 'info')
         audio = speech.listen(source, timeout=tout, phrase_time_limit=ptlimit)                
 
         try:
             text = speech.recognize_google(audio, language='en-US').lower()
             print("You said : {}".format(text))
+            save_logs('You said : {}'.format(text), 'info')
             return text
 
         except:
             print("Could not understand what you said")
+            save_logs('Could not understand what you said', 'warning')
             return "Could not understand what you said".lower()
 
 
 # text to speech
 def jarvis_speak(text):
     print('Jarvis : ', text)
+    save_logs('Jarvis : {}'.format(text), 'info')
     engine.say(text)
     engine.runAndWait()
 
@@ -65,10 +97,12 @@ def background_music(signal):
     if signal == 'start':
         ws.PlaySound('music\IronMan_Theme_Song.wav', ws.SND_ASYNC | ws.SND_ALIAS)
         print('Background music started')
+        save_logs('Background music started', 'info')
 
     elif signal == 'stop':
         ws.PlaySound(None, ws.SND_ASYNC)
         print('Background music stopped')
+        save_logs('Background music stopped', 'info')
     
     return
 
@@ -81,9 +115,11 @@ def check_new_call():
         chk_call = call.check_incoming_call()
         if chk_call == True:
             jarvis_speak('Sir, there is a new call')
+
             sleep(5)
         if chk_call == False:
             print('There is no new call')
+            save_logs('There is no new call', 'info')
 
 check_call_process = mp.Process(target=check_new_call)
 
@@ -98,12 +134,13 @@ def main(count=0):
         jarvis_speak(ans)
 
         print('This is trial number "{}" at "{}"'.format(count, datetime.datetime.now()))
-
+        save_logs('This is trial number "{}" at "{}"'.format(count, datetime.datetime.now()), 'debug')
 main_process = mp.Process(target=main)
 
 
 
 if __name__ == '__main__':
+    initiate_logs()
     background_music('start')
     jarvis_speak('welcome back sir , all systems are online')
     background_music('stop')
