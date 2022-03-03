@@ -64,15 +64,34 @@ def reply(text):
     elif 'send whatsapp message' in text or 'send message' in text:
         import pywhatkit
 
+        '''
+        Type:
+             jarvis send a message to ayush bansal that i am fine
+             jarvis inform ayush bansal that i am fine
+             jarvis tell ayush bansal that i am fine
+             jarvis inform kshitij that i am fine
+             jarvis 
+        '''
+
         def extract_msg(text):
             out = {'number': '', 'message': ''}
+
+            # code to extract number and message from text
+            # NOTE : out is dict and it contains number and message as key and value are to be appended in the out dict. find number using csv or json.
 
             return out
         
         out = extract_msg(text)
         crt_hr = datetime.datetime.now().strftime("%H")
         crt_min = datetime.datetime.now().strftime("%M")
-        pywhatkit.sendwhatmsg(phone_no = out['number'], message = out['message'], time_hour = crt_hr, time_min = crt_min, tab_close=True)
+
+        pywhatkit.sendwhatmsg(  phone_no = out['number'], 
+                                message = out['message'], 
+                                time_hour = crt_hr, 
+                                time_min = crt_min, 
+                                tab_close=True
+                                )
+        
         return('sir, now i have sent your message')
 
     else:
