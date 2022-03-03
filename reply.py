@@ -62,31 +62,62 @@ def reply(text):
             return('no sir, there is no new call')
 
     # 2. send whatsapp message
-    elif 'send whatsapp message' in text or 'send message' in text:
+    elif 'send whatsapp message' in text or 'send message' in text or 'inform' in text:
         import tools.pywhatkit as pywhatkit
 
         '''
         Type:
              jarvis send a message to ayush bansal that i am fine
-             jarvis inform ayush bansal that i am fine
-             jarvis tell ayush bansal that i am fine
+             jarvis inform ayush bansal that i am fine           
              jarvis inform kshitij that i am fine
              jarvis 
         '''
 
         def extract_msg(text):
-            out = {'number': '', 'message': ''}
+           # out = {'number': '', 'message': ''}
+            out=text.replace('jarvis send a msg to','')
+            out=text.replace('jarvis inform','')
+            out=text.replace('jarvis tell','')
+            extracted_data=out.split('that','')
+            global msg
+            global R_name
+            msg=extracted_data[1]
+            R_name=extracted_data[0].lower()
+            #finding name in csv file
+            # CSV Synthesize...
 
+            import csv
+
+            contacts_data_open = open('contacts_data.csv','r')
+            contacts_data = csv.reader(contacts_data_open)
+            list_contacts_data = list(contacts_data)
+
+            for temp in list_contacts_data:
+                
+                import ast
+                names = ast.literal_eval(temp[0])
+                global num
+                num=temp[1]
+                for temp2 in names:
+                    if R_name == temp2:
+                        print('found')
+                        print(num)
+                    else:
+                        print('not found')
+
+           
+
+            
             # code to extract number and message from text
             # NOTE : out is dict and it contains number and message as key and value are to be appended in the out dict. find number using csv or json.
 
-            return out
+            return extracted_data
         
         out = extract_msg(text)
         crt_hr = datetime.datetime.now().strftime("%H")
         crt_min = datetime.datetime.now().strftime("%M")
 
-        pywhatkit.sendwhatmsg(  phone_no = out['number'], 
+        pywhatkit.sendwhatmsg(  phone_no = num, 
                                 message = out['message'], 
                                 time_hour = crt_hr, 
                                 time_min = crt_min+1, 
