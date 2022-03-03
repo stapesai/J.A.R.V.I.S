@@ -1,8 +1,7 @@
 def extract_msg(text : str):
         output = {'number': '', 'message': ''}
-        if 'send a message to' in text:
-            print('send a message to')
-            text.replace('send','fsgsdgsdf')
+
+        text = text.replace('send','fsgsdgsdf')
 
         text.replace('inform','')
         

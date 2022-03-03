@@ -17,7 +17,7 @@ def reply(text):
     elif 'what are you doing' in text:
         return('I am waiting for your command sir')
     
-    elif 'what time is it' in text:
+    elif 'what time is it' in text or 'current time' in text or'what is the time' in text:
         return('Current time is {}'.format(datetime.datetime.now().strftime("%H:%M:%S")))
 
     elif 'hello' in text:
@@ -46,7 +46,14 @@ def reply(text):
     
     # Features
     # 1. attending to calls
-    elif 'attend my call' in text or 'respond to my call' in text or 'is there any call' in text or 'is there any new call' in text or 'respond to call' in text or 'respond to incoming call' in text or 'respond to my call' in text:
+    elif (  'attend my call' in text or 
+            'respond to my call' in text or 
+            'is there any call' in text or 
+            'is there any new call' in text or 
+            'respond to call' in text or 
+            'respond to incoming call' in text or 
+            'respond to my call' in text
+            ):
 
         if call.check_incoming_call() == True:
             calling_process = mp.Process(target=call.__main__)
@@ -62,25 +69,33 @@ def reply(text):
             return('no sir, there is no new call')
 
     # 2. send whatsapp message
-    elif 'send whatsapp message' in text or 'send message' in text or 'inform' in text or 'send a message' in text :
-        import tools.pywhatkit as pywhatkit
+    elif (  'send whatsapp message' in text or 
+            'send message' in text or 
+            'inform' in text or 
+            'send a message' in text
+            ):
+        from tools.pywhatkit import sendwhatmsg
 
         '''
         Type:
-             jarvis send a message to ayush bansal that i am fine
-             jarvis inform ayush bansal that i am fine           
-             jarvis inform kshitij that i am fine
+            jarvis send a message to ayush bansal that i am fine
+            jarvis inform ayush bansal that i am fine           
+            jarvis inform kshitij that i am fine
         '''
 
         def extract_msg(text : str):
-            output = {'number': '', 'message': ''}
+            output = {'name':'', 'number': '', 'message': ''}
 
-            out=text.replace('send a message to','')
-            out=text.replace('inform','')
+            if 'send a message' in text:
+                text = text.replace('send a message to','')
+            elif 'inform' in text:
+                text = text.replace('inform','')
 
-            extracted_data=out.split(' that ')
+            extracted_data=text.split(' that ')
 
-            R_name=extracted_data[0].lower()
+            R_name=(extracted_data[0].lower()).strip()
+            output.update({'name': str(R_name)})
+
             msg = extracted_data[1]
 
             output.update({'message': str(msg)})
@@ -93,36 +108,33 @@ def reply(text):
             list_contacts_data = list(contacts_data)
 
             for temp in list_contacts_data:
-                print('loop1')
                 import ast
                 names = ast.literal_eval(temp[0])
                 num=temp[1]
                 for temp2 in names:
-                    print('loop2')
                     if R_name in temp2:
-                        print('loop3')
                         output.update({'number': '+91' + str(num)})
                         contacts_data_open.close()
+                        print(output)
                         return output
-                    else:
-                        break
             print(output)
         
         try:
             info = extract_msg(text)
-            crt_hr = datetime.datetime.now().strftime("%H")
-            crt_min = datetime.datetime.now().strftime("%M")
+            crt_hr = int(datetime.datetime.now().strftime("%H"))
+            crt_min = int(datetime.datetime.now().strftime("%M"))
 
-            pywhatkit.sendwhatmsg ( phone_no = info['number'], 
-                                    message = info['message'],
-                                    time_hour = crt_hr, 
-                                    time_min = crt_min+2, 
-                                    tab_close=True
-                                    )
+            sendwhatmsg(phone_no = info['number'], 
+                        message = info['message'],
+                        time_hour = crt_hr, 
+                        time_min = crt_min+2, 
+                        tab_close=True
+                        )
             
             return('sir, now i have sent your message')
         
-        except:
+        except Exception as e:
+            print(e)
             return('sir, i could not send your message')
 
     else:
