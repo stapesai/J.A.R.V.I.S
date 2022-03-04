@@ -4,7 +4,7 @@ import datetime
 import pyautogui as pg
 
 # reply function
-def reply(text): 
+def reply(text : str): 
 
     if 'jarvis' == text:
         return('Yes sir')
@@ -136,7 +136,7 @@ def reply(text):
             return('Unknown error')
 
     # 5. play-pause music
-    elif ('play' in text or 'pause' in text):
+    elif ('play song' in text or 'pause song' in text or 'resume song' in text or 'play music' in text or 'pause music' in text or 'resume music' in text):
         pg.press('playpause')
         return('ok sir')
     
@@ -156,6 +156,14 @@ def reply(text):
         return('ok sir')
     
     # 9. change volume      --> future work
+    elif ('change volume' in text or 'set volume' in text):
+        
+        if 'change volume' in text:
+            text = text.replace('change volume to','')
+        elif 'set volume' in text:
+            text = text.replace('set volume to','')
+
+        return('This feature is still in development mode')
 
     else:
         return('This is not programmed yet.')

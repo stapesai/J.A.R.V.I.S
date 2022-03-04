@@ -129,7 +129,7 @@ def main(count=0):
         hotword_detection()
 
         count += 1
-        text = jarvis_voice_recognise()
+        text = jarvis_voice_recognise(ptlimit=5)
         ans = rep.reply(text)
         jarvis_speak(ans)
 
