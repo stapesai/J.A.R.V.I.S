@@ -1,2 +1,3 @@
 *.pyc
 features/download-videos/videos.csv
+logs/log.log

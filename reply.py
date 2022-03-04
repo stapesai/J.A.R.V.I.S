@@ -1,6 +1,7 @@
 import features.whatsapp.main_call as call
 import multiprocessing as mp
 import datetime
+import pyautogui as pg
 
 # reply function
 def reply(text): 
@@ -133,6 +134,28 @@ def reply(text):
         
         else:
             return('Unknown error')
+
+    # 5. play-pause music
+    elif ('play' in text or 'pause' in text):
+        pg.press('playpause')
+        return('ok sir')
+    
+    # 6. next song or next track
+    elif ('next song' in text or 'next track' in text or 'next music' in text):
+        pg.press('nexttrack')
+        return('ok sir')
+    
+    # 7. previous song or previous track
+    elif ('previous song' in text or 'previous track' in text or 'previous music' in text):
+        pg.press('prevtrack')
+        return('ok sir')
+    
+    # 8. mute or unmute music
+    elif ('mute' == text or 'unmute' == text):
+        pg.hotkey('volumemute')
+        return('ok sir')
+    
+    # 9. change volume      --> future work
 
     else:
         return('This is not programmed yet.')
