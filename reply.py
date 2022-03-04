@@ -74,13 +74,12 @@ def reply(text):
             'inform' in text or 
             'send a message' in text
             ):
-        from tools.pywhatkit import sendwhatmsg
+        import features.whatsapp.send_msg as send_message
 
         '''
         Type:
             jarvis send a message to ayush bansal that i am fine
-            jarvis inform ayush bansal that i am fine           
-            jarvis inform kshitij that i am fine
+            jarvis inform ayush bansal that i am fine
         '''
 
         def extract_msg(text : str):
@@ -121,21 +120,21 @@ def reply(text):
         
         try:
             info = extract_msg(text)
-            crt_hr = int(datetime.datetime.now().strftime("%H"))
-            crt_min = int(datetime.datetime.now().strftime("%M"))
 
-            sendwhatmsg(phone_no = info['number'], 
-                        message = info['message'],
-                        time_hour = crt_hr, 
-                        time_min = crt_min+2, 
-                        tab_close=True
-                        )
-            
-            return('sir, now i have sent your message')
-        
+            result = send_message.send_msg(phone_no = info['number'], 
+                                    message = info['message']
+                                    )
         except Exception as e:
-            print(e)
+            return e
+
+        if result == True:
+            return('sir, your message has been sent')
+        
+        elif result == False:
             return('sir, i could not send your message')
+        
+        else:
+            return('Unknown error')
 
     else:
         return('This is not programmed yet.')
