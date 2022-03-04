@@ -3,10 +3,9 @@ def send_msg(phone_no: str, message: str, file_name: str = 'WhatsappMsg_DB.log')
         import webbrowser
         webbrowser.open("https://web.whatsapp.com/send?phone=" + phone_no + "&text=" + message)
         from time import sleep
-        sleep(8)
-        from pyautogui import click, hotkey, position, press
-        WIDTH, HEIGHT = position()
-        click(x=WIDTH / 2, y=HEIGHT / 2)
+        sleep(6)
+        from pyautogui import click, hotkey, press
+        click(x=1113, y=1029)
         sleep(1)
         press("enter")
         sleep(3)
