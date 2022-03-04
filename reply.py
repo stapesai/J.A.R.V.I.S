@@ -152,12 +152,12 @@ def reply(text : str):
     
     # 8. mute or unmute music
     elif ('mute' == text or 'unmute' == text):
-        pg.hotkey('volumemute')
+        pg.press('volumemute')
         return('ok sir')
     
     # 9. change volume      --> future work
     elif ('change volume' in text or 'set volume' in text):
-        
+
         if 'change volume' in text:
             text = text.replace('change volume to','')
         elif 'set volume' in text:
