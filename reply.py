@@ -121,9 +121,7 @@ def reply(text):
         try:
             info = extract_msg(text)
 
-            result = send_message.send_msg(phone_no = info['number'], 
-                                    message = info['message']
-                                    )
+            result = send_message.send_msg(phone_no = info['number'], message = info['message'], file_name='logs\WhatsappMsg_DB.log')
         except Exception as e:
             return e
 
