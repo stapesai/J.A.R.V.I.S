@@ -1,6 +1,7 @@
 import features.whatsapp.main_call as call
 import multiprocessing as mp
 import datetime
+import time
 
 # reply function
 def reply(text): 
@@ -43,7 +44,38 @@ def reply(text):
 
     elif 'could not understand what you said' in text:
         return('Could not understand what you said')
-    
+
+    elif 'set a timer for' in text:
+        import webbrowser
+        text=text.replace('set a timer for','')
+        text=text.replace('minutes','')
+        text=text.replace('seconds','')
+        new_TEXT=text.split('and')
+        if len(new_TEXT) == 1:
+            secs='0'
+        else:
+            secs=str(new_TEXT[1])
+            pass
+        mins=str(new_TEXT[0])
+        url='https://www.google.com/search?q=timer+'+mins+'+min+'+secs+'+sec&oq=timer+2+min+20+sec&aqs=chrome..69i57.4505j0j1&sourceid=chrome&ie=UTF-8'
+        webbrowser.open(url)
+        return( 'sir , timer has been started for',mins,'minutes','and',secs,'seconds')
+
+    elif 'remind me' in text:
+        import webbrowser
+        text=text.replace('remind me after','')
+        text=text.replace('minutes','')
+        text=text.replace('seconds','')
+        new_TEXT=text.split('and')
+        if len(new_TEXT) == 1:
+            secs='0'
+        else:
+            secs=str(new_TEXT[1])
+            pass
+        mins=str(new_TEXT[0])
+        url='https://www.google.com/search?q=timer+'+mins+'+min+'+secs+'+sec&oq=timer+2+min+20+sec&aqs=chrome..69i57.4505j0j1&sourceid=chrome&ie=UTF-8'
+        webbrowser.open(url)
+        return( 'ok sir , I will remind you after',mins,'minutes','and',secs,'seconds')
     # Features
     # 1. attending to calls
     elif (  'attend my call' in text or 
@@ -120,7 +152,7 @@ def reply(text):
         
         try:
             info = extract_msg(text)
-
+            
             result = send_message.send_msg(phone_no = info['number'], 
                                     message = info['message']
                                     )

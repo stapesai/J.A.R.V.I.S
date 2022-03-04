@@ -3,13 +3,13 @@ def send_msg(phone_no: str, message: str):
         import webbrowser
         webbrowser.open("https://web.whatsapp.com/send?phone=" + phone_no + "&text=" + message)
         from time import sleep
-        sleep(5)
+        sleep(8)
         from pyautogui import click, hotkey, position, press
         WIDTH, HEIGHT = position()
         click(x=WIDTH / 2, y=HEIGHT / 2)
-        sleep(0.5)
-        press("enter")
         sleep(1)
+        press("enter")
+        sleep(3)
         hotkey("ctrl", "w")
         
         # appending to database
