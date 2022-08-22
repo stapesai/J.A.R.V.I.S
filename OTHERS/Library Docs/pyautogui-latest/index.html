@@ -1,0 +1,1085 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PyAutoGUI documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html#document-index" class="icon icon-home"> PyAutoGUI
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-install">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#macos">macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-quickstart">Cheat Sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#general-functions">General Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#fail-safes">Fail-Safes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mouse-functions">Mouse Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#keyboard-functions">Keyboard Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#message-box-functions">Message Box Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#screenshot-functions">Screenshot Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-mouse">Mouse Control Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-screen-and-mouse-position">The Screen and Mouse Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mouse-movement">Mouse Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mouse-drags">Mouse Drags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tween-easing-functions">Tween / Easing Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mouse-clicks">Mouse Clicks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-mousedown-and-mouseup-functions">The mouseDown() and mouseUp() Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mouse-scrolling">Mouse Scrolling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-keyboard">Keyboard Control Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-write-function">The write() Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-press-keydown-and-keyup-functions">The press(), keyDown(), and keyUp() Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-hold-context-manager">The hold() Context Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-hotkey-function">The hotkey() Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#keyboard-keys">KEYBOARD_KEYS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-msgbox">Message Box Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-alert-function">The alert() Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-confirm-function">The confirm() Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-prompt-function">The prompt() Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-password-function">The password() Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-screenshot">Screenshot Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-screenshot-function">The screenshot() Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-locate-functions">The Locate Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-tests">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#platforms-tested">Platforms Tested</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-roadmap">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-source/modules">pyautogui</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-source/pyautogui">pyautogui package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html#document-index">PyAutoGUI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html#document-index">Docs</a> &raquo;</li>
+        
+      <li>PyAutoGUI  documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/asweigart/pyautogui/blob/master/docs/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-pyautogui-s-documentation">
+<h1>Welcome to PyAutoGUI’s documentation!<a class="headerlink" href="#welcome-to-pyautogui-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>PyAutoGUI lets your Python scripts control the mouse and keyboard to automate interactions with other applications. The API is designed to be simple. PyAutoGUI works on Windows, macOS, and Linux, and runs on Python 2 and 3.</p>
+<p>To install with pip, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code>. See the <a class="reference internal" href="index.html#document-install"><span class="doc">Installation</span></a> page for more details.</p>
+<p>The source code is available on: <a class="reference external" href="https://github.com/asweigart/pyautogui">https://github.com/asweigart/pyautogui</a></p>
+<p>PyAutoGUI has several features:</p>
+<ul class="simple">
+<li>Moving the mouse and clicking in the windows of other applications.</li>
+<li>Sending keystrokes to applications (for example, to fill out forms).</li>
+<li>Take screenshots, and given an image (for example, of a button or checkbox), and find it on the screen.</li>
+<li>Locate an application’s window, and move, resize, maximize, minimize, or close it (Windows-only, currently).</li>
+<li>Display alert and message boxes.</li>
+</ul>
+<p>Here’s <a class="reference external" href="https://www.youtube.com/watch?v=lfk_T6VKhTE">a YouTube video of a bot automatically playing the game Sushi Go Round</a>. The bot watches the game’s application window and searches for images of sushi orders. When it finds one, it clicks the ingredient buttons to make the sushi. It also clicks the phone in the game to order more ingredients as needed. The bot is completely autonomous and can finish all seven days of the game. This is the kind of automation that PyAutoGUI is capable of.</p>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screenWidth</span><span class="p">,</span> <span class="n">screenHeight</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="c1"># Get the size of the primary monitor.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screenWidth</span><span class="p">,</span> <span class="n">screenHeight</span>
+<span class="go">(2560, 1440)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">currentMouseX</span><span class="p">,</span> <span class="n">currentMouseY</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">position</span><span class="p">()</span> <span class="c1"># Get the XY position of the mouse.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">currentMouseX</span><span class="p">,</span> <span class="n">currentMouseY</span>
+<span class="go">(1314, 345)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># Move the mouse to XY coordinates.</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>          <span class="c1"># Click the mouse.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># Move the mouse to XY coordinates and click it.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button.png&#39;</span><span class="p">)</span> <span class="c1"># Find where button.png appears on the screen and click it.</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>      <span class="c1"># Move the mouse 400 pixels to the right of its current position.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">doubleClick</span><span class="p">()</span>     <span class="c1"># Double click the mouse.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">tween</span><span class="o">=</span><span class="n">pyautogui</span><span class="o">.</span><span class="n">easeInOutQuad</span><span class="p">)</span>  <span class="c1"># Use tweening/easing function to move mouse over 2 seconds.</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># type with quarter-second pause in between each key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;esc&#39;</span><span class="p">)</span>     <span class="c1"># Press the Esc key. All key names are in pyautogui.KEY_NAMES</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">hold</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">):</span>  <span class="c1"># Press the Shift key down and hold it.</span>
+<span class="go">        pyautogui.press([&#39;left&#39;, &#39;left&#39;, &#39;left&#39;, &#39;left&#39;])  # Press the left arrow key 4 times.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Shift key is released automatically.</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">hotkey</span><span class="p">(</span><span class="s1">&#39;ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="c1"># Press the Ctrl-C hotkey combination.</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">alert</span><span class="p">(</span><span class="s1">&#39;This is the message to display.&#39;</span><span class="p">)</span> <span class="c1"># Make an alert box appear and pause the program until OK is clicked.</span>
+</pre></div>
+</div>
+<p>This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">distance</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="go">        pyautogui.drag(distance, 0, duration=0.5)   # move right</span>
+<span class="go">        distance -= 5</span>
+<span class="go">        pyautogui.drag(0, distance, duration=0.5)   # move down</span>
+<span class="go">        pyautogui.drag(-distance, 0, duration=0.5)  # move left</span>
+<span class="go">        distance -= 5</span>
+<span class="go">        pyautogui.drag(0, -distance, duration=0.5)  # move up</span>
+</pre></div>
+</div>
+<img alt="_images/square_spiral.png" src="_images/square_spiral.png" />
+<p>The benefit of using PyAutoGUI, as opposed to a script that directly generates the image file, is that you can use the brush tools that MS Paint provides.</p>
+</div>
+<div class="section" id="faq-frequently-asked-questions">
+<h1>FAQ: Frequently Asked Questions<a class="headerlink" href="#faq-frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<p>Send questions to <a class="reference external" href="mailto:al&#37;&#52;&#48;inventwithpython&#46;com">al<span>&#64;</span>inventwithpython<span>&#46;</span>com</a></p>
+<p><strong>Q: Can PyAutoGUI work on Android, iOS, or tablet/smartphone apps.</strong></p>
+<p>A: Unfortunately no. PyAutoGUI only runs on Windows, macOS, and Linux.</p>
+<p><strong>Q: Does PyAutoGUI work on multi-monitor setups.</strong></p>
+<p>A: No, right now PyAutoGUI only handles the primary monitor.</p>
+<p><strong>Q: Does PyAutoGUI do OCR?</strong></p>
+<p>A: No, but this is a feature that’s on the roadmap.</p>
+<p><strong>Q: Can PyAutoGUI do keylogging, or detect if a key is currently pressed down?</strong></p>
+<p>A: No, PyAutoGUI cannot do this currently.</p>
+</div>
+<div class="section" id="fail-safes">
+<h1>Fail-Safes<a class="headerlink" href="#fail-safes" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/sorcerers_apprentice_brooms.png" src="_images/sorcerers_apprentice_brooms.png" />
+<p>Like the enchanted brooms from the Sorcerer’s Apprentice programmed to keep filling (and then overfilling) the bath with water, a bug in your program could make it go out of control. It’s hard to use the mouse to close a program if the mouse cursor is moving around on its own.</p>
+<p>As a safety feature, a fail-safe feature is enabled by default. When a PyAutoGUI function is called, if the mouse is in any of the four corners of the primary monitor, they will raise a <code class="docutils literal notranslate"><span class="pre">pyautogui.FailSafeException</span></code>. There is a one-tenth second delay after calling every PyAutoGUI functions to give the user time to slam the mouse into a corner to trigger the fail safe.</p>
+<p>You can disable this failsafe by setting <code class="docutils literal notranslate"><span class="pre">pyautogui.FAILSAFE</span> <span class="pre">=</span> <span class="pre">False</span></code>. <strong>I HIGHLY RECOMMEND YOU DO NOT DISABLE THE FAILSAFE.</strong></p>
+<p>The tenth-second delay is set by the <code class="docutils literal notranslate"><span class="pre">pyautogui.PAUSE</span></code> setting, which is <code class="docutils literal notranslate"><span class="pre">0.1</span></code> by default. You can change this value. There is also a <code class="docutils literal notranslate"><span class="pre">pyautogui.DARWIN_CATCH_UP_TIME</span></code> setting which adds an additional delay on macOS after keyboard and mouse events, since the operating system appears to need a delay after PyAutoGUI issues these events. It is set to <code class="docutils literal notranslate"><span class="pre">0.01</span></code> by default, adding an additional hundredth-second delay.</p>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<span id="document-install"></span><div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install PyAutoGUI, install the <code class="code docutils literal notranslate"><span class="pre">pyautogui</span></code> package from PyPI by running <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code> (on Windows) or <code class="code docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code> (on macOS and Linux). (On macOS and Linux, <code class="code docutils literal notranslate"><span class="pre">pip</span></code> refers to Python 2’s pip tool.)</p>
+<p>OS-specific instructions are below.</p>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>On Windows, you can use the <code class="docutils literal notranslate"><span class="pre">py.exe</span></code> program to run the latest version of Python:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code></div></blockquote>
+<p>If you have multiple versions of Python installed, you can select which one with a command line argument to <code class="docutils literal notranslate"><span class="pre">py</span></code>. For example, for Python 3.8, run:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-3.8</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code></div></blockquote>
+<p>(This is the same as running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code>.)</p>
+</div>
+<div class="section" id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
+<p>On macOS and Linux, you need to run <code class="docutils literal notranslate"><span class="pre">python3</span></code>:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code></div></blockquote>
+<p>If you are running El Capitan and have problems installing pyobjc try:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">MACOSX_DEPLOYMENT_TARGET=10.11</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyobjc</span></code></div></blockquote>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p>On macOS and Linux, you need to run <code class="docutils literal notranslate"><span class="pre">python3</span></code>:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code></div></blockquote>
+<p>On Linux, additionally you need to install the <code class="docutils literal notranslate"><span class="pre">scrot</span></code> application, as well as Tkinter:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">scrot</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-tk</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-dev</span></code></p>
+</div></blockquote>
+<p>PyAutoGUI install the modules it depends on, including PyTweening, PyScreeze, PyGetWindow, PymsgBox, and MouseInfo.</p>
+</div>
+</div>
+<span id="document-quickstart"></span><div class="section" id="cheat-sheet">
+<h2>Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permalink to this headline">¶</a></h2>
+<p>This is a quickstart reference to using PyAutoGUI. PyAutoGUI is cross-platform GUI automation module that works on Python 2 &amp; 3. You can control the mouse and keyboard as well as perform basic image recognition to automate tasks on your computer.</p>
+<p><strong>All the keyword arguments in the examples on this page are optional.</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+</pre></div>
+</div>
+<p>PyAutoGUI works on Windows/Mac/Linux and on Python 2 &amp; 3. Install from PyPI with <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyautogui</span></code>.</p>
+<div class="section" id="general-functions">
+<h3>General Functions<a class="headerlink" href="#general-functions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>  <span class="c1"># current mouse x and y</span>
+<span class="go">(968, 56)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>  <span class="c1"># current screen resolution width and height</span>
+<span class="go">(1920, 1080)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">onScreen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># True if x &amp; y are within the screen.</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fail-safes">
+<h3>Fail-Safes<a class="headerlink" href="#fail-safes" title="Permalink to this headline">¶</a></h3>
+<p>Set up a 2.5 second pause after each PyAutoGUI call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">PAUSE</span> <span class="o">=</span> <span class="mf">2.5</span>
+</pre></div>
+</div>
+<p>When fail-safe mode is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, moving the mouse to the upper-left will raise a <code class="code docutils literal notranslate"><span class="pre">pyautogui.FailSafeException</span></code> that can abort your program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">FAILSAFE</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mouse-functions">
+<h3>Mouse Functions<a class="headerlink" href="#mouse-functions" title="Permalink to this headline">¶</a></h3>
+<p>XY coordinates have 0, 0 origin at top left corner of the screen. X increases going right, Y increases going down.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">num_seconds</span><span class="p">)</span>  <span class="c1"># move mouse to XY coordinates over num_second seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveRel</span><span class="p">(</span><span class="n">xOffset</span><span class="p">,</span> <span class="n">yOffset</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">num_seconds</span><span class="p">)</span>  <span class="c1"># move mouse relative to its current position</span>
+</pre></div>
+</div>
+<p>If <code class="code docutils literal notranslate"><span class="pre">duration</span></code> is 0 or unspecified, movement is immediate. Note: dragging on Mac can’t be immediate.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">dragTo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">num_seconds</span><span class="p">)</span>  <span class="c1"># drag mouse to XY</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">dragRel</span><span class="p">(</span><span class="n">xOffset</span><span class="p">,</span> <span class="n">yOffset</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">num_seconds</span><span class="p">)</span>  <span class="c1"># drag mouse relative to its current position</span>
+</pre></div>
+</div>
+<p>Calling <code class="code docutils literal notranslate"><span class="pre">click()</span></code> just clicks the mouse once with the left button at the mouse’s current location, but the keyword arguments can change that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">,</span> <span class="n">clicks</span><span class="o">=</span><span class="n">num_of_clicks</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">secs_between_clicks</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">button</span></code> keyword argument can be <code class="code docutils literal notranslate"><span class="pre">'left'</span></code>, <code class="code docutils literal notranslate"><span class="pre">'middle'</span></code>, or <code class="code docutils literal notranslate"><span class="pre">'right'</span></code>.</p>
+<p>All clicks can be done with <code class="code docutils literal notranslate"><span class="pre">click()</span></code>, but these functions exist for readability. Keyword args are optional:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">rightClick</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">middleClick</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">doubleClick</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">tripleClick</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Positive scrolling will scroll up, negative scrolling will scroll down:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">amount_to_scroll</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Individual button down and up events can be called separately:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">mouseDown</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">mouseUp</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">moveToX</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moveToY</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keyboard-functions">
+<h3>Keyboard Functions<a class="headerlink" href="#keyboard-functions" title="Permalink to this headline">¶</a></h3>
+<p>Key presses go to wherever the keyboard cursor is at function-calling time.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">typewrite</span><span class="p">(</span><span class="s1">&#39;Hello world!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">secs_between_keys</span><span class="p">)</span>  <span class="c1"># useful for entering text, newline is Enter</span>
+</pre></div>
+</div>
+<p>A list of key names can be passed too:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">typewrite</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;backspace&#39;</span><span class="p">,</span> <span class="s1">&#39;enter&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">],</span> <span class="n">interval</span><span class="o">=</span><span class="n">secs_between_keys</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full list of key names is in <code class="code docutils literal notranslate"><span class="pre">pyautogui.KEYBOARD_KEYS</span></code>.</p>
+<p>Keyboard hotkeys like Ctrl-S or Ctrl-Shift-1 can be done by passing a list of key names to <code class="code docutils literal notranslate"><span class="pre">hotkey()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">hotkey</span><span class="p">(</span><span class="s1">&#39;ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>  <span class="c1"># ctrl-c to copy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">hotkey</span><span class="p">(</span><span class="s1">&#39;ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>  <span class="c1"># ctrl-v to paste</span>
+</pre></div>
+</div>
+<p>Individual button down and up events can be called separately:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyDown</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyUp</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="message-box-functions">
+<h3>Message Box Functions<a class="headerlink" href="#message-box-functions" title="Permalink to this headline">¶</a></h3>
+<p>If you need to pause the program until the user clicks OK on something, or want to display some information to the user, the message box functions have similar names that JavaScript has:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">alert</span><span class="p">(</span><span class="s1">&#39;This displays some text with an OK button.&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">confirm</span><span class="p">(</span><span class="s1">&#39;This displays text and has an OK and Cancel button.&#39;</span><span class="p">)</span>
+<span class="go">&#39;OK&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="s1">&#39;This lets the user type in a string and press OK.&#39;</span><span class="p">)</span>
+<span class="go">&#39;This is what I typed in.&#39;</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">prompt()</span></code> function will return <code class="code docutils literal notranslate"><span class="pre">None</span></code> if the user clicked Cancel.</p>
+</div>
+<div class="section" id="screenshot-functions">
+<h3>Screenshot Functions<a class="headerlink" href="#screenshot-functions" title="Permalink to this headline">¶</a></h3>
+<p>PyAutoGUI uses Pillow/PIL for its image-related data.</p>
+<p>On Linux, you must run <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">scrot</span></code> to use the screenshot features.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">screenshot</span><span class="p">()</span>  <span class="c1"># returns a Pillow/PIL Image object</span>
+<span class="go">&lt;PIL.Image.Image image mode=RGB size=1920x1080 at 0x24C3EF0&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;foo.png&#39;</span><span class="p">)</span>  <span class="c1"># returns a Pillow/PIL Image object, and saves it to a file</span>
+<span class="go">&lt;PIL.Image.Image image mode=RGB size=1920x1080 at 0x31AA198&gt;</span>
+</pre></div>
+</div>
+<p>If you have an image file of something you want to click on, you can find it on the screen with <code class="code docutils literal notranslate"><span class="pre">locateOnScreen()</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">locateOnScreen</span><span class="p">(</span><span class="s1">&#39;looksLikeThis.png&#39;</span><span class="p">)</span>  <span class="c1"># returns (left, top, width, height) of first place it is found</span>
+<span class="go">(863, 417, 70, 13)</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">locateAllOnScreen()</span></code> function will return a generator for all the locations it is found on the screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">locateAllOnScreen</span><span class="p">(</span><span class="s1">&#39;looksLikeThis.png&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">...</span>
+<span class="go">(863, 117, 70, 13)</span>
+<span class="go">(623, 137, 70, 13)</span>
+<span class="go">(853, 577, 70, 13)</span>
+<span class="go">(883, 617, 70, 13)</span>
+<span class="go">(973, 657, 70, 13)</span>
+<span class="go">(933, 877, 70, 13)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">pyautogui</span><span class="o">.</span><span class="n">locateAllOnScreen</span><span class="p">(</span><span class="s1">&#39;looksLikeThis.png&#39;</span><span class="p">))</span>
+<span class="go">[(863, 117, 70, 13), (623, 137, 70, 13), (853, 577, 70, 13), (883, 617, 70, 13), (973, 657, 70, 13), (933, 877, 70, 13)]</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">locateCenterOnScreen()</span></code> function just returns the XY coordinates of the middle of where the image is found on the screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">locateCenterOnScreen</span><span class="p">(</span><span class="s1">&#39;looksLikeThis.png&#39;</span><span class="p">)</span>  <span class="c1"># returns center x and y</span>
+<span class="go">(898, 423)</span>
+</pre></div>
+</div>
+<p>These functions return <code class="code docutils literal notranslate"><span class="pre">None</span></code> if the image couldn’t be found on the screen.</p>
+<p>Note: The locate functions are slow and can take a full second or two.</p>
+</div>
+</div>
+<span id="document-mouse"></span><div class="section" id="mouse-control-functions">
+<h2>Mouse Control Functions<a class="headerlink" href="#mouse-control-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-screen-and-mouse-position">
+<h3>The Screen and Mouse Position<a class="headerlink" href="#the-screen-and-mouse-position" title="Permalink to this headline">¶</a></h3>
+<p>Locations on your screen are referred to by X and Y Cartesian coordinates. The X coordinate starts at 0 on the left side and increases going right. Unlike in mathematics, the Y coordinate starts at 0 on the top and increases going down.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="n">X</span> <span class="n">increases</span> <span class="o">--&gt;</span>
+<span class="o">+---------------------------+</span>
+<span class="o">|</span>                           <span class="o">|</span> <span class="n">Y</span> <span class="n">increases</span>
+<span class="o">|</span>                           <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>   <span class="mi">1920</span> <span class="n">x</span> <span class="mi">1080</span> <span class="n">screen</span>      <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>                           <span class="o">|</span>     <span class="n">V</span>
+<span class="o">|</span>                           <span class="o">|</span>
+<span class="o">|</span>                           <span class="o">|</span>
+<span class="o">+---------------------------+</span> <span class="mi">1919</span><span class="p">,</span> <span class="mi">1079</span>
+</pre></div>
+</div>
+<p>The pixel at the top-left corner is at coordinates 0, 0. If your screen’s resolution is 1920 x 1080, the pixel in the lower right corner will be 1919, 1079 (since the coordinates begin at 0, not 1).</p>
+<p>The screen resolution size is returned by the <code class="docutils literal notranslate"><span class="pre">size()</span></code> function as a tuple of two integers. The current X and Y coordinates of the mouse cursor are returned by the <code class="docutils literal notranslate"><span class="pre">position()</span></code> function.</p>
+<p>For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">(1920, 1080)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(187, 567)</span>
+</pre></div>
+</div>
+<p>Here is a short Python 3 program that will constantly print out the position of the mouse cursor:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#! python3</span>
+<span class="kn">import</span> <span class="nn">pyautogui</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Press Ctrl-C to quit.&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+        <span class="n">positionStr</span> <span class="o">=</span> <span class="s1">&#39;X: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Y: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">positionStr</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">positionStr</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is the Python 2 version:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#! python</span>
+<span class="kn">import</span> <span class="nn">pyautogui</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Press Ctrl-C to quit.&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+        <span class="n">positionStr</span> <span class="o">=</span> <span class="s1">&#39;X: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Y: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="n">positionStr</span><span class="p">,</span>
+        <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\b</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positionStr</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>To check if XY coordinates are on the screen, pass them (either as two integer arguments or a single tuple/list arguments with two integers) to the <code class="docutils literal notranslate"><span class="pre">onScreen()</span></code> function, which will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if they are within the screen’s boundaries and <code class="docutils literal notranslate"><span class="pre">False</span></code> if not. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">onScreen</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">onScreen</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">onScreen</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">99999999</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">(1920, 1080)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">onScreen</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">onScreen</span><span class="p">(</span><span class="mi">1919</span><span class="p">,</span> <span class="mi">1079</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mouse-movement">
+<h3>Mouse Movement<a class="headerlink" href="#mouse-movement" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">moveTo()</span></code> function will move the mouse cursor to the X and Y integer coordinates you pass it. The <code class="docutils literal notranslate"><span class="pre">None</span></code> value can be passed for a coordinate to mean “the current mouse cursor position”. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># moves mouse to X of 100, Y of 200.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>  <span class="c1"># moves mouse to X of 100, Y of 500.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>  <span class="c1"># moves mouse to X of 600, Y of 500.</span>
+</pre></div>
+</div>
+<p>Normally the mouse cursor will instantly move to the new coordinates. If you want the mouse to gradually move to the new location, pass a third argument for the duration (in seconds) the movement should take. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># moves mouse to X of 100, Y of 200 over 2 seconds</span>
+</pre></div>
+</div>
+<p>(If the duration is less than <code class="docutils literal notranslate"><span class="pre">pyautogui.MINIMUM_DURATION</span></code> the movement will be instant. By default, <code class="docutils literal notranslate"><span class="pre">pyautogui.MINIMUM_DURATION</span></code> is 0.1.)</p>
+<p>If you want to move the mouse cursor over a few pixels <em>relative</em> to its current position, use the <code class="docutils literal notranslate"><span class="pre">move()</span></code> function. This function has similar parameters as <code class="docutils literal notranslate"><span class="pre">moveTo()</span></code>. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># moves mouse to X of 100, Y of 200.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>       <span class="c1"># move the mouse down 50 pixels.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>      <span class="c1"># move the mouse left 30 pixels.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>   <span class="c1"># move the mouse left 30 pixels.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mouse-drags">
+<h3>Mouse Drags<a class="headerlink" href="#mouse-drags" title="Permalink to this headline">¶</a></h3>
+<p>PyAutoGUI’s <code class="docutils literal notranslate"><span class="pre">dragTo()</span></code> and <code class="docutils literal notranslate"><span class="pre">drag()</span></code> functions have similar parameters as the <code class="docutils literal notranslate"><span class="pre">moveTo()</span></code> and <code class="docutils literal notranslate"><span class="pre">move()</span></code> functions. In addition, they have a <code class="docutils literal notranslate"><span class="pre">button</span></code> keyword which can be set to <code class="docutils literal notranslate"><span class="pre">'left'</span></code>, <code class="docutils literal notranslate"><span class="pre">'middle'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'right'</span></code> for which mouse button to hold down while dragging. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">dragTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># drag mouse to X of 100, Y of 200 while holding down left mouse button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">dragTo</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>  <span class="c1"># drag mouse to X of 300, Y of 400 over 2 seconds while holding down left mouse button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">drag</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>   <span class="c1"># drag the mouse left 30 pixels over 2 seconds while holding down the right mouse button</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tween-easing-functions">
+<h3>Tween / Easing Functions<a class="headerlink" href="#tween-easing-functions" title="Permalink to this headline">¶</a></h3>
+<p>Tweening is an extra feature to make the mouse movements fancy. You can probably skip this section if you don’t care about this.</p>
+<p>A tween or easing function dictates the progress of the mouse as it moves to its destination. Normally when moving the mouse over a duration of time, the mouse moves directly towards the destination in a straight line at a constant speed. This is known as a <em>linear tween</em> or <em>linear easing</em> function.</p>
+<p>PyAutoGUI has other tweening functions available in the <code class="docutils literal notranslate"><span class="pre">pyautogui</span></code> module. The <code class="docutils literal notranslate"><span class="pre">pyautogui.easeInQuad</span></code> function can be passed for the 4th argument to <code class="docutils literal notranslate"><span class="pre">moveTo()</span></code>, <code class="docutils literal notranslate"><span class="pre">move()</span></code>, <code class="docutils literal notranslate"><span class="pre">dragTo()</span></code>, and <code class="docutils literal notranslate"><span class="pre">drag()</span></code> functions to have the mouse cursor start off moving slowly and then speeding up towards the destination. The total duration is still the same as the argument passed to the function. The <code class="docutils literal notranslate"><span class="pre">pyautogui.easeOutQuad</span></code> is the reverse: the mouse cursor starts moving fast but slows down as it approaches the destination. The <code class="docutils literal notranslate"><span class="pre">pyautogui.easeOutElastic</span></code> will overshoot the destination and “rubber band” back and forth until it settles at the destination.</p>
+<p>For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">easeInQuad</span><span class="p">)</span>     <span class="c1"># start slow, end fast</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">easeOutQuad</span><span class="p">)</span>    <span class="c1"># start fast, end slow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">easeInOutQuad</span><span class="p">)</span>  <span class="c1"># start and end fast, slow in middle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">easeInBounce</span><span class="p">)</span>   <span class="c1"># bounce at the end</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">easeInElastic</span><span class="p">)</span>  <span class="c1"># rubber band at the end</span>
+</pre></div>
+</div>
+<p>These tweening functions are copied from Al Sweigart’s PyTweening module: <a class="reference external" href="https://pypi.python.org/pypi/PyTweening">https://pypi.python.org/pypi/PyTweening</a> <a class="reference external" href="https://github.com/asweigart/pytweening">https://github.com/asweigart/pytweening</a> This module does not have to be installed to use the tweening functions.</p>
+<p>If you want to create your own tweening function, define a function that takes a single float argument between <code class="docutils literal notranslate"><span class="pre">0.0</span></code> (representing the start of the mouse travelling) and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> (representing the end of the mouse travelling) and returns a float value between <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
+</div>
+<div class="section" id="mouse-clicks">
+<h3>Mouse Clicks<a class="headerlink" href="#mouse-clicks" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">click()</span></code> function simulates a single, left-button mouse click at the mouse’s current position. A “click” is defined as pushing the button down and then releasing it up. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>  <span class="c1"># click the mouse</span>
+</pre></div>
+</div>
+<p>To combine a <code class="docutils literal notranslate"><span class="pre">moveTo()</span></code> call before the click, pass integers for the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> keyword argument:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># move to 100, 200, then click the left mouse button.</span>
+</pre></div>
+</div>
+<p>To specify a different mouse button to click, pass <code class="docutils literal notranslate"><span class="pre">'left'</span></code>, <code class="docutils literal notranslate"><span class="pre">'middle'</span></code>, or  <code class="docutils literal notranslate"><span class="pre">'right'</span></code> for the <code class="docutils literal notranslate"><span class="pre">button</span></code> keyword argument:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">button</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>  <span class="c1"># right-click the mouse</span>
+</pre></div>
+</div>
+<p>To do multiple clicks, pass an integer to the <code class="docutils literal notranslate"><span class="pre">clicks</span></code> keyword argument. Optionally, you can pass a float or integer to the <code class="docutils literal notranslate"><span class="pre">interval</span></code> keyword argument to specify the amount of pause between the clicks in seconds. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">clicks</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># double-click the left mouse button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">clicks</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># double-click the left mouse button, but with a quarter second pause in between clicks</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">button</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">clicks</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1">## triple-click the right mouse button with a quarter second pause in between clicks</span>
+</pre></div>
+</div>
+<p>As a convenient shortcut, the <code class="docutils literal notranslate"><span class="pre">doubleClick()</span></code> function will perform a double click of the left mouse button. It also has the optional <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">interval</span></code>, and <code class="docutils literal notranslate"><span class="pre">button</span></code> keyword arguments. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">doubleClick</span><span class="p">()</span>  <span class="c1"># perform a left-button double click</span>
+</pre></div>
+</div>
+<p>There is also a <code class="docutils literal notranslate"><span class="pre">tripleClick()</span></code> function with similar optional keyword arguments.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rightClick()</span></code> function has optional <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> keyword arguments.</p>
+</div>
+<div class="section" id="the-mousedown-and-mouseup-functions">
+<h3>The mouseDown() and mouseUp() Functions<a class="headerlink" href="#the-mousedown-and-mouseup-functions" title="Permalink to this headline">¶</a></h3>
+<p>Mouse clicks and drags are composed of both pressing the mouse button down and releasing it back up. If you want to perform these actions separately, call the <code class="docutils literal notranslate"><span class="pre">mouseDown()</span></code> and <code class="docutils literal notranslate"><span class="pre">mouseUp()</span></code> functions. They have the same <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">button</span></code>. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">mouseDown</span><span class="p">();</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">mouseUp</span><span class="p">()</span>  <span class="c1"># does the same thing as a left-button mouse click</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">mouseDown</span><span class="p">(</span><span class="n">button</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>  <span class="c1"># press the right button down</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">mouseUp</span><span class="p">(</span><span class="n">button</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># move the mouse to 100, 200, then release the right button up.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mouse-scrolling">
+<h3>Mouse Scrolling<a class="headerlink" href="#mouse-scrolling" title="Permalink to this headline">¶</a></h3>
+<p>The mouse scroll wheel can be simulated by calling the <code class="docutils literal notranslate"><span class="pre">scroll()</span></code> function and passing an integer number of “clicks” to scroll. The amount of scrolling in a “click” varies between platforms. Optionally, integers can be passed for the the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> keyword arguments to move the mouse cursor before performing the scroll. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># scroll up 10 &quot;clicks&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># scroll down 10 &quot;clicks&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># move mouse cursor to 100, 200, then scroll up 10 &quot;clicks&quot;</span>
+</pre></div>
+</div>
+<p>On OS X and Linux platforms, PyAutoGUI can also perform horizontal scrolling by calling the hscroll() function. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">hscroll</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># scroll right 10 &quot;clicks&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">hscroll</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># scroll left 10 &quot;clicks&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">scroll()</span></code> function is a wrapper for <code class="docutils literal notranslate"><span class="pre">vscroll()</span></code>, which performs vertical scrolling.</p>
+</div>
+</div>
+<span id="document-keyboard"></span><div class="section" id="keyboard-control-functions">
+<h2>Keyboard Control Functions<a class="headerlink" href="#keyboard-control-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-write-function">
+<h3>The write() Function<a class="headerlink" href="#the-write-function" title="Permalink to this headline">¶</a></h3>
+<p>The primary keyboard function is <code class="docutils literal notranslate"><span class="pre">write()</span></code>. This function will type the characters in the string that is passed. To add a delay interval in between pressing each character key, pass an int or float for the <code class="docutils literal notranslate"><span class="pre">interval</span></code> keyword argument.</p>
+<p>For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>                 <span class="c1"># prints out &quot;Hello world!&quot; instantly</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># prints out &quot;Hello world!&quot; with a quarter second delay after each character</span>
+</pre></div>
+</div>
+<p>You can only press single-character keys with <code class="docutils literal notranslate"><span class="pre">write()</span></code>, so you can’t press the Shift or F1 keys, for example.</p>
+</div>
+<div class="section" id="the-press-keydown-and-keyup-functions">
+<h3>The press(), keyDown(), and keyUp() Functions<a class="headerlink" href="#the-press-keydown-and-keyup-functions" title="Permalink to this headline">¶</a></h3>
+<p>To press these keys, call the <code class="docutils literal notranslate"><span class="pre">press()</span></code> function and pass it a string from the <code class="docutils literal notranslate"><span class="pre">pyautogui.KEYBOARD_KEYS</span></code> such as <code class="docutils literal notranslate"><span class="pre">enter</span></code>, <code class="docutils literal notranslate"><span class="pre">esc</span></code>, <code class="docutils literal notranslate"><span class="pre">f1</span></code>. See <a class="reference internal" href="#keyboard-keys">KEYBOARD_KEYS</a>.</p>
+<p>For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;enter&#39;</span><span class="p">)</span>  <span class="c1"># press the Enter key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;f1&#39;</span><span class="p">)</span>     <span class="c1"># press the F1 key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>   <span class="c1"># press the left arrow key</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">press()</span></code> function is really just a wrapper for the <code class="docutils literal notranslate"><span class="pre">keyDown()</span></code> and <code class="docutils literal notranslate"><span class="pre">keyUp()</span></code> functions, which simulate pressing a key down and then releasing it up. These functions can be called by themselves. For example, to press the left arrow key three times while holding down the Shift key, call the following:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyDown</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">)</span>  <span class="c1"># hold down the shift key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># press the left arrow key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># press the left arrow key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># press the left arrow key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyUp</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">)</span>    <span class="c1"># release the shift key</span>
+</pre></div>
+</div>
+<p>To press multiple keys similar to what <code class="docutils literal notranslate"><span class="pre">write()</span></code> does, pass a list of strings to <code class="docutils literal notranslate"><span class="pre">press()</span></code>. For example:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">([</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Or you can set how many presses <code class="code docutils literal notranslate"><span class="pre">left</span></code>:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">presses</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To add a delay interval in between each press, pass an int or float for the <code class="docutils literal notranslate"><span class="pre">interval</span></code> keyword argument.</p>
+</div>
+<div class="section" id="the-hold-context-manager">
+<h3>The hold() Context Manager<a class="headerlink" href="#the-hold-context-manager" title="Permalink to this headline">¶</a></h3>
+<p>To make holding a key convenient, the <code class="docutils literal notranslate"><span class="pre">hold()</span></code> function can be used as a context manager and passed a string from the <code class="docutils literal notranslate"><span class="pre">pyautogui.KEYBOARD_KEYS</span></code> such as <code class="docutils literal notranslate"><span class="pre">shift</span></code>, <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>, <code class="docutils literal notranslate"><span class="pre">alt</span></code>, and this key will be held for the duration of the <code class="docutils literal notranslate"><span class="pre">with</span></code> context block. See <a class="reference internal" href="#keyboard-keys">KEYBOARD_KEYS</a>.</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">hold</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">):</span>
+<span class="go">        pyautogui.press([&#39;left&#39;, &#39;left&#39;, &#39;left&#39;])</span>
+</pre></div>
+</div>
+<p>…is equivalent to this code:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyDown</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">)</span>  <span class="c1"># hold down the shift key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># press the left arrow key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># press the left arrow key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>     <span class="c1"># press the left arrow key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyUp</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">)</span>    <span class="c1"># release the shift key</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-hotkey-function">
+<h3>The hotkey() Function<a class="headerlink" href="#the-hotkey-function" title="Permalink to this headline">¶</a></h3>
+<p>To make pressing hotkeys or keyboard shortcuts convenient, the <code class="docutils literal notranslate"><span class="pre">hotkey()</span></code> can be passed several key strings which will be pressed down in order, and then released in reverse order. This code:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">hotkey</span><span class="p">(</span><span class="s1">&#39;ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;shift&#39;</span><span class="p">,</span> <span class="s1">&#39;esc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>…is equivalent to this code:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyDown</span><span class="p">(</span><span class="s1">&#39;ctrl&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyDown</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyDown</span><span class="p">(</span><span class="s1">&#39;esc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyUp</span><span class="p">(</span><span class="s1">&#39;esc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyUp</span><span class="p">(</span><span class="s1">&#39;shift&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">keyUp</span><span class="p">(</span><span class="s1">&#39;ctrl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To add a delay interval in between each press, pass an int or float for the <code class="docutils literal notranslate"><span class="pre">interval</span></code> keyword argument.</p>
+</div>
+<div class="section" id="keyboard-keys">
+<h3>KEYBOARD_KEYS<a class="headerlink" href="#keyboard-keys" title="Permalink to this headline">¶</a></h3>
+<p>The following are the valid strings to pass to the <code class="docutils literal notranslate"><span class="pre">press()</span></code>, <code class="docutils literal notranslate"><span class="pre">keyDown()</span></code>, <code class="docutils literal notranslate"><span class="pre">keyUp()</span></code>, and <code class="docutils literal notranslate"><span class="pre">hotkey()</span></code> functions:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span>
+<span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span>
+<span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;`&#39;</span><span class="p">,</span>
+<span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+<span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="s1">&#39;~&#39;</span><span class="p">,</span>
+<span class="s1">&#39;accept&#39;</span><span class="p">,</span> <span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;altleft&#39;</span><span class="p">,</span> <span class="s1">&#39;altright&#39;</span><span class="p">,</span> <span class="s1">&#39;apps&#39;</span><span class="p">,</span> <span class="s1">&#39;backspace&#39;</span><span class="p">,</span>
+<span class="s1">&#39;browserback&#39;</span><span class="p">,</span> <span class="s1">&#39;browserfavorites&#39;</span><span class="p">,</span> <span class="s1">&#39;browserforward&#39;</span><span class="p">,</span> <span class="s1">&#39;browserhome&#39;</span><span class="p">,</span>
+<span class="s1">&#39;browserrefresh&#39;</span><span class="p">,</span> <span class="s1">&#39;browsersearch&#39;</span><span class="p">,</span> <span class="s1">&#39;browserstop&#39;</span><span class="p">,</span> <span class="s1">&#39;capslock&#39;</span><span class="p">,</span> <span class="s1">&#39;clear&#39;</span><span class="p">,</span>
+<span class="s1">&#39;convert&#39;</span><span class="p">,</span> <span class="s1">&#39;ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;ctrlleft&#39;</span><span class="p">,</span> <span class="s1">&#39;ctrlright&#39;</span><span class="p">,</span> <span class="s1">&#39;decimal&#39;</span><span class="p">,</span> <span class="s1">&#39;del&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
+<span class="s1">&#39;divide&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;enter&#39;</span><span class="p">,</span> <span class="s1">&#39;esc&#39;</span><span class="p">,</span> <span class="s1">&#39;escape&#39;</span><span class="p">,</span> <span class="s1">&#39;execute&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;f10&#39;</span><span class="p">,</span>
+<span class="s1">&#39;f11&#39;</span><span class="p">,</span> <span class="s1">&#39;f12&#39;</span><span class="p">,</span> <span class="s1">&#39;f13&#39;</span><span class="p">,</span> <span class="s1">&#39;f14&#39;</span><span class="p">,</span> <span class="s1">&#39;f15&#39;</span><span class="p">,</span> <span class="s1">&#39;f16&#39;</span><span class="p">,</span> <span class="s1">&#39;f17&#39;</span><span class="p">,</span> <span class="s1">&#39;f18&#39;</span><span class="p">,</span> <span class="s1">&#39;f19&#39;</span><span class="p">,</span> <span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="s1">&#39;f20&#39;</span><span class="p">,</span>
+<span class="s1">&#39;f21&#39;</span><span class="p">,</span> <span class="s1">&#39;f22&#39;</span><span class="p">,</span> <span class="s1">&#39;f23&#39;</span><span class="p">,</span> <span class="s1">&#39;f24&#39;</span><span class="p">,</span> <span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f5&#39;</span><span class="p">,</span> <span class="s1">&#39;f6&#39;</span><span class="p">,</span> <span class="s1">&#39;f7&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;f9&#39;</span><span class="p">,</span>
+<span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;fn&#39;</span><span class="p">,</span> <span class="s1">&#39;hanguel&#39;</span><span class="p">,</span> <span class="s1">&#39;hangul&#39;</span><span class="p">,</span> <span class="s1">&#39;hanja&#39;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">,</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span> <span class="s1">&#39;junja&#39;</span><span class="p">,</span>
+<span class="s1">&#39;kana&#39;</span><span class="p">,</span> <span class="s1">&#39;kanji&#39;</span><span class="p">,</span> <span class="s1">&#39;launchapp1&#39;</span><span class="p">,</span> <span class="s1">&#39;launchapp2&#39;</span><span class="p">,</span> <span class="s1">&#39;launchmail&#39;</span><span class="p">,</span>
+<span class="s1">&#39;launchmediaselect&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;modechange&#39;</span><span class="p">,</span> <span class="s1">&#39;multiply&#39;</span><span class="p">,</span> <span class="s1">&#39;nexttrack&#39;</span><span class="p">,</span>
+<span class="s1">&#39;nonconvert&#39;</span><span class="p">,</span> <span class="s1">&#39;num0&#39;</span><span class="p">,</span> <span class="s1">&#39;num1&#39;</span><span class="p">,</span> <span class="s1">&#39;num2&#39;</span><span class="p">,</span> <span class="s1">&#39;num3&#39;</span><span class="p">,</span> <span class="s1">&#39;num4&#39;</span><span class="p">,</span> <span class="s1">&#39;num5&#39;</span><span class="p">,</span> <span class="s1">&#39;num6&#39;</span><span class="p">,</span>
+<span class="s1">&#39;num7&#39;</span><span class="p">,</span> <span class="s1">&#39;num8&#39;</span><span class="p">,</span> <span class="s1">&#39;num9&#39;</span><span class="p">,</span> <span class="s1">&#39;numlock&#39;</span><span class="p">,</span> <span class="s1">&#39;pagedown&#39;</span><span class="p">,</span> <span class="s1">&#39;pageup&#39;</span><span class="p">,</span> <span class="s1">&#39;pause&#39;</span><span class="p">,</span> <span class="s1">&#39;pgdn&#39;</span><span class="p">,</span>
+<span class="s1">&#39;pgup&#39;</span><span class="p">,</span> <span class="s1">&#39;playpause&#39;</span><span class="p">,</span> <span class="s1">&#39;prevtrack&#39;</span><span class="p">,</span> <span class="s1">&#39;print&#39;</span><span class="p">,</span> <span class="s1">&#39;printscreen&#39;</span><span class="p">,</span> <span class="s1">&#39;prntscrn&#39;</span><span class="p">,</span>
+<span class="s1">&#39;prtsc&#39;</span><span class="p">,</span> <span class="s1">&#39;prtscr&#39;</span><span class="p">,</span> <span class="s1">&#39;return&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;scrolllock&#39;</span><span class="p">,</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span> <span class="s1">&#39;separator&#39;</span><span class="p">,</span>
+<span class="s1">&#39;shift&#39;</span><span class="p">,</span> <span class="s1">&#39;shiftleft&#39;</span><span class="p">,</span> <span class="s1">&#39;shiftright&#39;</span><span class="p">,</span> <span class="s1">&#39;sleep&#39;</span><span class="p">,</span> <span class="s1">&#39;space&#39;</span><span class="p">,</span> <span class="s1">&#39;stop&#39;</span><span class="p">,</span> <span class="s1">&#39;subtract&#39;</span><span class="p">,</span> <span class="s1">&#39;tab&#39;</span><span class="p">,</span>
+<span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;volumedown&#39;</span><span class="p">,</span> <span class="s1">&#39;volumemute&#39;</span><span class="p">,</span> <span class="s1">&#39;volumeup&#39;</span><span class="p">,</span> <span class="s1">&#39;win&#39;</span><span class="p">,</span> <span class="s1">&#39;winleft&#39;</span><span class="p">,</span> <span class="s1">&#39;winright&#39;</span><span class="p">,</span> <span class="s1">&#39;yen&#39;</span><span class="p">,</span>
+<span class="s1">&#39;command&#39;</span><span class="p">,</span> <span class="s1">&#39;option&#39;</span><span class="p">,</span> <span class="s1">&#39;optionleft&#39;</span><span class="p">,</span> <span class="s1">&#39;optionright&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<span id="document-msgbox"></span><div class="section" id="message-box-functions">
+<h2>Message Box Functions<a class="headerlink" href="#message-box-functions" title="Permalink to this headline">¶</a></h2>
+<p>PyAutoGUI makes use of the message box functions in PyMsgBox to provide a cross-platform, pure Python way to display JavaScript-style message boxes. There are four message box functions provided:</p>
+<div class="section" id="the-alert-function">
+<h3>The alert() Function<a class="headerlink" href="#the-alert-function" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alert</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Displays a simple message box with text and a single OK button. Returns the text of the button clicked on.</p>
+</div>
+<div class="section" id="the-confirm-function">
+<h3>The confirm() Function<a class="headerlink" href="#the-confirm-function" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">confirm</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;OK&#39;</span><span class="p">,</span> <span class="s1">&#39;Cancel&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Displays a message box with OK and Cancel buttons. Number and text of buttons can be customized. Returns the text of the button clicked on.</p>
+</div>
+<div class="section" id="the-prompt-function">
+<h3>The prompt() Function<a class="headerlink" href="#the-prompt-function" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prompt</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Displays a message box with text input, and OK &amp; Cancel buttons. Returns the text entered, or None if Cancel was clicked.</p>
+</div>
+<div class="section" id="the-password-function">
+<h3>The password() Function<a class="headerlink" href="#the-password-function" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">password</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Displays a message box with text input, and OK &amp; Cancel buttons. Typed characters appear as <code class="docutils literal notranslate"><span class="pre">*</span></code>. Returns the text entered, or None if Cancel was clicked.</p>
+</div>
+</div>
+<span id="document-screenshot"></span><div class="section" id="screenshot-functions">
+<h2>Screenshot Functions<a class="headerlink" href="#screenshot-functions" title="Permalink to this headline">¶</a></h2>
+<p>PyAutoGUI can take screenshots, save them to files, and locate images within the screen. This is useful if you have a small image of, say, a button that needs to be clicked and want to locate it on the screen. These features are provided by the PyScreeze module, which is installed with PyAutoGUI.</p>
+<p>Screenshot functionality requires the Pillow module. OS X uses the <code class="code docutils literal notranslate"><span class="pre">screencapture</span></code> command, which comes with the operating system. Linux uses the <code class="code docutils literal notranslate"><span class="pre">scrot</span></code> command, which can be installed by running <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">scrot</span></code>.</p>
+<div class="section" id="the-screenshot-function">
+<h3>The screenshot() Function<a class="headerlink" href="#the-screenshot-function" title="Permalink to this headline">¶</a></h3>
+<p>Calling <code class="code docutils literal notranslate"><span class="pre">screenshot()</span></code> will return an Image object (see the Pillow or PIL module documentation for details). Passing a string of a filename will save the screenshot to a file as well as return it as an Image object.</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im1</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">screenshot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im2</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;my_screenshot.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On a 1920 x 1080 screen, the <code class="code docutils literal notranslate"><span class="pre">screenshot()</span></code> function takes roughly 100 milliseconds - it’s not fast but it’s not slow.</p>
+<p>There is also an optional <code class="code docutils literal notranslate"><span class="pre">region</span></code> keyword argument, if you do not want a screenshot of the entire screen. You can pass a four-integer tuple of the left, top, width, and height of the region to capture:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-locate-functions">
+<h3>The Locate Functions<a class="headerlink" href="#the-locate-functions" title="Permalink to this headline">¶</a></h3>
+<p>NOTE: As of version 0.9.41, if the locate functions can’t find the provided image, they’ll raise <code class="code docutils literal notranslate"><span class="pre">ImageNotFoundException</span></code> instead of returning <code class="code docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>You can visually locate something on the screen if you have an image file of it. For example, say the calculator app was running on your computer and looked like this:</p>
+<img alt="_images/calculator.png" src="_images/calculator.png" />
+<p>You can’t call the <code class="code docutils literal notranslate"><span class="pre">moveTo()</span></code> and <code class="code docutils literal notranslate"><span class="pre">click()</span></code> functions if you don’t know the exact screen coordinates of where the calculator buttons are. The calculator can appear in a slightly different place each time it is launched, causing you to re-find the coordinates each time. However, if you have an image of the button, such as the image of the 7 button:</p>
+<img alt="_images/calc7key.png" src="_images/calc7key.png" />
+<p>… you can call the <code class="code docutils literal notranslate"><span class="pre">locateOnScreen('calc7key.png')</span></code> function to get the screen coordinates. The return value is a 4-integer tuple: (left, top, width, height). This tuple can be passed to <code class="code docutils literal notranslate"><span class="pre">center()</span></code> to get the X and Y coordinates at the center of this region. If the image can’t be found on the screen, <code class="code docutils literal notranslate"><span class="pre">locateOnScreen()</span></code> raises <code class="code docutils literal notranslate"><span class="pre">ImageNotFoundException</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">locateOnScreen</span><span class="p">(</span><span class="s1">&#39;calc7key.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span>
+<span class="go">Box(left=1416, top=562, width=50, height=41)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1416</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span><span class="o">.</span><span class="n">left</span>
+<span class="go">1416</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7point</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">button7location</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7point</span>
+<span class="go">Point(x=1441, y=582)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1441</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7point</span><span class="o">.</span><span class="n">x</span>
+<span class="go">1441</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7x</span><span class="p">,</span> <span class="n">button7y</span> <span class="o">=</span> <span class="n">button7point</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">button7x</span><span class="p">,</span> <span class="n">button7y</span><span class="p">)</span>  <span class="c1"># clicks the center of where the 7 button was found</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;calc7key.png&#39;</span><span class="p">)</span> <span class="c1"># a shortcut version to click on the center of where the 7 button was found</span>
+</pre></div>
+</div>
+<p>The optional <code class="code docutils literal notranslate"><span class="pre">confidence</span></code> keyword argument specifies the accuracy with which the function should locate the image on screen. This is helpful in case the function is not able to locate an image due to negligible pixel differences:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">locateOnScreen</span><span class="p">(</span><span class="s1">&#39;calc7key.png&#39;</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span>
+<span class="go">Box(left=1416, top=562, width=50, height=41)</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: You need to have <a class="reference external" href="https://pypi.org/project/opencv-python/">OpenCV</a> installed for the <code class="code docutils literal notranslate"><span class="pre">confidence</span></code> keyword to work.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">locateCenterOnScreen()</span></code> function combines <code class="code docutils literal notranslate"><span class="pre">locateOnScreen()</span></code> and <code class="code docutils literal notranslate"><span class="pre">center()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">locateCenterOnScreen</span><span class="p">(</span><span class="s1">&#39;calc7key.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On a 1920 x 1080 screen, the locate function calls take about 1 or 2 seconds. This may be too slow for action video games, but works for most purposes and applications.</p>
+<p>There are several “locate” functions. They all start looking at the top-left corner of the screen (or image) and look to the right and then down. The arguments can either be a</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">locateOnScreen(image,</span> <span class="pre">grayscale=False)</span></code> - Returns (left, top, width, height) coordinate of first found instance of the <code class="code docutils literal notranslate"><span class="pre">image</span></code> on the screen. Raises <code class="code docutils literal notranslate"><span class="pre">ImageNotFoundException</span></code> if not found on the screen.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">locateCenterOnScreen(image,</span> <span class="pre">grayscale=False)</span></code> - Returns (x, y) coordinates of the center of the first found instance of the <code class="code docutils literal notranslate"><span class="pre">image</span></code> on the screen. Raises <code class="code docutils literal notranslate"><span class="pre">ImageNotFoundException</span></code> if not found on the screen.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">locateAllOnScreen(image,</span> <span class="pre">grayscale=False)</span></code> - Returns a generator that yields (left, top, width, height) tuples for where the image is found on the screen.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">locate(needleImage,</span> <span class="pre">haystackImage,</span> <span class="pre">grayscale=False)</span></code> - Returns (left, top, width, height) coordinate of first found instance of <code class="code docutils literal notranslate"><span class="pre">needleImage</span></code> in <code class="code docutils literal notranslate"><span class="pre">haystackImage</span></code>. Raises <code class="code docutils literal notranslate"><span class="pre">ImageNotFoundException</span></code> if not found on the screen.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">locateAll(needleImage,</span> <span class="pre">haystackImage,</span> <span class="pre">grayscale=False)</span></code> - Returns a generator that yields (left, top, width, height) tuples for where <code class="code docutils literal notranslate"><span class="pre">needleImage</span></code> is found in <code class="code docutils literal notranslate"><span class="pre">haystackImage</span></code>.</li>
+</ul>
+<p>The “locate all” functions can be used in for loops or passed to <code class="code docutils literal notranslate"><span class="pre">list()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">locateAllOnScreen</span><span class="p">(</span><span class="s1">&#39;someButton.png&#39;</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">(1101, 252, 50, 50)</span>
+<span class="go">(59, 481, 50, 50)</span>
+<span class="go">(1395, 640, 50, 50)</span>
+<span class="go">(1838, 676, 50, 50)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">pyautogui</span><span class="o">.</span><span class="n">locateAllOnScreen</span><span class="p">(</span><span class="s1">&#39;someButton.png&#39;</span><span class="p">))</span>
+<span class="go">[(1101, 252, 50, 50), (59, 481, 50, 50), (1395, 640, 50, 50), (1838, 676, 50, 50)]</span>
+</pre></div>
+</div>
+<p>These “locate” functions are fairly expensive; they can take a full second to run. The best way to speed them up is to pass a <code class="code docutils literal notranslate"><span class="pre">region</span></code> argument (a 4-integer tuple of (left, top, width, height)) to only search a smaller region of the screen instead of the full screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">locateOnScreen</span><span class="p">(</span><span class="s1">&#39;someButton.png&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="section" id="grayscale-matching">
+<h4>Grayscale Matching<a class="headerlink" href="#grayscale-matching" title="Permalink to this headline">¶</a></h4>
+<p>Optionally, you can pass <code class="code docutils literal notranslate"><span class="pre">grayscale=True</span></code> to the locate functions to give a slight speedup (about 30%-ish). This desaturates the color from the images and screenshots, speeding up the locating but potentially causing false-positive matches.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">locateOnScreen</span><span class="p">(</span><span class="s1">&#39;calc7key.png&#39;</span><span class="p">,</span> <span class="n">grayscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button7location</span>
+<span class="go">(1416, 562, 50, 41)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pixel-matching">
+<h4>Pixel Matching<a class="headerlink" href="#pixel-matching" title="Permalink to this headline">¶</a></h4>
+<p>To obtain the RGB color of a pixel in a screenshot, use the Image object’s <code class="code docutils literal notranslate"><span class="pre">getpixel()</span></code> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">screenshot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="go">(130, 135, 144)</span>
+</pre></div>
+</div>
+<p>Or as a single function, call the <code class="code docutils literal notranslate"><span class="pre">pixel()</span></code> PyAutoGUI function, which is a wrapper for the previous calls:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pix</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pix</span>
+<span class="go">RGB(red=130, green=135, blue=144)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">130</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pix</span><span class="o">.</span><span class="n">red</span>
+<span class="go">130</span>
+</pre></div>
+</div>
+<p>If you just need to verify that a single pixel matches a given pixel, call the <code class="code docutils literal notranslate"><span class="pre">pixelMatchesColor()</span></code> function, passing it the X coordinate, Y coordinate, and RGB tuple of the color it represents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">pixelMatchesColor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">144</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">pixelMatchesColor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The optional <code class="code docutils literal notranslate"><span class="pre">tolerance</span></code> keyword argument specifies how much each of the red, green, and blue values can vary while still matching:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyautogui</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">pixelMatchesColor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">144</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">pixelMatchesColor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">134</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pyautogui</span><span class="o">.</span><span class="n">pixelMatchesColor</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">134</span><span class="p">),</span> <span class="n">tolerance</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-tests"></span><div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>The unit tests for PyAutoGUI are currently not comprehensive. The tests (in basicTests.py) cover the following:</p>
+<ul class="simple">
+<li>onScreen()</li>
+<li>size()</li>
+<li>position()</li>
+<li>moveTo()</li>
+<li>moveRel()</li>
+<li>typewrite()</li>
+<li>PAUSE</li>
+</ul>
+<div class="section" id="platforms-tested">
+<h3>Platforms Tested<a class="headerlink" href="#platforms-tested" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Python 3.4, 3.3, 3.2, 3.1, 2.7, 2.6, 2.5</li>
+<li>Windows</li>
+<li>OS X</li>
+<li>Raspberry Pi</li>
+</ul>
+<p>(If you have run the unit tests successfully on other platforms, please tell <a class="reference external" href="mailto:al&#37;&#52;&#48;inventwithpython&#46;com">al<span>&#64;</span>inventwithpython<span>&#46;</span>com</a>.)</p>
+<p>PyAutoGUI is not compatible with Python 2.4 or before.</p>
+<p>The keyboard functions do not work on Ubuntu when run in VirtualBox on Windows.</p>
+</div>
+</div>
+<span id="document-roadmap"></span><div class="section" id="roadmap">
+<h2>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h2>
+<p>PyAutoGUI is planned as a replacement for other Python GUI automation scripts, such as PyUserInput, PyKeyboard, PyMouse, pykey, etc. Eventually it would be great to offer the same type of features that <a class="reference external" href="http://www.sikuli.org">Sikuli</a> offers.</p>
+<p>For now, the primary aim for PyAutoGUI is cross-platform mouse and keyboard control and a simple API.</p>
+<p>Future features planned (specific versions not planned yet):</p>
+<ul class="simple">
+<li>A tool for determining why an image can’t be found in a particular screenshot. (This is a common source of questions for users.)</li>
+<li>Full compatibility on Raspberry Pis.</li>
+<li>“Wave” function, which is used just to see where the mouse is by shaking the mouse cursor a bit. A small helper function.</li>
+<li>locateNear() function, which is like the other locate-related screen reading functions except it finds the first instance near an xy point on the screen.</li>
+<li>Find a list of all windows and their captions.</li>
+<li>Click coordinates relative to a window, instead of the entire screen.</li>
+<li>Make it easier to work on systems with multiple monitors.</li>
+<li>GetKeyState() type of function</li>
+<li>Ability to set global hotkey on all platforms so that there can be an easy “kill switch” for GUI automation programs.</li>
+<li>Optional nonblocking pyautogui calls.</li>
+<li>“strict” mode for keyboard - passing an invalid keyboard key causes an exception instead of silently skipping it.</li>
+<li>rename keyboardMapping to KEYBOARD_MAPPING</li>
+<li>Ability to convert png and other image files into a string that can be copy/pasted directly in the source code, so that they don’t have to be shared separately with people’s pyautogui scripts.</li>
+<li>Test to make sure pyautogui works in Windows/mac/linux VMs.</li>
+<li>A way to compare two images and highlight differences between them (good for pointing out when a UI changes, etc.)</li>
+</ul>
+<dl class="docutils">
+<dt>Window handling features:</dt>
+<dd><ul class="first last simple">
+<li>pyautogui.getWindows()      # returns a dict of window titles mapped to window IDs</li>
+<li>pyautogui.getWindow(str_title_or_int_id)   # returns a “Win” object</li>
+<li>win.move(x, y)</li>
+<li>win.resize(width, height)</li>
+<li>win.maximize()</li>
+<li>win.minimize()</li>
+<li>win.restore()</li>
+<li>win.close()</li>
+<li>win.position()  # returns (x, y) of top-left corner</li>
+<li>win.moveRel(x=0, y=0)   # moves relative to the x, y of top-left corner of the window</li>
+<li>win.clickRel(x=0, y=0, clicks=1, interval=0.0, button=’left’)  # click relative to the x, y of top-left corner of the window</li>
+<li>Additions to screenshot functionality so that it can capture specific windows instead of full screen.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<span id="document-source/modules"></span><div class="section" id="pyautogui">
+<h2>pyautogui<a class="headerlink" href="#pyautogui" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<span id="document-source/pyautogui"></span><div class="section" id="pyautogui-package">
+<h3>pyautogui package<a class="headerlink" href="#pyautogui-package" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="submodules">
+<h4>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="pyautogui-keynames-module">
+<h4>pyautogui.keynames module<a class="headerlink" href="#pyautogui-keynames-module" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="module-contents">
+<h4>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This documentation is still a work in progress.</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Al Sweigart
+      
+        <span class="commit">
+          Revision <code>24d638dc</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="/en/latest/">latest</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="//pyautogui.readthedocs.io/_/downloads/en/latest/pdf/">pdf</a></dd>
+        
+          <dd><a href="//pyautogui.readthedocs.io/_/downloads/en/latest/htmlzip/">html</a></dd>
+        
+          <dd><a href="//pyautogui.readthedocs.io/_/downloads/en/latest/epub/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="//readthedocs.org/projects/pyautogui/?fromdocs=pyautogui">Project Home</a>
+          </dd>
+          <dd>
+            <a href="//readthedocs.org/builds/pyautogui/?fromdocs=pyautogui">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>
