@@ -1,0 +1,5 @@
+BEGIN:VCARD
+VERSION:3.0
+N:abc;defg;hij;klmn;hjgjh
+TEL;TYPE=HOME:+91-1234567890
+END:VCARD

@@ -1,0 +1,18 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Last Name;First Name;Middle Name;Prefix;Suffix
+FN:Prefix First Name Middle Name Last Name, Suffix
+ORG:Company
+TITLE:Job Title
+NOTE:null
+TEL;type=Work:12
+TEL;type=Home:1
+TEL;type=Home:+91 1234
+item1.TEL:+91 123456789
+item1.X-ABLabel:Mobile
+item2.URL:web address
+item2.X-ABLabel:OTHER
+EMAIL;TYPE=Home:Email
+item3.ADR;type=Home:;;Address;City;State;Postcode;Country
+item3.X-ABADR:
+END:VCARD

@@ -4,4 +4,8 @@ def WoL(mac,ip,port_input = 8080, interface_input = None):
     print("WoL sent to " + str(mac) + " at " + str(ip))
     return
 
-# WoL(mac='b4:60:77:03:1a:66',ip='192.168.1.16')      # tv
+if __name__ == "__main__":
+    import time
+    for i in range(50):
+        WoL(mac='80:9f:9b:38:6c:7c',ip='192.168.1.16')      # tv
+        time.sleep(2x)

@@ -21,6 +21,7 @@ def ReadCSV(file_name):
             # edit the video name to remove any special characters
             row[0] = row[0].replace(': ', '')
             row[0] = row[0].replace('||', 'II')
+            row[0] = row[0].strip()
 
             # if pw_check == 'y':
             if '.mp4' in row[1]:
@@ -39,7 +40,7 @@ def ReadCSV(file_name):
 # check connection to client
 def check_client():
     import sys
-    sys.path.insert(0, 'V:\\J.A.R.V.I.S\\features')
+    sys.path.insert(0, 'G:\\Jarvis NvMe Drive\\J.A.R.V.I.S\\features')
     import command_remotly.command_server as command_server
     command_server.check_connection_to_client()
 
@@ -71,9 +72,19 @@ def shut_down(n):
         os.system('shutdown -s -t 0')
 
 # main function
-def main():
+if __name__ == '__main__':
+    # ask user if he want to shut down the computer after download
+    shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
+    if shut_check == 'y':
+        check_client()
+
+    # ask user the name of the csv file
+    csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
+    ReadCSV(csv_file_name)
+
+    from plyer import notification
     for task in urls:
-        if '.mp4' in task[1]:               # for pw protected videos
+        if 'master.m3u8' in task[1]:               # for pw protected videos
             video_name = task[0] + '.mp4'
         else:
             video_name = task[0]
@@ -92,6 +103,9 @@ def main():
             print('New Video Path: ' + video_path)
             print('Downloading...')
             print('-'*500) # print a line
+            
+            # notification.notify(title = 'New Video : {}'.format(video_name))
+
 
             # download the video
             VideoDownloader(video_link, video_name, video_path)
@@ -99,32 +113,3 @@ def main():
     
     # shuting down the computer after download
     shut_down(300)
-
-
-# ask user if he want to shut down the computer after download
-shut_check = input('Do you want to shut down the computer after download? (y/n) : ')
-if shut_check == 'y':
-    check_client()
-
-# ask user the name of the csv file
-csv_file_name = str(input('Enter the csv file name: ')) + str('.csv')
-ReadCSV(csv_file_name)
-
-# calling main function
-main()
-
-# using multiprocessing to download videos in parallel
-# from multiprocessing import Process
-# if __name__ == '__main__':
-#     process_list = []
-#     for task in urls:
-#         video_name = task[0] + '.mp4'
-#         video_link = task[1]
-#         video_path = task[2]
-#         process = Process(target=VideoDownloader, args=(video_link, video_name, video_path))
-#         process_list.append(process)
-#         process.start()
-#     for process in process_list:
-#         process.join()
-
-# code completed..... :) :) :)

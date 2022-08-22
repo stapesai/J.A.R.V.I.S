@@ -1,0 +1,62 @@
+[
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/13768a7d-d502-46ad-bfdd-ad5d3679e318/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC8xMzc2OGE3ZC1kNTAyLTQ2YWQtYmZkZC1hZDVkMzY3OWUzMTgvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTQ2Mn19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=EJSFPec07U5FOOqS3nq6E0cUK6mYL0q6I4LowPGmql4U1sb1WPcbuxCnak7pcK7~S-OPcWfj-6WQtXla9ysJt82l3mo1MzmqLnorVOzOQXEYoC1JdBQAjvZojF~4O4n3zqKIEUIwhGWeb10MGocMPaETB6F1Di1s7SDmc-2sFrpIZQFsyAjgB01kx03SeRUCvU6nEWO8ZrVgn~7n3bOgl~TCK8mYYDJjsMnTJgdHdjFwce6Ss4nxgagu9GAQT5h5Z-VzOjb1pSCIN4ELzVaSeZj-XhdpCScD9Hu6rTzddoVrc~YJysFH44GeVQ~YMIoGisu3hAfWoWNJHcDIXRIbQA__",
+        "createdAt": "2022-06-24T16:24:22.626Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/46cf9cc0-16d8-4ae7-86b6-71af3964fea4/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC80NmNmOWNjMC0xNmQ4LTRhZTctODZiNi03MWFmMzk2NGZlYTQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTU5Nn19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=k-gUNmZCZWSgBm2pmjr~oQ~aXZ~YWfmVlbtYOtMtrk~epQLChyLo2V~0vIPBEhJl-qf255DeN-HPiCAAiOM~gQNU0qsWWV6AUT6VBeAjdXOPO2~UZ10oR0lEThuogilNSSIpKP0qUg~A672z992kiZdz6hDt2HqF1t-pbdy5CvZbcDbpfDzDHqDmZxUCQbehZQLaJ1CGovAsUMZ0964XIiPwaToG9WDH-ASwjtkzVOsDTV-Bg1M3pr7On3wi6ASr0WTNii57lyoMB6ttJpiySNvtFV-kQjrcHVoAWPgMGcJ5X539LuOUgEKdzj~d6cuYlz40f~kIdIEJIoS1~es6BA__",
+        "createdAt": "2022-06-24T16:26:36.792Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/57adc94d-02a3-466c-a45e-835fea9a6a92/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC81N2FkYzk0ZC0wMmEzLTQ2NmMtYTQ1ZS04MzVmZWE5YTZhOTIvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTYwMn19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=abuQNwIN4s6voRKF1NPVKzSxujHq1i~nvXL5JEuqXlirOlQR2ScKavlZeKWkMPscIVDe4cx4IGqjW5SwONZ29r9XF0MTjUWmE6JcOTz1TnrpwX4WmieHPVM2Pakf7KQeu6zBNfSm7F5oxZUFE-ie42ESxFlUcI1ESbqyJ3mVwK9MhYL65Xxg3IYpXXEZaPLucl2OrDwcfyksRfYkuoXD9KePN7WzuHU6BwpCttgL-QOnU5H5fa3QE608aGfroRqfG0TqwhVxqGTgbJPAzuqa9BSsW902NvINksN141-cLOFNojVoI6TO0aNtdgsT70Qfu1DWVHPgMXLgqf86TC~YAQ__",
+        "createdAt": "2022-06-24T16:26:42.596Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/57709cab-e716-47af-b8b6-23c68a046472/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC81NzcwOWNhYi1lNzE2LTQ3YWYtYjhiNi0yM2M2OGEwNDY0NzIvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTYwNX19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=A6-ERi~E7jSN0L4q~vkIb2gfo~VvijRaUqXBhjsB2XV87BF2zVMvG5Zdl~YP5kqB8Wko6azmGQSkrr-3bZYAo8FgBBx0YuP4Fmh6HrArGDLS2MB8JiPx3QTNn1t2RlBtAsPsfx7nieFvO8nBzxs0CAQskbLJq2V6e7cs7zc19w6HdpPOSZZJuZRx036M2v2zjITb-U9L3GKRmjpzebfJYJzASfq8PHwU4DfhC3PgmslIOI~myAouB~SeB6TsBAcgRD7j6sp1qL~ZPhX-YKkdWYziAPiQCLUEJrFHrHetnMfTNlNHZmqPDMHUw2Y0L6etWZMqzMH2AUyv5VxwkfZvCA__",
+        "createdAt": "2022-06-24T16:26:45.876Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/d6df4008-a489-4772-9081-1e8ea904ca19/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC9kNmRmNDAwOC1hNDg5LTQ3NzItOTA4MS0xZThlYTkwNGNhMTkvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTYyNn19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=qi72c88hPhHg-CapJ7Wsiimdn-QgX2kYiYwejqNSpKVAiSJ0~5PEq15QWf7U0w-bj9nUXmg0t6oYRvUOdcfXTTKS1~oezK8uSOVfzsd6KjSAi5Y~f46Kk29njagoEw8eYpPwMnYVGw1wXvMb~v5QW0fu-CpHQMD6BXLsbt0L1ESkiEWfui6Eszn7rleyss9Dl5TaxQAQGUmbPs5uBAFiCtKwwE8LpqqQAh5tlFF9ECAyPQhLbQ93J-S4m-jFRFjodjA052hNZ973g9KfWUztOB0w52io1EOGRxwBoVIGCf9FGOOy7fJVMBBemzRSTRL5xJiiRJH3qptQzuyqv~639Q__",
+        "createdAt": "2022-06-24T16:27:07.217Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/6405c929-757f-4985-9b98-6a867dfd4769/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC82NDA1YzkyOS03NTdmLTQ5ODUtOWI5OC02YTg2N2RmZDQ3NjkvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTYzMH19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=oVp3PyarSQyW5V0ANRKL5bPk5BtIsxGgy5sdvx5yFXUI3mjuhPRxadf66aksInCOaF3JaZkzorOFso1yOu2QnIekDa9LW-i1vf~DhL7SFkpcAJv-6rtIyyhIGBqQfbA~2kxe8pm5EVsBOY0CPO-TiFSWwYs4Vo1T0losLgZb5wRRV7sU~gV8InysAXU4Nc4PPZvSJbyHSypTtOxK7YXRDy6xSLpRy6cZxbxrfgmuPooDvyTg944Kx2QSStUUDZ-UisDwIESWmJRjeEh2U4WJA8bEberDcLGA3plk7SvN-2NnMFTwgJHM-MuF27if0NJidovD~68HnG0HUh9k8dnl2g__",
+        "createdAt": "2022-06-24T16:27:11.298Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/5d85009d-e0bd-4529-9613-15ba7c33f8ba/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC81ZDg1MDA5ZC1lMGJkLTQ1MjktOTYxMy0xNWJhN2MzM2Y4YmEvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTcxMn19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=LghNzm0CLHq2f4w44B-5CaV~naTkGzDNmGaOhOfpb2bshlw9zTpf-E4GazJ3rmjZ-L2ohpzAZPmU96YCHBCDyBuHCR-VuJEd6o7lYR8gQ86SHe~V1PycuLjiLrm-R6Dl5T7oTqRo2tNHRuCXCe5ZGOG4e655wkQOTKgQM6UeHLC4hC9vV2CxpPKFZL5VFhoE3u~4kjCTvv1uTQ8ylwAkhxWamCX9MaqewJR~rAX7UCv3F0erGCrqwSEIAblv0-KDw41XxO2pgDDPJsEuX24pS24rBFHewqOQJLH81~FD581X~W3gGpOug4Z2pIhX1oHTIBM4WAqi5McTwuo1WZVexQ__",
+        "createdAt": "2022-06-24T16:28:33.299Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/7077c642-c214-4d27-994a-c4632b83aefc/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC83MDc3YzY0Mi1jMjE0LTRkMjctOTk0YS1jNDYzMmI4M2FlZmMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTcyMX19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=QXrZ1OYO2RY0FOv6Ziav14fOqHA8sNSO~Nt-Qs4XCZFD2ot3pD43zQM5lHd-jlnoj5i6oJvEOfaE2coikc2lDvz82w7uo5xBn2-7xypa614Qfmp55-CsYMx0JHY-GBFP03xPIrmSAc5djwUPIrFTHwWRD19vWXbtmgG~IB41zfRzjfUDq27UZCkaOGcUq8OXiyB5TX41FA04WULo1VrfEw~nDYEauqOGNFAKlk2QrnRF1QJkfO6IyZVxLcDsDMw1CLWSpldLyT5rZeGhQb7RnwOZ2N6EhmQ9GrG8fP3eJeDVxE9rPiVeGqs5FVei-sTy0C5pAE2FsTvvsVomWNMQqw__",
+        "createdAt": "2022-06-24T16:28:41.482Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/5b432267-87ca-4695-bbae-89dba56b07cd/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC81YjQzMjI2Ny04N2NhLTQ2OTUtYmJhZS04OWRiYTU2YjA3Y2QvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTcyNX19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=YzEylTH9gqcZHB3GYGliXk-JDrvEyYWtTL~rD~Krvyzx0DUag5pTbCPEaI0F2D2q~i-FvvS7BDSAhEMZGkwY6QdosXqLF28phAmjmi0Ox3PseTR3MGqS-zaGoKGYSGav31onHdV~9xQNS7zwA-8EGJ7kdkw6U1ODVYL4hTsVels91ZIHJgODAPf2YN5JQKG~xugVvF2OrvZZnPOxs~uCJScmH77PY8lGpPCcaDak~IwuL7HklifCSSKlgDze8ljkZt~02EQMCr9rxEam8VHMWEvAj7hK6jfVK81lsj8xSq4fO2RZfvy0ueXo0suyt0xHecHh17mlH2j7IFZ7nSzQXg__",
+        "createdAt": "2022-06-24T16:28:46.427Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/a9847d47-3d74-48ef-9cfb-222a687d03e3/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC9hOTg0N2Q0Ny0zZDc0LTQ4ZWYtOWNmYi0yMjJhNjg3ZDAzZTMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTczMn19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=qRvMLCMqd1khgQyFXRRSFJmBb4E~3Wu1Jo7fAv1pQcI8Z~aE8MwOYrUjzgI7IfGSEMBQS-mphO~VhAFqtOBkObXmirdmsP-Piq56evXDcsgVsWMAh-MrN2guQj6VVFZ67AVw9ZeQkUagEQmKw6K06je4~AmrtNxtTX36tq-a4Paldo-ALD-LnpvdZ3Qdp7WLEu1K3nKjUFsWEL5sqZpKg0nyIxxnZ~h~KtJo1CvWCQhkDZxmIspk~P~AP~zzy8QCgw4V-SuI-fsHaZJ5Yl5YLa8hTC5dV-fuA7Fx87vlZ7mHDf2VNc~iSro0YEpC~EONeZyp-rnpu7wnwREVpkiXHA__",
+        "createdAt": "2022-06-24T16:28:53.208Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/487272b8-8574-4e5f-a802-78530b109bea/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC80ODcyNzJiOC04NTc0LTRlNWYtYTgwMi03ODUzMGIxMDliZWEvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTgyM319fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=nztopmL--dFpluPEtPh2nbGlvCqIzHEw7fDdqhUhi9vPcs~5GBNT1L~ZzFE~mMjuvIluYC3BC1zS~HD2mPFg3roWPW0ylhPrQpVRCJyMbMrGo8G9YXhuD1MBsiXmJRHNRTNUaIO-YBsv4HFG2d7ekhOeSx11GD1moKaSj~~3iCX572YiGMGMJyRC2I29apE9VmknAzQdfpkbdKyaaBrGKLrS5COxTiK~xdMXk0GvbRuu6W-ntZOF2WdOkRHJcjQg9LU~kdXmSmddnpsxmJZ632uLa5xiyN2j4EIavLBp2frR0~LNmIQDZUaO6tcpSNT-51oo91LdRWDg-aL5M0Z5oQ__",
+        "createdAt": "2022-06-24T16:30:23.713Z"
+    },
+    {
+        "videoUrl": "https://d1d34p8vz63oiq.cloudfront.net/14318713-0f6f-4b30-a87a-8295044b6c44/master.mpd",
+        "cookie": "?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMWQzNHA4dno2M29pcS5jbG91ZGZyb250Lm5ldC8xNDMxODcxMy0wZjZmLTRiMzAtYTg3YS04Mjk1MDQ0YjZjNDQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY1NjEwOTgzMX19fV19&Key-Pair-Id=APKAJBP3D6S2IU5JK4LQ&Signature=VC5Oj7dacVfWMyEyymeadL8SfXje~AwwYnvaKdC4wVdbYX1BG1dH9ceh8M-M9X2QVNfGcnbSgPrUflBF6S12bmu2XkVjfTcWAjPzNtuUy-EVNPaxDvtgz7~T1A9VV9-n4YYlAoWTNB19GI5VWKWARHKEeCcSgWgpRReYOQHWgeJUhj-2hpVfA3vlCD2gj~i89iQmRRUbKOCX0Rjdf~KTpLtRmsQ187OVKctF2STiFJYcrt23QM4KLSW4mTC-7Oo~BE~kGJCJW~~rTrU0AWBMRnL51v6gavryHomTG5doVleI-8hfX3WodXG-2meK1u7ywXNgtjSSmrXiu~pTKFJZTg__",
+        "createdAt": "2022-06-24T16:30:31.764Z"
+    }
+]

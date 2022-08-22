@@ -4,7 +4,8 @@ def receive_command():
     import os
 
     s = socket.socket()
-    hosts = ['192.168.1.11', '192.168.1.12']
+    # hosts = ['192.168.1.11', '192.168.1.12']
+    hosts = [str(ip)]
     port = 9999
 
     for host in hosts:
@@ -30,6 +31,7 @@ def receive_command():
 if __name__ == "__main__":
     # main function
     print('client program initalized...')
+    ip = input("Enter IP address of server: ")
     while True:
         receive_command()
         import time

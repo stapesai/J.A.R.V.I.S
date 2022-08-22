@@ -1,16 +1,14 @@
-text='remind me'
-if 'remind me' in text:
-    import webbrowser
-    text=text.replace('remind me after','')
-    text=text.replace('minutes','')
-    text=text.replace('seconds','')
-    new_TEXT=text.split('and')
-    if len(new_TEXT) == 1:
-        secs='0'
-    else:
-        secs=str(new_TEXT[1])
-        pass
-    mins=str(new_TEXT[0])
-    url='https://www.google.com/search?q=timer+'+mins+'+min+'+secs+'+sec&oq=timer+2+min+20+sec&aqs=chrome..69i57.4505j0j1&sourceid=chrome&ie=UTF-8'
-    webbrowser.open(url)
- #   return( 'ok sir , I will remind you after',mins,'minutes','and',secs,'seconds')
+from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
+
+
+def main():
+    sessions = AudioUtilities.GetAllSessions()
+    for session in sessions:
+        volume = session._ctl.QueryInterface(ISimpleAudioVolume)
+        if session.Process and session.Process.name() == "vlc.exe":
+            print("volume.GetMasterVolume(): %s" % volume.GetMasterVolume())
+            volume.SetMasterVolume(0.6, None)
+
+
+if __name__ == "__main__":
+    main()

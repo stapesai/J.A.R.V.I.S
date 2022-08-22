@@ -1,9 +1,12 @@
 # send command
-def send_command(command):
+def send_command(command : str):
     import socket
 
     s = socket.socket()
-    hosts = ['192.168.1.11', '192.168.1.12']
+    # hosts = ['192.168.1.11', '192.168.1.12']
+    hostname=socket.gethostname()
+    IPAddr=socket.gethostbyname(hostname)
+    hosts = [str(IPAddr)]
     port = 9999
 
     for host in hosts:
@@ -55,9 +58,9 @@ def check_connection_to_client():
 
 if __name__ == "__main__":
     # main function
-    print('client program initalized...')
+    print('checking connection to client...')
     check_connection_to_client()
-while True:
-    command = input("Enter command: ")
-    reply = send_command(command)
-    print('Reply is : ',reply)
+    while True:
+        command = input("Enter command: ")
+        reply = send_command(command)
+        print('Reply is : ',reply)

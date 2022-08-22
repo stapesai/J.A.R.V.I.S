@@ -1,0 +1,140 @@
+Permutations and Combinations -01 : Fundamental Principle of Counting
+Permutations and Combinations -02 : Grouping method
+Permutation and Combination -03 : PIE and Circular Permutation
+Permutation and Combination -04 : Circular Permutation & Open Selection & Begger's Method
+Permutation and Combination -05 : Beggar's Method || Grid Problem || Coefficient Method
+Permutation and Combination -06 : Problem solving session on Permutation and Combination
+Permutations and Combinations : Solution to DPP 01
+Permutations and Combinations : Solution to DPP 02
+Permutations and Combinations : Solution to DPP 03
+Permutation and Combination : Solution to DPP 04
+Permutation and Combination : Solution to DPP 05
+
+Practice Problems in Algebra -01 : Problem solving session on Algebra
+Practice Problems In Algebra -02 : Problem solving session on Algebra (Part 2)
+Practice Problems In Algebra : Solution to DPP 01
+Practice Problems In Algebra : Solution to DPP 02
+Practice Problems In Algebra : Solution to DPP 03
+
+Fundamentals of 2D Geometry -01 : Fundamentals In 2-D Geometry
+Fundamentals In 2D Geometry : Solution to DPP 01
+Straight Lines -01 : Locus of a moving point & Different forms of straight line
+Straight Lines -02 : Angle between two straight lines & Parametric form of line
+Straight Lines -03 : Condition of concurrency & Family of lines
+Straight Lines -04 : Equation of bisectors & shifting of origin
+Straight Lines -05 : Pair of straight line
+Straight Line : Solution to DPP 01
+Straight Line : Solution to DPP 02
+Straight Line : Solution to DPP 03
+Straight Line : Solution to DPP 04
+Straight Line : Solution to DPP 05
+
+Circles -01 : Introduction to Circles and different forms
+Circles -02 : Various Tangents to a circle & Power of a point
+Circles -03 : Chord of contact || Pair of tangents || Family of circles
+Circles -04 : Common tangent to two circles
+Circles -05 : Radical axis & Radical centre
+Circles : Solution to DPP 01
+Circles : Solution to DPP 02
+Circles : Solution to DPP 03
+Circles : Solution to DPP 04
+Circles : Solution to DPP 05
+
+Parabola -01 : Introduction to conics & standard forms of Parabola
+Parabola 02 : Position of a point With respect to parabola & Chord of parabola
+Parabola 03 : Tangents and Normals to Parabola
+Parabola -04 : Pair of Tangents || Chord of contact || Chord with a given middle point
+Parabola -05 : Pole Polar and Concept of Envelope, Diameter (No DPP)
+Parabola : Solution to DPP 01
+Parabola : Solution to DPP 02
+Parabola : Solution to DPP 03
+Parabola : Solution to DPP 04
+Parabola : Solution to DPP 05
+
+Ellipse -01 : Ellipse standard equation and Basic terminology
+Ellipse -02 : Tangent & Normal to an Ellipse
+Ellipse -03 : Chord of Contact & Pair of Tangents
+Ellipse -04 : Diameter & Important Highlights
+Ellipse : Solution to DPP 01
+Ellipse : Solution to DPP 02
+Ellipse : Solution to DPP 03
+Ellipse : Solution to DPP 04
+Hyperbola -01 : Hyperbola definition & Basic terminology
+Hyperbola -02 : Auxiliary Circle || Tangent & Normals to Hyperbola
+Hyperbola -03 : Asymptotes & Rectangular Hyperbola
+Hyperbola : Solution to DPP 01
+Hyperbola : Solution to DPP 02
+Hyperbola : Solution to DPP 03
+
+
+
+Trigonometry -08 : Ambiguous Case || Ex central triangle || Distance between special points (No DPP)
+Trigonometry -07 : Length of angle bisector & Median, Orthocenter & Pedal triangle
+Trigonometry -06 : Inradius, Circumradius & Exradius of triangle
+Trigonometry -05 : Trigonometric equation discussion || Sine, Cosine and Tangent Rule
+Trigonometry -04 : Different types of Trigonometric Equation & Trigonometric Inequalities
+Trigonometry -03 : Solution of Trigonometric equation by factorisation & by introducing an auxiliary argument
+Trigonometry -02 : Trigonometric Identities || Summation of Trigonometric Series || Range of Trigonometric Functions
+Trigonometry -01 : Basics of trigonometry & Trigonometric ratios of compound angle
+Trigonometry : Solution to DPP 07
+Trigonometry : Solution to DPP 06
+Trigonometry : Solution to DPP 05
+Trigonometry : Solution to DPP 04
+Trigonometry : Solution to DPP 03
+Trigonometry : Solution to DPP 02
+Trigonometry : Solution to DPP 01
+
+
+Biomolecules : Solution to DPP 03
+Biomolecules : Solution to DPP 01
+Biomolecules : Solution to DPP 02
+Carbocation : Solution to DPP 04
+Carbocation : Solution to DPP 03
+Carbocation : Solution to DPP 02
+Carbocation : Solution to DPP 01
+Free Radical : Solution to DPP 03
+Free Radical : Solution to DPP 02
+Free Radical : Solution to DPP 01
+Substitution : Solution to DPP 04
+Substitution : Solution to DPP 03
+Substitution : Solution to DPP 02
+Substitution : Solution to DPP 01
+Elimination Reaction : Solution to DPP 03
+Elimination Reaction : Solution to DPP 02
+Elimination Reaction : Solution to DPP 01
+
+Reduction -04 : Birch Reduction And Hydrogenation
+Reduction -03 : Reduction-3
+Reduction -02 : Reduction with metallic hydride (NO DPP)
+Reduction -01 : Grignard Reagent
+Reduction : Solution to DPP 01
+Oxidation -02 : Ozonolysis and Oxidation Of Aldehyde
+Oxidation -01 : Oxidation of Alcohol & Alkene
+Oxidation : Solution to DPP 02
+Reduction : Solution to DPP 02
+Oxidation : Solution to DPP 01
+
+Carbonyl Compound -05 : Name Reaction-3
+Carbonyl Compound -04 : Name Reaction-2
+Carbonyl Compound -03 : Reaction With Amine and Name Reaction
+Carbonyl Compound -02 : Nucleophilic Addition Reactions
+Carbonyl Compound -01 : Malaprade Reaction And Heating Effect
+Carbonyl compound : Solution to DPP 06
+Carbonyl Compound : Solution to DPP 05
+Carbonyl Compound : Solution to DPP 04
+Carbonyl Compound : Solution to DPP 03
+Carbonyl Compound : Solution to DPP 02
+Carbonyl Compound : Solution to DPP 01
+
+Hydrocarbon -01 : Hydrocarbon (No DPP)
+Carboxylic Acid & Amine -05 : Hoffmann Bromamide Degradation
+Carboxylic Acid & Amine -04 : Reimer Tiemann and Wolff Rearrangement
+Carboxylic Acid & Amine -03 : Carbene and its reaction
+Carboxylic Acid & Amine -02 : Hydrolysis of Ester
+Carboxylic Acid & Amine -01 : Carboxylic Acid
+Carboxylic Acid & Amine : Solution to DPP 06
+Carboxylic Acid & Amine : Solution to DPP 05
+Carboxylic Acid & Amine : Solution to DPP 04
+Carboxylic Acid & Amine : Solution to DPP 03
+Carboxylic Acid & Amine : Solution to DPP 02
+Carboxylic Acid & Amine : Solution to DPP 01

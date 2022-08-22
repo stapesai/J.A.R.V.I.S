@@ -46,33 +46,38 @@ def reply(text : str):
     elif 'could not understand what you said' in text:
         return('Could not understand what you said')
 
-    elif 'set a timer for' in text or 'remind me' in text:
+    elif 'set a timer for' in text:
         import webbrowser
-        if 'set a timer for' in text:
-            text=text.replace('set a timer for','')
-        elif 'remind me' in text:
-            text=text.replace('remind me','')
+        text=text.replace('set a timer for','')
         text=text.replace('minutes','')
         text=text.replace('seconds','')
         new_TEXT=text.split('and')
+        if len(new_TEXT) == 1:
+            secs='0'
+        else:
+            secs=str(new_TEXT[1])
+            pass
         mins=str(new_TEXT[0])
-        url='https://www.google.com/search?q=timer+'+mins+'+min+'
+        url='https://www.google.com/search?q=timer+'+mins+'+min+'+secs+'+sec'
         webbrowser.open(url)
-        return( 'sir , timer has been started for',mins,'minutes')
+        return( 'sir , timer has been started for',mins,'minutes','and',secs,'seconds')
 
-
-    elif 'start stopwatch' in text:
+    elif 'remind me' in text:
         import webbrowser
-        webbrowser.open('https://www.google.com/search?q=stopwatch')
-        time.sleep(2)
-        pg.hotkey('ctrl','+')
-        reset_img=pg.locateCenterOnScreen('imgs\chrome_reset.png',confidence=0.7)
-        pg.click(reset_img)
-        start_press=pg.locateCenterOnScreen('imgs\SW_start.png',confidence=0.7)
-        time.sleep(0.4)
-        pg.click(start_press)
-        return ('sir,stopwatch has been started')
-         
+        text=text.replace('remind me after','')
+        text=text.replace('minutes','')
+        text=text.replace('seconds','')
+        new_TEXT=text.split('and')
+        if len(new_TEXT) == 1:
+            secs='0'
+        else:
+            secs=str(new_TEXT[1])
+            pass
+        mins=str(new_TEXT[0])
+        url='https://www.google.com/search?q=timer+'+mins+'+min+'+secs+'+sec'
+        webbrowser.open(url)
+        return( 'ok sir , I will remind you after',mins,'minutes','and',secs,'seconds')
+    
     # Features
     # 1. attending to calls
     elif (  'attend my call' in text or 
