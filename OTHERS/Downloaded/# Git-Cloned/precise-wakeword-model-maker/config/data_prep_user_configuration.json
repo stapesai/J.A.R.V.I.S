@@ -1,0 +1,17 @@
+{
+    "audio_source_directory": "audio/flow_test_delete_after/",
+    "wakeword_model_name": "test_output_model",
+    "pdsounds_directory": "audio/flow_test_delete_after/pdsounds_march2009/mp3/",
+    "extra_audio_directories_to_process": [
+        "audio/noises/",
+        "audio/common_voice/",
+        "audio/random_TTS/"
+    ],
+    "extra_audio_directories_labels": [
+        "non-utterances",
+        "utterances",
+        "utterances"
+    ],
+    "max_files_from_source_directory": 45000,
+    "max_files_per_destination_directory": 10000
+}

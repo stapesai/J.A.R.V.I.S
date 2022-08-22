@@ -1,0 +1,9 @@
+ovos-plugin-manager==0.0.5
+ovos-utils==0.0.15
+ovos-tts-plugin-google-tx==0.0.2
+ovos-tts-plugin-mimic2==0.1.3
+ovos-tts-plugin-pico
+ovos-tts-plugin-responsivevoice==0.1.1
+filelock==3.2.1
+soupsieve==2.3.1
+neon-tts-plugin-larynx_server==0.0.4

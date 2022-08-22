@@ -1,0 +1,38 @@
+/dist/
+/build/
+.cache/
+/.idea/
+__pycache__/
+/other/
+/.venv/
+/data/*/
+/wakewords/
+/logs
+*.egg-info/
+/.pytest_cache/
+/venv/
+/out/
+
+*.pyc
+*.pb
+*.params
+*.net
+*.pbtxt
+*.wav
+
+# Data folders
+/*/wake-word/
+/*/not-wake-word/
+/*/test/
+
+!requirements.txt
+
+# jenkins branch
+/wake-words.txt
+/all/
+/mycroft-precise/
+/models/
+
+# other
+audio/
+out/
