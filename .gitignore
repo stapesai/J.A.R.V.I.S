@@ -1,2 +1,4 @@
 features/download-videos/videos.csv
-logs/log.log
+features/Python to make bulk contacts from CSV/csv2vcf.csv
+features/Python to make bulk contacts from CSV/output.vcf
+*.log
