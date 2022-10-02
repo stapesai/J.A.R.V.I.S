@@ -2,3 +2,5 @@ features/download-videos/videos.csv
 features/Python to make bulk contacts from CSV/csv2vcf.csv
 features/Python to make bulk contacts from CSV/output.vcf
 *.log
+ai_features/otp-bomber-selenium/
+ai_features/whatsapp-msg-NLP/
