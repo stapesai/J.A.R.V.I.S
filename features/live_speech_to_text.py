@@ -29,7 +29,7 @@ def live_speech_to_text():
                     print('Recognizing........')
                     MyText = r.recognize_google(audio2)
                     MyText = MyText.lower()
-                    print("Did you say "+MyText)
+                    print("Did you say "+ MyText)
                 except:
                     MyText = 'Not recognized'
                     print('Not recognized')
@@ -50,5 +50,6 @@ def live_speech_to_text():
             engine.say('Yes sir')
             engine.runAndWait()
             print('Jarvis : Yes sir')
+
 
 live_speech_to_text()

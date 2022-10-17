@@ -3016,3 +3016,95 @@ comtypes - DEBUG - CoUninitialize() done. - 24-Sep-22 17:56:43
 comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000028FA250B370>.Release() -> 0 - 24-Sep-22 17:56:43
 comtypes._comobject - DEBUG - 0 active COM objects: Removed <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000028FA250B370> - 24-Sep-22 17:56:43
 comtypes._comobject - DEBUG - Remaining: [] - 24-Sep-22 17:56:43
+comtypes - DEBUG - CoInitializeEx(None, 2) - 13-Oct-22 00:04:27
+comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Devasheesh Mishra\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\comtypes\\gen\\__init__.py'> - 13-Oct-22 00:04:27
+comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\Devasheesh Mishra\AppData\Local\Programs\Python\Python310\lib\site-packages\comtypes\gen' - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396} - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x21443cb0b40 at 214439a5840>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does implement IProvideClassInfo - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396} - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb0b80 at 214439a5ac0> - 13-Oct-22 00:04:27
+comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8)) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x21443cb0b80 at 214439a5a40> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x21443cb0ba0 at 214439a5540> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeInfo) ptr=0x2144326b6e8 at 214439a58c0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeInfo) ptr=0x2144326b740 at 214439a53c0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeLib) ptr=0x21442a30730 at 214439a5ac0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb0b40 at 214439a5840> - 13-Oct-22 00:04:27
+comtypes.client._events - DEBUG - <POINTER(ISpeechVoice) ptr=0x21443cb0b80 at 214439a5a40> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x21443cb0ba0 at 214439a5840> - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.VoiceChange not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.Bookmark not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.Word not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.Sentence not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.Phoneme not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.Viseme not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.AudioLevel not implemented - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>: _ISpeechVoiceEvents.EnginePrivate not implemented - 13-Oct-22 00:04:27
+comtypes.client._events - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'> - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - 1 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010> - 13-Oct-22 00:04:27
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>.AddRef() -> 1 - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x21443cb0ba8 at 214439a5cc0> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x21443cb64c0 at 214439a5cc0>) - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21443cb64c0 at 214439a5cc0> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x21443cb7920 at 214439a5cc0>) - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb7290 at 214439a5e40> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x21443cb7b00 at 214439a5f40>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x21443cb7b00 at 214439a5f40>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2 - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2 - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x2144326b7f0 at 214439a6140> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C} - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb7b00 at 214439a6240> - 13-Oct-22 00:04:27
+comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8)) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x21443cb7b00 at 214439a6140> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IDispatch) ptr=0x21443cb7b00 at 214439a60c0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeInfo) ptr=0x2144326b7f0 at 214439a61c0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeLib) ptr=0x21442a30730 at 214439a6240> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IDispatch) ptr=0x21443cb7b00 at 214439a5f40> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x21443cb7290 at 214439a5dc0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x21443cb7920 at 214439a5cc0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21443cb7b00 at 214439a6140> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x21443cb7ed0 at 214439a6140>) - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb7290 at 214439a5dc0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x21443cb7ed0 at 214439a6140> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x21443cb7990 at 214439a5ec0>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x21443cb7990 at 214439a5ec0>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2 - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2 - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x2144326b7f0 at 214439a5fc0> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C} - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb7990 at 214439a61c0> - 13-Oct-22 00:04:27
+comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8)) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x21443cb7990 at 214439a5fc0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IDispatch) ptr=0x21443cb7990 at 214439a6240> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeInfo) ptr=0x2144326b7f0 at 214439a6040> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeLib) ptr=0x21442a30730 at 214439a61c0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IDispatch) ptr=0x21443cb7990 at 214439a5ec0> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x21443cb7a90 at 214439a5ec0>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x21443cb7a90 at 214439a5ec0>) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2 - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2 - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x2144326b7f0 at 214439a6040> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C} - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IUnknown) ptr=0x21443cb7a90 at 214439a60c0> - 13-Oct-22 00:04:27
+comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8)) - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'> - 13-Oct-22 00:04:27
+comtypes.client - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x21443cb7a90 at 214439a6040> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IDispatch) ptr=0x21443cb7a90 at 214439a5f40> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeInfo) ptr=0x2144326b7f0 at 214439a6240> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ITypeLib) ptr=0x21442a30730 at 214439a60c0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IDispatch) ptr=0x21443cb7a90 at 214439a5ec0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21443cb7990 at 214439a5fc0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21443cb7a90 at 214439a6040> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x21443cb7290 at 214439a5cc0> - 13-Oct-22 00:04:27
+comtypes - DEBUG - Calling CoUninitialize() - 13-Oct-22 00:04:28
+comtypes - DEBUG - CoUninitialize() done. - 13-Oct-22 00:04:28
+comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010>.Release() -> 0 - 13-Oct-22 00:04:28
+comtypes._comobject - DEBUG - 0 active COM objects: Removed <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000214439F3010> - 13-Oct-22 00:04:28
+comtypes._comobject - DEBUG - Remaining: [] - 13-Oct-22 00:04:28
